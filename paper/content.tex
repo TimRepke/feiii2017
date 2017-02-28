@@ -5,6 +5,8 @@ Efficiently identifying relations between companies based on 10k filings [.. is 
 
 - task: rank relationships between financial entities
 
+- we focus our approach on textual features only (neglect evaluating revenue streams that could be extracted from other sources i.e. stock market)
+
 - difficulty: small imbalanced dataset, fuzzy definition of "relevance"
 
 - performance: good NDCG around .98
@@ -12,9 +14,10 @@ Efficiently identifying relations between companies based on 10k filings [.. is 
 % from webpage: Given a 10-K filing, an analyst asks, does Company Y, mentioned in this filing, play the role R with respect to filing Company X? Rather than simply answering "yes" or "no", a system responds by providing all the mentions of Company Y in Company X's 10-K filing, with context sentences. These triples are then in ordered by the likelihood that the context accurately defines the relationship or role R between X and Y.
 
 \section{Description of the Data}
-The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship between the filing company and a mentioned financial entity. Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}.
+The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship between the filing company and a mentioned financial entity. Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}. Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
 
-Additional information such as the context a triple was extracted from and supplementary meta-data may be useful to construct features for the ranking task. We focus our approach on textual features only. 
+Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}. Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
+
 
 \subsection{Inter Annotator Agreement}
 The quality of annotations is estimated using Cohen's kappa. The inter annotator agreement (IAA) between two experts is defined as
@@ -52,8 +55,45 @@ where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based 
 		\toprule
 		Approach & NDCG & $\sigma ($NDCG$)$\\
 		\midrule
-		Baseline (random) & $0.87$ & $0.07$\\
-		Baseline (worst) & $0.73$ & $0.13$\\
+		Baseline (random) & 0.87 & 0.07\\
+		Baseline (worst) & 0.73 & 0.13\\
+		\midrule
+		full set, categorical & 0.97 & 0.04 \\
+		role based, categorical & 0.92 & 0.07  \\
+		full set, continuous & \textbf{0.98} & 0.03 \\
+		role based, continuous & 0.93 & 0.07 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+%
+%\begin{table}
+%	\caption{Experimental results}
+%	\label{tab:freq}
+%	\begin{tabular}{lcccc}
+%		\toprule
+%		Approach & NDCG & $\sigma ($NDCG$)$ & F1-score & $\sigma($F1-Score$)$\\
+%		\midrule
+%		Baseline (random) & $0.87$ & $0.07$ & - & - \\
+%		Baseline (worst) & $0.73$ & $0.13$ & - & - \\
+%		full set, categorical & $0.97$ & $0.04$ & $0.73$ & $0.27$ \\
+%		role based, categorical & $0.92$ & $0.07$ & $0.49$ & $0.17$ \\
+%		full set, continuous & $0.98$ & $0.03$ & - & - \\
+%		role based, continuous & $0.93$ & $0.07$ & - & - \\
+%		\bottomrule
+%	\end{tabular}
+%\end{table}
+%
+\begin{figure}
+	\begin{subfigure}[t]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{conf_full}
+		\caption{Trained on all samples}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}[t]{0.5\linewidth}
+		\includegraphics[width=\linewidth]{conf_role}
+		\caption{Trained on role samples}
+	\end{subfigure}
+	\caption{Normalised aggregated confusion matrices for the model with different training sets}
+	\label{fig:confmatrix}
+\end{figure}
