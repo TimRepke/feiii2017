@@ -27,18 +27,20 @@ $$
 where $p_0$ is the proportion of labels with agreement, and $p_e$ the statistical chance of random agreement.
 
 \begin{figure}
-	\includegraphics[width=\linewidth]{iaa}
+	\includegraphics[width=0.7\linewidth]{iaa}
 	\caption{$\kappa$ IAA (upper triangular matrix), number of commonly rated triples (lower triangular matrix), and number of ratings (diagonal matrix)}
 	\label{fig:iaa}
 \end{figure}
 
-\Fref{fig:iaa} shows the $\kappa$ for each pair of experts, as well as the number of overlapping labels. Most triplets (60\%) aren't represented in this figure, since they only received a rating by one expert and very few by more than two. The weighted average of $\overline{k}<0.5$ and few overlapping annotations are not ideal for a reliable development and evaluation of a system. For all experiments each triplet's rounded average rating is considered.
+\Fref{fig:iaa} shows the $\kappa$ for each pair of experts, as well as the number of overlapping labels. Most triplets (60\%) aren't represented in this figure, since they only received a rating by one expert and very few by more than two. The weighted average of $\overline{k}<0.5$ and few overlapping annotations are not ideal for a reliable development and evaluation of a system.
 
 \subsection{Preparing the Dataset}
+Our ranking model takes the three sentences triples are extracted from as input to predict its relevance. Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}. Based on the normalised tokens of the entire training set, a dictionary is constructed.
 
-avg and clip annotator scores, lemmatise sentences, tfidf bow
+As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments. The four rating categories are mapped to numerical values (1-4).
 
-\section{Ranking Algorithm}
+\section{Ranking Model}
+
 
 \section{Evaluation and Conclusion}
 The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG). The rank at position $p$ is calculated by
