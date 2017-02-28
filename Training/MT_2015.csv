@@ -1,0 +1,75 @@
+DOCUMENT_TYPE,FILER_NAME,FILER_CIK,FILING_INTERVAL,FILING_DATE,MENTIONED_FINANCIAL_ENTITY,PP_RSSD_ID,ROLE,THREE_SENTENCES,RATING_EXPERT_2,COMMENT_EXPERT_2
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Equity Securities,,Issuer,"Item 5.
+Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+35-38",Irrelevant,"""-1-1-1"""
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Securities,,agent,"M&T Securities is registered as a broker/dealer under the Securities Exchange Act of 1934, as amended, and as an investment advisor under the Investment Advisors Act of 1940, as
+amended (the ?Investment Advisors Act?). M&T Securities is licensed as a life insurance agent in each state where M&T Bank operates branch offices and in a number of other states. It provides securities brokerage, investment
+advisory and insurance services.",Neutral,0.0.-1. Qualified role names: life insurance agent
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Bank,,agent,"M&T Securities is registered as a broker/dealer under the Securities Exchange Act of 1934, as amended, and as an investment advisor under the Investment Advisors Act of 1940, as
+amended (the ?Investment Advisors Act?). M&T Securities is licensed as a life insurance agent in each state where M&T Bank operates branch offices and in a number of other states. It provides securities brokerage, investment
+advisory and insurance services.",Neutral,0.0.-1. Qualified role names: life insurance agent
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,Affiliates,"The FDIC may decline to enforce the cross-guarantee provisions if it determines that a waiver is in the
+best interest of the DIF. Transactions with Affiliates There are various legal restrictions on the extent to which M&T and its non-bank subsidiaries may borrow or otherwise obtain funding from M&T Bank and Wilmington Trust, N.A. In general, Sections
+23A and 23B of the Federal Reserve Board Act and Federal Reserve Board Regulation W require that any ?covered transaction? by M&T Bank and Wilmington Trust, N.A. (or any of their respective subsidiaries) with an affiliate must in
+certain cases be secured by designated amounts of specified collateral and must be limited as follows: (a) in the case of any single such affiliate, the aggregate amount of covered transactions of the insured depository institution and its
+subsidiaries may not exceed 10% of the capital stock and surplus of such insured depository institution, and (b) in the case of all affiliates, the aggregate amount of covered transactions of an insured depository institution and its
+subsidiaries may not exceed 20% of the capital stock and surplus of such insured depository institution. The Dodd-Frank Act significantly expanded the coverage and scope of the limitations on affiliate transactions within a banking organization,
+including for example, the requirement that the 10% of capital limit on covered transactions begin to apply to financial subsidiaries.",Relevant,1.1.0
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Bank,,Affiliates,"The FDIC may decline to enforce the cross-guarantee provisions if it determines that a waiver is in the
+best interest of the DIF. Transactions with Affiliates There are various legal restrictions on the extent to which M&T and its non-bank subsidiaries may borrow or otherwise obtain funding from M&T Bank and Wilmington Trust, N.A. In general, Sections
+23A and 23B of the Federal Reserve Board Act and Federal Reserve Board Regulation W require that any ?covered transaction? by M&T Bank and Wilmington Trust, N.A. (or any of their respective subsidiaries) with an affiliate must in
+certain cases be secured by designated amounts of specified collateral and must be limited as follows: (a) in the case of any single such affiliate, the aggregate amount of covered transactions of the insured depository institution and its
+subsidiaries may not exceed 10% of the capital stock and surplus of such insured depository institution, and (b) in the case of all affiliates, the aggregate amount of covered transactions of an insured depository institution and its
+subsidiaries may not exceed 20% of the capital stock and surplus of such insured depository institution. The Dodd-Frank Act significantly expanded the coverage and scope of the limitations on affiliate transactions within a banking organization,
+including for example, the requirement that the 10% of capital limit on covered transactions begin to apply to financial subsidiaries.",Relevant,1.1.0
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,"Wilmington Trust, N.A.",,Affiliates,"The FDIC may decline to enforce the cross-guarantee provisions if it determines that a waiver is in the
+best interest of the DIF. Transactions with Affiliates There are various legal restrictions on the extent to which M&T and its non-bank subsidiaries may borrow or otherwise obtain funding from M&T Bank and Wilmington Trust, N.A. In general, Sections
+23A and 23B of the Federal Reserve Board Act and Federal Reserve Board Regulation W require that any ?covered transaction? by M&T Bank and Wilmington Trust, N.A. (or any of their respective subsidiaries) with an affiliate must in
+certain cases be secured by designated amounts of specified collateral and must be limited as follows: (a) in the case of any single such affiliate, the aggregate amount of covered transactions of the insured depository institution and its
+subsidiaries may not exceed 10% of the capital stock and surplus of such insured depository institution, and (b) in the case of all affiliates, the aggregate amount of covered transactions of an insured depository institution and its
+subsidiaries may not exceed 20% of the capital stock and surplus of such insured depository institution. The Dodd-Frank Act significantly expanded the coverage and scope of the limitations on affiliate transactions within a banking organization,
+including for example, the requirement that the 10% of capital limit on covered transactions begin to apply to financial subsidiaries.",Relevant,1.1.0
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,counterparties,"Other conditions and factors that could materially adversely affect the Company?s
+liquidity and funding include a lack of market or customer confidence in, or negative news about, the Company or the financial services industry generally which also may result in a loss of deposits and/or negatively affect the ability to access the
+capital markets; the loss of customer deposits to alternative investments; inability to sell or securitize loans or other assets; and downgrades in one or more of the Company?s credit ratings. A downgrade in the Company?s credit ratings,
+which could result from general industry-wide or regulatory factors not solely related to the Company, could adversely affect the Company?s ability to borrow funds and raise the cost of borrowings substantially and could cause creditors and
+business counterparties to raise collateral requirements or take other actions that could adversely affect M&T?s ability to raise capital. Many of the above conditions and factors may be caused by events over which M&T has little or no
+control.",Irrelevant,0.0.0
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,trustee,"Mr. Jones has held a number of management
+positions within M&T Bank?s Finance Division since 1992. Mr. Jones is an executive vice president and chief financial officer (2005) and a director (2007) of Wilmington Trust, N.A., and he is chairman of the board, president
+(2009) and a trustee (2005) of M&T Real Estate. He is chairman of the
+34",Relevant,1.1.1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,trustee,"Previously, he was responsible for all of the non-retail segments in
+the New York City, Philadelphia, Connecticut, New Jersey, Tarrytown, Greater Washington D.C. and Northern Virginia, Southern Pennsylvania and Delaware markets of M&T Bank, as well as the Company?s commercial real estate business, Commercial
+Marketing and Treasury Management. He is an executive vice president (2003) and a trustee (2014) of M&T Real Estate, chairman of the board (2009) and a director (2003) of M&T Realty Capital, and an executive vice
+president and a director of Wilmington Trust, N.A. (2014). Mr. Pearson served as senior vice president of M&T Bank from 2000 to 2002.",Relevant,1.1.1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Realty,,trustee,"Previously, he was responsible for all of the non-retail segments in
+the New York City, Philadelphia, Connecticut, New Jersey, Tarrytown, Greater Washington D.C. and Northern Virginia, Southern Pennsylvania and Delaware markets of M&T Bank, as well as the Company?s commercial real estate business, Commercial
+Marketing and Treasury Management. He is an executive vice president (2003) and a trustee (2014) of M&T Real Estate, chairman of the board (2009) and a director (2003) of M&T Realty Capital, and an executive vice
+president and a director of Wilmington Trust, N.A. (2014). Mr. Pearson served as senior vice president of M&T Bank from 2000 to 2002.",Relevant,1.1.1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,"Wilmington Trust, N.A.",,trustee,"Previously, he was responsible for all of the non-retail segments in
+the New York City, Philadelphia, Connecticut, New Jersey, Tarrytown, Greater Washington D.C. and Northern Virginia, Southern Pennsylvania and Delaware markets of M&T Bank, as well as the Company?s commercial real estate business, Commercial
+Marketing and Treasury Management. He is an executive vice president (2003) and a trustee (2014) of M&T Real Estate, chairman of the board (2009) and a director (2003) of M&T Realty Capital, and an executive vice
+president and a director of Wilmington Trust, N.A. (2014). Mr. Pearson served as senior vice president of M&T Bank from 2000 to 2002.",Relevant,1.1.1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,trustee,"Mr. Warman previously served as senior vice president of M&T Bank and has held a number of management positions within M&T Bank since 1995. He is an executive
+vice president and treasurer of Wilmington Trust, N.A. (2008), a trustee of M&T Real Estate (2009), and is treasurer of Wilmington Trust Company (2012). PART II",Relevant,1.1.-1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Wilmington Trust Company,,trustee,"Mr. Warman previously served as senior vice president of M&T Bank and has held a number of management positions within M&T Bank since 1995. He is an executive
+vice president and treasurer of Wilmington Trust, N.A. (2008), a trustee of M&T Real Estate (2009), and is treasurer of Wilmington Trust Company (2012). PART II",Relevant,1.1.-1 (M&T is not in the role of trustee)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Equity Securities,,Issuer,"Item 5.
+Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.
+M&T?s common stock is traded under the symbol MTB on the New York Stock Exchange.",Irrelevant,"""-1-1-1"""
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Equity Securities,,Issuer,"Table of ContentsIssuer Purchases of Equity Securities In February 2007, M&T announced that it had been authorized by its Board of Directors to purchase up to 5,000,000 shares of its common stock. M&T did not repurchase any shares pursuant to
+such plan during 2014.",Relevant,-1.1.1
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T,,Issuer,"Table of ContentsIssuer Purchases of Equity Securities In February 2007, M&T announced that it had been authorized by its Board of Directors to purchase up to 5,000,000 shares of its common stock. M&T did not repurchase any shares pursuant to
+such plan during 2014.",Relevant,-1.1.1
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Bayview Lending Group LLC,,affiliates,"Revenues earned for sub-servicing
+loans were $116 million in 2014, $35 million in 2013 and $12 million in 2012. The contractual servicing rights associated with loans sub-serviced by the Company were predominantly held by affiliates of Bayview Lending Group LLC (?BLG?).
+During the third quarter of 2013, the Company added approximately $38 billion of residential real estate loans to its portfolio of loans sub-serviced for affiliates of BLG.",Highly relevant,1.1.1 (Bayview Lending Group LLC is not in the role of affiliates)
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Bank,,agent,"The VRDBs are generally enhanced by letters of credit provided by M&T Bank. M&T Bank oftentimes acts as remarketing agent for the VRDBs and, at its discretion, may from time-to-time own some of the VRDBs while such
+instruments are remarketed. When this occurs, the VRDBs are classified as trading account assets in the Company?s consolidated balance sheet.",Relevant,1.1.1. Qualified role names: remarketing agent
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,M&T Bank,,agent,"The total amount of VRDBs outstanding backed by M&T Bank letters of
+credit was $2.0 billion and $1.7 billion at December 31, 2014 and 2013, respectively. M&T Bank also serves as remarketing agent for most of those bonds. Table 17 MATURITY DISTRIBUTION OF SELECTED LOANS(a)",Highly relevant,1.1.-1. Qualified role names: remarketing agent
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Bayview Financial,,affiliates,"The carrying value of that investment was $47 million at December 31, 2014. Bayview Financial Holdings, L.P. (together with its affiliates, ?Bayview Financial?), a privately-held specialty mortgage finance company, is BLG?s majority investor. In addition to their
+common investment in BLG, the Company and Bayview Financial conduct other business activities with each other.",Highly relevant,1.1.1
+10-K,M&T BANK CORP,36270,m&t-2014,2/20/2015,Equity Securities,,Issuer,"The information required by this item concerning Equity Compensation Plan information is filed as part of this Annual Report on Form 10-K. See Part II, Item 5. ?Market for
+Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.?Item 13.",Irrelevant,"""-1-1-1"""

@@ -1,0 +1,66 @@
+"DOCUMENT_TYPE","FILER_NAME","FILER_CIK","FILING_INTERVAL","FILING_DATE","MENTIONED_FINANCIAL_ENTITY","PP_RSSD_ID","ROLE","THREE_SENTENCES","RATING_EXPERT_2","COMMENT_EXPERT_2"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","counterparties","Financial services institutions are interrelated as a result of
+trading, clearing, counterparty, or other relationships. BB&T has exposure to many different industries and counterparties,
+and BB&T and certain of its subsidiaries routinely execute transactions with counterparties in the financial services industry,
+including brokers and dealers, commercial banks, investment banks, mutual and hedge funds, and other institutional clients. Many
+of these transactions expose BB&T to credit risk in the event of default of its counterparty or client.","Neutral","-1.0.0"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","counterparties","BB&T mitigates the credit risk by subjecting counterparties to credit reviews
+and approvals similar to those used in making loans and other extensions of credit. In addition, certain counterparties are required
+to provide collateral to BB&T when their unsecured loss positions exceed certain negotiated limits. The fair value of interest
+rate lock commitments, which are related to mortgage loan commitments, is based on quoted market prices adjusted for commitments
+that BB&T does not expect to fund and includes the value attributable to the net servicing fee.","Relevant","1.1.1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","counterparty","Credit riskCredit risk is the risk to earnings or capital arising from the
+default, inability or unwillingness of a borrower, obligor, or counterparty to meet the terms of any financial obligation with
+BB&T or otherwise perform as agreed. Credit risk exists in all activities where success depends on the performance of a borrower,
+obligor, or counterparty.","Neutral","-1.0.-1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T.","","Counterparties","BB&T also issues standard
+representation and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities and
+other similar arrangements. Counterparties in many of these indemnifications provide similar indemnifications to BB&T. Although
+these agreements often do not specify limitations, BB&T does not believe that any payments related to these guarantees would
+materially change the financial condition or results of operations of BB&T.BB&T holds public funds in certain states that do not require
+100% collateralization on public fund bank deposits.","Relevant","1.0.1.1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","Counterparties","BB&T also issues standard
+representation and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities and
+other similar arrangements. Counterparties in many of these indemnifications provide similar indemnifications to BB&T. Although
+these agreements often do not specify limitations, BB&T does not believe that any payments related to these guarantees would
+materially change the financial condition or results of operations of BB&T.BB&T holds public funds in certain states that do not require
+100% collateralization on public fund bank deposits.","Relevant","1.0.1.1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T.","","Counterparties","BB&T also issues standard
+representation and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities and
+other similar arrangements. Counterparties in many of these indemnifications provide similar indemnifications to BB&T. Although
+these agreements often do not specify limitations, BB&T does not believe that any payments related to these guarantees would
+materially change the financial condition or results of operations of BB&T.BB&T holds public funds in certain states that do not require
+100% collateralization on public fund bank deposits.","Relevant","1.0.1.1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","guarantor","While this review
+is largely focused on the borrower?s ability to repay the loan, BB&T also considers the capacity and willingness of a
+loan?s guarantors to support the debt service on the loan as a secondary source of repayment. When a guarantor exhibits the
+documented capacity and willingness to support the loan, BB&T may consider extending the loan maturity and/or temporarily deferring
+principal payments if the ultimate collection of both principal and interest is not in question. In these cases, BB&T may not
+deem the loan to be impaired due to the documented capacity and willingness of the guarantor to repay the loan.","Relevant","1.1.0"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T.","","Counterparties","BB&T also issues
+standard representations and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities
+and other similar arrangements. Counterparties in many of these indemnification arrangements provide similar indemnifications to
+BB&T. Although these agreements often do not specify limitations, BB&T does not believe that any payments related to these
+guarantees would materially change the financial position or results of operations of BB&T.Legal Proceedings","Relevant","1.0.1.-1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T","","Counterparties","BB&T also issues
+standard representations and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities
+and other similar arrangements. Counterparties in many of these indemnification arrangements provide similar indemnifications to
+BB&T. Although these agreements often do not specify limitations, BB&T does not believe that any payments related to these
+guarantees would materially change the financial position or results of operations of BB&T.Legal Proceedings","Relevant","1.0.1.-1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","BB&T.","","Counterparties","BB&T also issues
+standard representations and warranties in underwriting agreements, merger and acquisition agreements, loan sales, brokerage activities
+and other similar arrangements. Counterparties in many of these indemnification arrangements provide similar indemnifications to
+BB&T. Although these agreements often do not specify limitations, BB&T does not believe that any payments related to these
+guarantees would materially change the financial position or results of operations of BB&T.Legal Proceedings","Relevant","1.0.1.-1"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","GNMA","","seller","8,498As an approved seller/servicer, Branch Bank is required to maintain
+minimum levels of shareholders? equity, as specified by various agencies, including the United States Department of Housing
+and Urban Development, GNMA, FHLMC and FNMA. At December 31, 2013 and 2012, Branch Bank?s equity was above all required levels.","Relevant","-1.1.0 (seller/servicer is a different role from simple seller; GNMA is not the seller in this context). Qualified role names: seller/servicer"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","FNMA","","seller","8,498As an approved seller/servicer, Branch Bank is required to maintain
+minimum levels of shareholders? equity, as specified by various agencies, including the United States Department of Housing
+and Urban Development, GNMA, FHLMC and FNMA. At December 31, 2013 and 2012, Branch Bank?s equity was above all required levels.","Relevant","-1.1.0 (seller/servicer is a different role from simple seller; FNMA is not the seller in this context). Qualified role names: seller/servicer"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","State Street Bank and Trust Company)","","trustee","4.2
+Indenture Regarding Senior Securities (including form of Senior Debt Security) between Registrant and U.S. Bank National Association (as successor in interest to State Street Bank and Trust Company), as trustee, dated as of May 24, 1996.
+Incorporated herein by reference to Exhibit 4(c) of Form S-3 Registration Statement No. 333-02899.","Relevant","-1.1.0 (U.S. Bank NA is in the role of trustee)"
+"10-K","BB&T CORP","92230","2013-FY","2/25/2014","State Street Bank and Trust Company)","","trustee","4.4
+Indenture Regarding Subordinated Securities (including Form of Subordinated Debt Security) between the Registrant and U.S. Bank National Association (as successor in interest to State Street Bank and Trust Company), as trustee, dated as of May 24, 1996.
+Incorporated herein by reference to Exhibit 4(d) of Form S-3 Registration Statement No. 333-02899.","Relevant","-1.1.0 (U.S. Bank NA is in the role of trustee)"

@@ -1,0 +1,70 @@
+"DOCUMENT_TYPE","FILER_NAME","FILER_CIK","FILING_INTERVAL","FILING_DATE","MENTIONED_FINANCIAL_ENTITY","PP_RSSD_ID","ROLE","THREE_SENTENCES","RATING_EXPERT_2","COMMENT_EXPERT_2"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Equity Securities","","Issuer","Table of ContentsPART II
+Item 5?Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity
+Securities The information called for by Item 5(a) relating to market price, dividend and related stockholder
+information is incorporated herein by reference to the section of the Consolidated Financial Statistics titled ?Common Stock Dividend and Market Price? on page 126 of the Corporation?s Annual Report to Stockholders for the year ended
+December 31, 2012. Information regarding dividend restrictions of the Corporation?s banking subsidiaries is
+incorporated herein by reference to Note 29? Restrictions on Subsidiary Dividends and Loans or Advances on page 117 of the Corporation?s Annual Report to Stockholders for the year ended December 31, 2012.","Neutral","-1.0.0 (Equity Securities is not a financial entity)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Northern Trust Corporation","","Trustee","4.5
+Junior Subordinated Indenture, dated as of January 1, 1997, between Northern Trust Corporation and The First National Bank of Chicago, as Debenture Trustee (incorporated herein by
+reference to Exhibit 4(a) to the Corporation?s Current Report on Form 8-K dated January 16, 1997).4.6","Relevant","-1.1.-1 (Northern Trust Corporation is not in the role of Trustee). Qualified role names: Debenture Trustee"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The First National Bank of Chicago","","Trustee","4.5
+Junior Subordinated Indenture, dated as of January 1, 1997, between Northern Trust Corporation and The First National Bank of Chicago, as Debenture Trustee (incorporated herein by
+reference to Exhibit 4(a) to the Corporation?s Current Report on Form 8-K dated January 16, 1997).4.6","Relevant","-1.1.-1. Qualified role names: Debenture Trustee"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The Northern Trust Company","","Issuer","4.7
+Fiscal Agency Agreement, dated March 11, 2005, by and among The Northern Trust Company as Issuer, Kredietbank S.A. Luxembourgeoise as Fiscal Agent, and Kredietbank S.A.
+Luxembourgeoise and Brown Shipley & Co. Limited as Paying Agents (incorporated herein by reference to Exhibit 4(i) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended March 31, 2005).4.8","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","JPMorgan Chase Bank, N.A.","","Trustee","4.8
+Indenture, dated as of August 15, 2006, between Northern Trust Corporation and JPMorgan Chase Bank, N.A., as Trustee (incorporated herein by reference to Exhibit 4.1 to the
+Corporation?s Current Report on Form 8-K dated August 23, 2006).4.9","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Northern Trust Corporation","","Trustee","10.1**
+Deferred Compensation Plans Trust Agreement, dated May 11, 1998, between Northern Trust Corporation and Harris Trust and Savings Bank as Trustee (which, effective August 31,
+1999, was succeeded by U.S. Trust Company, N.A. and effective June 1, 2009, was succeeded by Evercore Trust Company, N.A.) regarding the Supplemental Employee Stock Ownership Plan for Employees of The Northern Trust Company, the Supplemental
+Thrift-Incentive Plan for Employees of The Northern Trust Company, the Supplemental Pension Plan for Employees of The Northern Trust Company, and the Northern Trust Corporation Deferred Compensation Plan (incorporated herein by reference to Exhibit
+10(iv) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended June 30, 1998).(i)**","Relevant","-1.1.-1 (Northern Trust Company is not in the role of Trustee)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Savings Bank","","Trustee","10.1**
+Deferred Compensation Plans Trust Agreement, dated May 11, 1998, between Northern Trust Corporation and Harris Trust and Savings Bank as Trustee (which, effective August 31,
+1999, was succeeded by U.S. Trust Company, N.A. and effective June 1, 2009, was succeeded by Evercore Trust Company, N.A.) regarding the Supplemental Employee Stock Ownership Plan for Employees of The Northern Trust Company, the Supplemental
+Thrift-Incentive Plan for Employees of The Northern Trust Company, the Supplemental Pension Plan for Employees of The Northern Trust Company, and the Northern Trust Corporation Deferred Compensation Plan (incorporated herein by reference to Exhibit
+10(iv) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended June 30, 1998).(i)**","Relevant","-1.1.-1 (Harris Trust and Savings Bank is parsed incorrectly as financial entity)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","U.S. Trust Company, N.A.","","Trustee","10.1**
+Deferred Compensation Plans Trust Agreement, dated May 11, 1998, between Northern Trust Corporation and Harris Trust and Savings Bank as Trustee (which, effective August 31,
+1999, was succeeded by U.S. Trust Company, N.A. and effective June 1, 2009, was succeeded by Evercore Trust Company, N.A.) regarding the Supplemental Employee Stock Ownership Plan for Employees of The Northern Trust Company, the Supplemental
+Thrift-Incentive Plan for Employees of The Northern Trust Company, the Supplemental Pension Plan for Employees of The Northern Trust Company, and the Northern Trust Corporation Deferred Compensation Plan (incorporated herein by reference to Exhibit
+10(iv) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended June 30, 1998).(i)**","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Evercore Trust Company, N.A.","","Trustee","10.1**
+Deferred Compensation Plans Trust Agreement, dated May 11, 1998, between Northern Trust Corporation and Harris Trust and Savings Bank as Trustee (which, effective August 31,
+1999, was succeeded by U.S. Trust Company, N.A. and effective June 1, 2009, was succeeded by Evercore Trust Company, N.A.) regarding the Supplemental Employee Stock Ownership Plan for Employees of The Northern Trust Company, the Supplemental
+Thrift-Incentive Plan for Employees of The Northern Trust Company, the Supplemental Pension Plan for Employees of The Northern Trust Company, and the Northern Trust Corporation Deferred Compensation Plan (incorporated herein by reference to Exhibit
+10(iv) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended June 30, 1998).(i)**","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Employee Stock Ownership Plan","","Trustee","10.1**
+Deferred Compensation Plans Trust Agreement, dated May 11, 1998, between Northern Trust Corporation and Harris Trust and Savings Bank as Trustee (which, effective August 31,
+1999, was succeeded by U.S. Trust Company, N.A. and effective June 1, 2009, was succeeded by Evercore Trust Company, N.A.) regarding the Supplemental Employee Stock Ownership Plan for Employees of The Northern Trust Company, the Supplemental
+Thrift-Incentive Plan for Employees of The Northern Trust Company, the Supplemental Pension Plan for Employees of The Northern Trust Company, and the Northern Trust Corporation Deferred Compensation Plan (incorporated herein by reference to Exhibit
+10(iv) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended June 30, 1998).(i)**","Relevant","-1.1.-1 (Employee Stock Ownership Plan is not a financial entity)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The First National Bank of Chicago","","Trustee","10.14
+Amended and Restated Trust Agreement of NTC Capital I, dated as of January 16, 1997, among Northern Trust Corporation, as Depositor, The First National Bank of Chicago, as
+Property Trustee, First Chicago Delaware, Inc., as Delaware Trustee, and the Administrative Trustees named therein (incorporated herein by reference to Exhibit 4(h) to the Corporation?s Current Report on Form 8-K dated January 16,
+1997).10.15","Relevant","-1.1.-1. Qualified role names: Property Trustee"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","NTC Capital I","","Guarantor","10.15
+Guarantee Agreement, dated as of January 16, 1997, relating to NTC Capital I, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago,
+as Guarantee Trustee (incorporated herein by reference to Exhibit 4(j) to the Corporation?s Current Report on Form 8-K dated January 16, 1997).10.16","Relevant","-1.1.-1 (NTC Capital I is not in the role of Guarantor)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Northern Trust Corporation","","Guarantor","10.15
+Guarantee Agreement, dated as of January 16, 1997, relating to NTC Capital I, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago,
+as Guarantee Trustee (incorporated herein by reference to Exhibit 4(j) to the Corporation?s Current Report on Form 8-K dated January 16, 1997).10.16","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The First National Bank of Chicago","","Trustee","10.15
+Guarantee Agreement, dated as of January 16, 1997, relating to NTC Capital I, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago,
+as Guarantee Trustee (incorporated herein by reference to Exhibit 4(j) to the Corporation?s Current Report on Form 8-K dated January 16, 1997).10.16","Relevant","-1.1.-1. Qualified role names: Guarantee Trustee"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The First National Bank of Chicago","","Trustee","10.16
+Amended and Restated Trust Agreement of NTC Capital II, dated as of April 25, 1997, among Northern Trust Corporation, as Depositor, The First National Bank of Chicago, as Property
+Trustee, First Chicago Delaware, Inc., as Delaware Trustee, and the Administrative Trustees named therein (incorporated herein by reference to Exhibit (4)(i) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended
+March 31, 1997).10.17","Relevant","-1.1.-1. Qualified role names: Property Trustee"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","NTC Capital","","Guarantor","10.17
+Guarantee Agreement, dated as of April 25, 1997, relating to NTC Capital II, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago, as
+Guarantee Trustee (incorporated herein by reference to Exhibit (4)(ii) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended March 31, 1997).10.18**","Relevant","-1.1.-1 (NTC Capital II parsed incorrectly; NTC Capital II is not in the role of Guarantor)"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","Northern Trust Corporation","","Guarantor","10.17
+Guarantee Agreement, dated as of April 25, 1997, relating to NTC Capital II, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago, as
+Guarantee Trustee (incorporated herein by reference to Exhibit (4)(ii) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended March 31, 1997).10.18**","Relevant","-1.1.-1"
+"10-K","NORTHERN TRUST CORP","73124","2012-FY","2/26/2013","The First National Bank of Chicago","","Trustee","10.17
+Guarantee Agreement, dated as of April 25, 1997, relating to NTC Capital II, by and between Northern Trust Corporation, as Guarantor, and The First National Bank of Chicago, as
+Guarantee Trustee (incorporated herein by reference to Exhibit (4)(ii) to the Corporation?s Quarterly Report on Form 10-Q for the quarter ended March 31, 1997).10.18**","Relevant","-1.1.-1. Qualified role names: Guarantee Trustee"

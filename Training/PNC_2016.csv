@@ -1,0 +1,133 @@
+"DOCUMENT_TYPE","FILER_NAME","FILER_CIK","FILING_INTERVAL","FILING_DATE","MENTIONED_FINANCIAL_ENTITY","PP_RSSD_ID","ROLE","THREE_SENTENCES","RATING_EXPERT_6","COMMENT_EXPERT_6"
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","affiliates","This supervisory framework, including the
+examination reports and supervisory ratings (which are not publicly available) of the agencies, could materially impact the conduct, growth and profitability of our operations. The Consumer Financial Protection Bureau (CFPB) is responsible for examining PNC Bank and its affiliates (including PNC) for compliance with most federal consumer financial protection laws, including the
+laws relating to fair lending and prohibiting unfair, deceptive or abusive acts or practices in connection with the offer, sale or provision of consumer financial products or services, and for enforcing such laws with respect to PNC Bank and its
+affiliates. The results of the CFPB?s examinations, which are not publicly available, also can result in restrictions or limitations on the operations of a regulated entity as well as enforcement actions against a regulated entity, including
+the imposition of substantial monetary penalties and nonmonetary requirements.","Neutral","Note: This assumes PNC is an affiliate of itself, which is consistent with the text and example training data."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Bank","","affiliates","enforcement action against the bank if an acceptable plan is not submitted or the bank fails to comply with an approved plan. Sections 23A and 23B of the Federal Reserve Act and the Federal Reserve?s implementing regulation, Regulation W, place quantitative and qualitative restrictions on covered transactions between a bank
+and its affiliates (for example between PNC Bank, on the one hand, and PNC and its nonbank subsidiaries, on the other hand). In general, section 23A and Regulation W limit the total amount of covered transactions between a bank and any single
+affiliate to 10 percent of the bank?s capital stock and surplus, limit the total amount of covered transactions between a bank and all its affiliates to 20 percent of the bank?s capital stock and surplus, prohibit a bank from purchasing
+low-quality assets from an affiliate, and require certain covered transactions to be secured with prescribed amounts of collateral.","Highly relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","affiliates","enforcement action against the bank if an acceptable plan is not submitted or the bank fails to comply with an approved plan. Sections 23A and 23B of the Federal Reserve Act and the Federal Reserve?s implementing regulation, Regulation W, place quantitative and qualitative restrictions on covered transactions between a bank
+and its affiliates (for example between PNC Bank, on the one hand, and PNC and its nonbank subsidiaries, on the other hand). In general, section 23A and Regulation W limit the total amount of covered transactions between a bank and any single
+affiliate to 10 percent of the bank?s capital stock and surplus, limit the total amount of covered transactions between a bank and all its affiliates to 20 percent of the bank?s capital stock and surplus, prohibit a bank from purchasing
+low-quality assets from an affiliate, and require certain covered transactions to be secured with prescribed amounts of collateral.","Highly relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","servicers","The CFPB has issued new rules for mortgage origination and mortgage servicing. Both the origination and servicing rules create new private rights of action for consumers against lenders and servicers like
+PNC in the event of certain violations. For additional information concerning the mortgage rules, see Supervision and Regulation in Item 1 of this Report.","Neutral",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Computershare Trust Company, N.A.","","agent","We include here by
+reference the information regarding our compensation plans under which PNC equity securities are authorized for issuance as of December 31, 2015 in the table (with introductory paragraph and notes) that appears under the caption ?Approval
+of 2016 Incentive Award Plan ? Item 3? in our Proxy Statement to be filed for the 2016 annual meeting of shareholders and is incorporated by reference herein and in Item 12 of this Report.
+Our stock transfer agent and registrar is:
+Computershare Trust Company, N.A. 250 Royall
+Street Canton, MA 02021
+800-982-7652 Registered shareholders may
+contact the above phone number regarding dividends and other shareholder services.We include here by reference the information that appears under the Common Stock Performance Graph caption
+at the end of this Item 5.","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","insurer","PNC retains select corporate risks through its wholly-owned captive insurance company Alpine Indemnity Limited, and transfers excess risk through the purchase
+of insurance where appropriate, to mitigate the effects of operational loss events. PNC?s risks associated with its participation as an insurer for these programs are mitigated through policy and annual aggregate limits. Decisions surrounding
+PNC?s retention of its operating risks through deductibles or captive participation are made in conjunction with the enterprise risk management governance framework.","Relevant","Though this seems relevant, it looks like the entity Alpine Indemnity Limited was missed."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Bank","","affiliate","by the U.S. banking agencies, and final rules issued by the Federal Reserve that make certain modifications to the Federal Reserve?s capital planning and stress testing rules.
+See Table 37 for information on an affiliate purchase of notes issued by PNC Bank during 2015. Parent Company Liquidity ? Sources The principal source of parent company liquidity
+is the dividends it receives from its subsidiary bank, which may be impacted by the following:","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Bank","","issuer","In the second
+quarter of 2015, Moody?s concluded its review for PNC and PNC Bank under this new methodology. As a result, Moody?s upgraded PNC Bank?s long-term deposit rating three notches to Aa2, confirmed PNC Bank?s senior debt and issuer
+ratings at A2, and confirmed PNC Bank?s Prime-1 short-term notes rating. The Moody?s rating outlook for PNC and PNC Bank is stable.","Highly relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","FHA","","issuer","FNMA and FHLMC generally securitize our transferred loans into mortgage-backed securities for sale into the secondary market through special purpose entities (SPEs) that they sponsor. We, as an
+authorized GNMA issuer/servicer, pool Federal Housing Administration (FHA) and Department of Veterans Affairs (VA) insured loans into mortgage-backed securities for sale into the secondary market. In Non-agency securitizations, we have transferred
+loans into securitization SPEs.","Relevant","The entities FNMA and FHLMC seemed to be missed."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Department of Veterans Affairs","","issuer","FNMA and FHLMC generally securitize our transferred loans into mortgage-backed securities for sale into the secondary market through special purpose entities (SPEs) that they sponsor. We, as an
+authorized GNMA issuer/servicer, pool Federal Housing Administration (FHA) and Department of Veterans Affairs (VA) insured loans into mortgage-backed securities for sale into the secondary market. In Non-agency securitizations, we have transferred
+loans into securitization SPEs.","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","FNMA","","issuer","Weighted-average yields are based on historical cost with effective yields weighted for the contractual
+maturity of each security. At December 31, 2015, there were no securities of a single issuer, other than FHLMC and FNMA, that exceeded 10% of Total shareholders? equity. The FHLMC investments had a total amortized cost of $4.9 billion and
+fair value of $5.0 billion.","Highly relevant","Again, I would have expected FHLMC to be picked up as well."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","The Bank of New York Mellon","","trustee","PNC Pension Plan Assets Assets related to our qualified pension plan (the Plan) are held in trust (the Trust). Effective July 1, 2011, the trustee is The Bank of New York Mellon. The Trust is exempt from tax pursuant to
+section 501(a) of the Internal Revenue Code (the Code).","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","National City","","insurers","Captive Mortgage Reinsurance Litigation In December 2011, a lawsuit ( White, et
+al. v. The PNC Financial Services Group, Inc., et al. (Civil Action No. 11-7928)) was filed against PNC (as successor in interest to National City Corporation and several of its subsidiaries) and several mortgage insurance companies in the
+U.S. District Court for the Eastern District of Pennsylvania. This lawsuit, which was brought as a class action, alleges that National City structured its program of reinsurance of private mortgage insurance in such a way as to avoid a true transfer
+of risk from the mortgage insurers to National City?s captive reinsurer. The plaintiffs allege that the payments from the mortgage insurers to the captive reinsurer constitute kickbacks, referral payments, or unearned fee splits prohibited
+under the Real Estate Settlement Procedures Act (RESPA), as well as common law unjust enrichment.","Relevant","Note: Seems incorrect here since National City (mortgage proiver) was acquired by PNC. Not an insurer."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","National City","","affiliates","The plaintiffs claim, among other things, that from the beginning of 2004 until the end of 2010 National City?s captive reinsurer collected from
+the mortgage insurance company defendants at least $219 million as its share of borrowers? private mortgage insurance premiums and that its share of paid claims during this period was approximately $12 million. The plaintiffs seek to certify a
+nationwide class of all persons who obtained residential mortgage loans originated, funded or originated through correspondent lending by National City or any of its subsidiaries or affiliates between January 1, 2004 and the present and, in
+connection with these mortgage loans, purchased private mortgage insurance and whose residential mortgage loans were included within National City?s captive mortgage reinsurance arrangements. Plaintiffs seek, among other things, statutory
+damages under RESPA (which include treble damages), restitution of reinsurance premiums collected, disgorgement of profits, and attorneys? fees.","Highly relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","National City Bank","","trustee","Table of ContentsPre-need Funeral Arrangements National City Bank and PNC Bank are defendants in a lawsuit pending in the U.S. District Court for the Eastern District of Missouri under the caption Jo Ann Howard, P.C., et al. v. Cassity, et al.
+(No. 4:09-CV-1252-ERW) arising out of trustee services provided by Allegiant Bank, a National City Bank and PNC Bank predecessor, with respect to Missouri trusts that held pre-need funeral contract assets. Under a pre-need funeral contract, a
+customer pays an amount up front in exchange for payment of funeral expenses following the customer?s death.","Relevant","The role here seems incorrect."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Bank","","trustee","Table of ContentsPre-need Funeral Arrangements National City Bank and PNC Bank are defendants in a lawsuit pending in the U.S. District Court for the Eastern District of Missouri under the caption Jo Ann Howard, P.C., et al. v. Cassity, et al.
+(No. 4:09-CV-1252-ERW) arising out of trustee services provided by Allegiant Bank, a National City Bank and PNC Bank predecessor, with respect to Missouri trusts that held pre-need funeral contract assets. Under a pre-need funeral contract, a
+customer pays an amount up front in exchange for payment of funeral expenses following the customer?s death.","Relevant","The role here seems incorrect."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Memorial Life Insurance Company","","seller","In a number of states, including Missouri, pre-need funeral contract sellers are required to deposit a portion of the proceeds of the
+sale of pre-need funeral contracts in a trust account. The lawsuit was filed in August 2009 by the Special Deputy Receiver for three
+insolvent affiliated companies, National Prearranged Services, Inc. a seller of pre-need funeral contracts (NPS), Lincoln Memorial Life Insurance Company (Lincoln), and Memorial Service Life Insurance Company (Memorial). Seven individual state life
+and health insurance guaranty associations, who claim they are liable under state law for payment of certain benefits under life insurance policies sold by Lincoln and Memorial, and the National Organization of Life & Health Guaranty
+Associations have also joined the action as plaintiffs.","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Life Insurance Company","","seller","In a number of states, including Missouri, pre-need funeral contract sellers are required to deposit a portion of the proceeds of the
+sale of pre-need funeral contracts in a trust account. The lawsuit was filed in August 2009 by the Special Deputy Receiver for three
+insolvent affiliated companies, National Prearranged Services, Inc. a seller of pre-need funeral contracts (NPS), Lincoln Memorial Life Insurance Company (Lincoln), and Memorial Service Life Insurance Company (Memorial). Seven individual state life
+and health insurance guaranty associations, who claim they are liable under state law for payment of certain benefits under life insurance policies sold by Lincoln and Memorial, and the National Organization of Life & Health Guaranty
+Associations have also joined the action as plaintiffs.","Relevant","WRONG financial entity reference AND the 2 entities mentioned are not part of PNC."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","servicers","Under these agreements, the mortgage servicers will make cash payments to federal and state governments, provide
+various forms of financial relief to borrowers, and implement new mortgage servicing standards. These governmental authorities are continuing their review of, and have engaged in discussions with, other mortgage servicers, including PNC, that were
+subject to the interagency horizontal review, which could result in the imposition of substantial payments and other forms of relief (similar to that agreed to by the five largest servicers) on some or all of these mortgage servicers, including PNC.
+Whether and to what extent any such relief may be imposed on PNC is not yet known.","Highly relevant","PNC relevant entity named in the lawsuit is Allegiant bank, bought by National City Bank, bought by PNC."
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","servicers","Under these agreements, the mortgage servicers will make cash payments to federal and state governments, provide
+various forms of financial relief to borrowers, and implement new mortgage servicing standards. These governmental authorities are continuing their review of, and have engaged in discussions with, other mortgage servicers, including PNC, that were
+subject to the interagency horizontal review, which could result in the imposition of substantial payments and other forms of relief (similar to that agreed to by the five largest servicers) on some or all of these mortgage servicers, including PNC.
+Whether and to what extent any such relief may be imposed on PNC is not yet known.","Highly relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","agents","However, we cannot now determine whether or not any claims asserted against us or others to whom we may have indemnification obligations, whether in the proceedings or other matters described above
+or otherwise, will have a material adverse effect on our results of operations in any future reporting period, which will depend on, among other things, the amount of the loss resulting from the claim and the amount of income otherwise reported for
+the reporting period. See Note 21 Commitments and Guarantees for additional information regarding the Visa indemnification and our other
+obligations to provide indemnification, including to current and former officers, directors, employees and agents of PNC and companies we have acquired.
+204 The PNC Financial Services Group, Inc. ? Form 10-K","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC","","agents","In some cases, indemnification obligations of the types described above arise under arrangements entered into by predecessor companies for which we
+become responsible as a result of the acquisition. Pursuant to their bylaws, PNC and its subsidiaries provide indemnification to directors,
+officers and, in some cases, employees and agents against certain liabilities incurred as a result of their service on behalf of or at the request of PNC and its subsidiaries. PNC and its subsidiaries also advance on behalf of covered individuals
+costs incurred in connection with certain claims or proceedings, subject to written undertakings by each such individual to repay all amounts advanced if it is ultimately determined that the individual is not entitled to indemnification.","Neutral",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.1
+The Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5, 2009
+Incorporated herein by reference to Exhibit 10.62 to the Corporation?s 2nd Quarter 2009 Form 10-Q*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.2
+Amendment 2009-1 to the Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5,
+2009
+Incorporated herein by reference to Exhibit 10.17 to the Corporation?s 2009 Form 10-K*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.3
+Amendment 2010-1 to the Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5,
+2009
+Incorporated herein by reference to Exhibit 10.20 of the Corporation?s 2010 Form 10-K*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.4
+Amendment 2011-1 to the Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5,
+2009
+Incorporated herein by reference to Exhibit 10.23 of the Corporation?s 2011 Form 10-K*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.5
+Amendment 2012-1 to the Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5,
+2009
+Incorporated herein by reference to Exhibit 10.24 to the Corporation?s Annual Report on Form 10-K for the year ended
+December 31, 2012 (2012 Form 10-K)*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation Plan","","Affiliates","10.5.6
+Amendment 2013-1 to the Corporation and Affiliates Deferred Compensation Plan, as amended and restated May 5,
+2009
+Incorporated by reference to Exhibit 10.5.6 of the Corporation?s 2013 Form 10-K*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation and","","Affiliates","10.6.1
+The Corporation and Affiliates Deferred Compensation and Incentive Plan, effective as of January 1, 2012
+Incorporated herein by reference to Exhibit 4.4 of the Corporation?s Registration Statement on Form S-8 No. 333-177896
+filed November 10, 2011*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Deferred Compensation and","","Affiliates","10.6.2
+Amendment 2013-1 to the Corporation and Affiliates Deferred Compensation and Incentive Plan, effective as of January 1,
+2012
+Incorporated by reference to Exhibit 10.6.2 of the Corporation?s 2013 Form 10-K*","Irrelevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Investment Corp.","","trustee","10.14
+Amended and Restated Trust Agreement between PNC Investment Corp., as settlor, and Hershey Trust Company, as
+trustee
+Incorporated herein by reference to Exhibit 10.35 of the Corporation?s Quarterly Report on Form 10-Q for the quarter
+ended September 30, 2005 (3rd Quarter 2005 Form 10-Q)*","Neutral",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","Hershey Trust Company","","trustee","10.14
+Amended and Restated Trust Agreement between PNC Investment Corp., as settlor, and Hershey Trust Company, as
+trustee
+Incorporated herein by reference to Exhibit 10.35 of the Corporation?s Quarterly Report on Form 10-Q for the quarter
+ended September 30, 2005 (3rd Quarter 2005 Form 10-Q)*","Relevant",""
+"10-K","PNC FINANCIAL SERVICES GROUP INC","713676","2015-FY","2/29/2016","PNC Bank, National Association","","trustee","10.15
+Trust Agreement between PNC Investment Corp., as settlor, and PNC Bank, National Association, as trustee
+Incorporated herein by reference to Exhibit 10.34 of the Corporation?s 3rd Quarter 2005 Form 10-Q*","Relevant",""

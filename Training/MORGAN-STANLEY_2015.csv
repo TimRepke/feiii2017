@@ -1,0 +1,581 @@
+DOCUMENT_TYPE,FILER_NAME,FILER_CIK,FILING_INTERVAL,FILING_DATE,MENTIONED_FINANCIAL_ENTITY,PP_RSSD_ID,ROLE,THREE_SENTENCES,RATING_EXPERT_1,COMMENT_EXPERT_1,RATING_EXPERT_1,COMMENT_EXPERT_1
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley Private Bank, National Association",,affiliates,"In addition, Wealth Management offers education savings programs, financial and wealth planning
+services, and annuity and other insurance products. In addition,
+Wealth Management offers its clients access to several cash management services through various banks and other third parties, including deposits, debit cards, electronic bill payments and check writing, as well as lending products through
+affiliates such as MSBNA and Morgan Stanley Private Bank, National Association (?MSPBNA? and, together with MSBNA, the ?U.S. Subsidiary Banks?), including securities-based lending, mortgage loans and home equity lines of credit.
+Wealth Management also offers access to trust and fiduciary services, offers access to cash management and commercial credit solutions to qualified small- and medium-sized businesses in the U.S., and provides individual and corporate retirement
+solutions, including individual retirement accounts and 401(k) plans and U.S. and global stock plan services to corporate executives and businesses.",Neutral,Describes business activity,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Smith Barney LLC,,affiliate,"MSBNA is an FDIC-insured national
+bank that is subject to supervision, regulation and examination by the OCC. MSPBNA offers certain mortgage and other secured lending products primarily for customers of its affiliate retail broker-dealer, Morgan Stanley Smith Barney LLC (?MSSB LLC?). MSPBNA also offers
+certain deposit products, as well as prime brokerage custody services.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,agent,"Sanctions that may be imposed for such failure include the suspension
+of individual employees, limitations on the Company engaging in various asset management activities for specified periods of time or specified types of clients, the revocation of registrations, other censures and significant fines. In order to
+facilitate its asset management business, the Company owns a registered U.S. broker-dealer, Morgan Stanley Distribution, Inc., which acts as distributor to the Morgan Stanley mutual funds and as placement agent to certain private investment funds
+managed by the Company?s Investment Management business segment. A number of legal entities within the Company?s Investment Management business are registered as commodity trading advisors and/or commodity pool operators, or are operating
+under certain exemptions from such registration pursuant to CFTC rules and other guidance.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Prudential Insurance Company of America,,affiliates,"On July 16, 2014, plaintiffs filed a notice of appeal of that decision, which has been consolidated with the
+appeal of the motion to dismiss. On April 25, 2012, The
+Prudential Insurance Company of America and certain affiliates filed a complaint against the Company and certain affiliates in the Superior Court of the State of New Jersey, styled The Prudential Insurance Company of America, et al. v. Morgan
+Stanley, et al. On October 16, 2012, plaintiffs filed an amended complaint. The amended complaint alleges that defendants made untrue statements and material omissions in connection with the sale to plaintiffs of certain mortgage pass-through
+certificates backed by securitization trusts containing residential mortgage loans.",Highly relevant,Key Word: Complaint,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"On July 16, 2014, plaintiffs filed a notice of appeal of that decision, which has been consolidated with the
+appeal of the motion to dismiss. On April 25, 2012, The
+Prudential Insurance Company of America and certain affiliates filed a complaint against the Company and certain affiliates in the Superior Court of the State of New Jersey, styled The Prudential Insurance Company of America, et al. v. Morgan
+Stanley, et al. On October 16, 2012, plaintiffs filed an amended complaint. The amended complaint alleges that defendants made untrue statements and material omissions in connection with the sale to plaintiffs of certain mortgage pass-through
+certificates backed by securitization trusts containing residential mortgage loans.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"On January 2, 2015, the court denied defendants? renewed motion to dismiss the amended complaint.
+On August 7, 2012, U.S. Bank, in its capacity as Trustee, filed a
+complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan Stanley Mortgage Loan Trust 2006-4SL, et
+al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,Who are the defendants?  Are they Morgan Stanley?,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-4SL,,Trustee,"On January 2, 2015, the court denied defendants? renewed motion to dismiss the amended complaint.
+On August 7, 2012, U.S. Bank, in its capacity as Trustee, filed a
+complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan Stanley Mortgage Loan Trust 2006-4SL, et
+al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-4SL",,Trustee,"On January 2, 2015, the court denied defendants? renewed motion to dismiss the amended complaint.
+On August 7, 2012, U.S. Bank, in its capacity as Trustee, filed a
+complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan Stanley Mortgage Loan Trust 2006-4SL, et
+al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"On August 8, 2014, the court granted in part and denied in part the defendants? motion to dismiss.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-14SL,,Trustee,"On August 8, 2014, the court granted in part and denied in part the defendants? motion to dismiss.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-14SL",,Trustee,"On August 8, 2014, the court granted in part and denied in part the defendants? motion to dismiss.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2007-4SL,,Trustee,"On August 8, 2014, the court granted in part and denied in part the defendants? motion to dismiss.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2007-4SL",,Trustee,"On August 8, 2014, the court granted in part and denied in part the defendants? motion to dismiss.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"Table of ContentsOn September 28, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan
+Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the
+Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately
+$609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-13ARX,,Trustee,"Table of ContentsOn September 28, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan
+Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the
+Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately
+$609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-13ARX,,Trustee,"Table of ContentsOn September 28, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan
+Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the
+Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately
+$609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Holdings LLC,,Trustee,"Table of ContentsOn September 28, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan
+Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the
+Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately
+$609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Inc.,,Trustee,"Table of ContentsOn September 28, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan
+Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the
+Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately
+$609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Merrill Lynch,,affiliates,"On November 7, 2014, plaintiff filed a notice of appeal from the court?s September 30, 2014 decision.
+On December 14, 2012, Royal Park Investments SA/NV filed a complaint
+against the Company, certain affiliates, and other defendants in the Supreme Court of NY, styled Royal Park Investments SA/NV v. Merrill Lynch et al. The complaint alleges that defendants made material misrepresentations and omissions in
+the sale to plaintiff of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans totaling approximately $628 million. On October 24, 2013, plaintiff filed a new complaint against the
+Company in the Supreme Court of NY, styled Royal Park Investments SA/NV v. Morgan Stanley et al. The new complaint alleges that defendants made material misrepresentations and omissions in the sale to plaintiff of certain mortgage
+pass-through certificates backed by securitization trusts containing residential mortgage loans.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"On February 3, 2014, the Company filed a motion to
+dismiss the complaint. On January 10, 2013, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust
+2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-10SL,,Trustee,"On February 3, 2014, the Company filed a motion to
+dismiss the complaint. On January 10, 2013, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust
+2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-10SL",,Trustee,"On February 3, 2014, the Company filed a motion to
+dismiss the complaint. On January 10, 2013, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust
+2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"On August 8, 2014, the court granted in part and denied in part the Company?s motion to dismiss the complaint.
+On January 31, 2013, HSH Nordbank AG and certain affiliates filed a
+complaint against the Company, certain affiliates, and other defendants in the Supreme Court of NY, styled HSH Nordbank AG et al. v. Morgan Stanley et al. The complaint alleges that defendants made material misrepresentations and omissions in
+the sale to plaintiffs of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total amount of certificates allegedly sponsored, underwritten and/or sold by the Company to plaintiff
+was approximately $524 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Bank Hapoalim B.M.,,affiliates,"On April 12, 2013, defendants filed a motion to dismiss the complaint. On February 14, 2013, Bank Hapoalim B.M. filed a complaint against the Company and certain affiliates in the Supreme Court of NY, styled Bank Hapoalim B.M. v. Morgan Stanley et al. The
+complaint alleges that defendants made material misrepresentations and omissions in the sale to plaintiff of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total amount of
+certificates allegedly sponsored, underwritten and/or sold by the Company to plaintiff was approximately $141 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"On April 12, 2013, defendants filed a motion to dismiss the complaint. On February 14, 2013, Bank Hapoalim B.M. filed a complaint against the Company and certain affiliates in the Supreme Court of NY, styled Bank Hapoalim B.M. v. Morgan Stanley et al. The
+complaint alleges that defendants made material misrepresentations and omissions in the sale to plaintiff of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total amount of
+certificates allegedly sponsored, underwritten and/or sold by the Company to plaintiff was approximately $141 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Saxon Asset Securities Trust, Series 2007-1",,trustee,"On September 18, 2014, the Company filed a notice of
+appeal from the ruling denying defendants? motion to dismiss.
+On March 7, 2013, the Federal Housing Finance Agency filed a summons with notice on behalf of the trustee of the Saxon Asset Securities Trust, Series
+2007-1, against the Company and an affiliate. The matter is styled Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Saxon Asset Securities Trust, Series 2007-1 v.
+Saxon Funding Management LLC and Morgan Stanley and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Saxon Asset Securities Trust, Series 2007-1",,Trustee,"On March 7, 2013, the Federal Housing Finance Agency filed a summons with notice on behalf of the trustee of the Saxon Asset Securities Trust, Series
+2007-1, against the Company and an affiliate. The matter is styled Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Saxon Asset Securities Trust, Series 2007-1 v.
+Saxon Funding Management LLC and Morgan Stanley and is pending in the Supreme Court of NY. The notice asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $593 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,Trustee,"On March 7, 2013, the Federal Housing Finance Agency filed a summons with notice on behalf of the trustee of the Saxon Asset Securities Trust, Series
+2007-1, against the Company and an affiliate. The matter is styled Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Saxon Asset Securities Trust, Series 2007-1 v.
+Saxon Funding Management LLC and Morgan Stanley and is pending in the Supreme Court of NY. The notice asserts claims for breach of contract and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $593 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank,,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Housing Finance Agency,,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Federal Home Loan Mortgage Corporation,,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1",,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,MSAC,,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley ABS Capital I Inc.,,trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank National Trust Company,,Trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1",,Trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I, Inc.",,Trustee,"On
+December 1, 2014, the Company filed a notice of appeal from the Court?s October 30, 2014 decision. On July 2, 2013, the trustee, Deutsche Bank became the named plaintiff in Federal Housing Finance Agency, as Conservator for the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of
+the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 (MSAC 2007-NC1) v. Morgan Stanley ABS Capital I Inc. , and filed a complaint in the Supreme Court of NY under the caption Deutsche Bank National Trust Company, as Trustee for the
+Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC1 v. Morgan Stanley ABS Capital I, Inc. On February 3, 2014, the plaintiff filed an amended complaint, which asserts claims for breach of contract and breach of the implied covenant of
+good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $1.25 billion, breached various representations and warranties. The amended complaint seeks, among
+other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission and interest.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Landesbank Baden,,affiliates,"On August 22, 2013, the Company a filed a motion to dismiss the complaint, which was granted in part and denied in part on November 24, 2014.
+On August 5, 2013, Landesbank Baden-W?rttemberg and two
+affiliates filed a complaint against the Company and certain affiliates in the Supreme Court of NY, styled Landesbank Baden-W?rttemberg et al. v. Morgan Stanley et al. The complaint alleges that defendants made material
+misrepresentations and omissions in the sale to plaintiffs of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total amount of certificates allegedly sponsored, underwritten
+and/or sold by the Company to plaintiffs was approximately $50 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"On August 22, 2013, the Company a filed a motion to dismiss the complaint, which was granted in part and denied in part on November 24, 2014.
+On August 5, 2013, Landesbank Baden-W?rttemberg and two
+affiliates filed a complaint against the Company and certain affiliates in the Supreme Court of NY, styled Landesbank Baden-W?rttemberg et al. v. Morgan Stanley et al. The complaint alleges that defendants made material
+misrepresentations and omissions in the sale to plaintiffs of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total amount of certificates allegedly sponsored, underwritten
+and/or sold by the Company to plaintiffs was approximately $50 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"On
+December 15, 2014, defendants filed a motion to dismiss the amended complaint in part. On August 26, 2013, a complaint was filed against the Company and certain affiliates in the Supreme Court of NY, styled Phoenix Light SF Limited et al v. Morgan Stanley et al . The complaint
+alleges that defendants made untrue statements and material omissions in the sale to plaintiffs, or their assignors, of certain mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans. The total
+amount of certificates allegedly issued by the Company and/or sold to plaintiffs or their assignors by the Company was approximately $344 million.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank,,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Housing Finance Agency,,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Federal Home Loan Mortgage Corporation,,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3",,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,MSAC,,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Holdings LLC,,trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank National Trust Company,,Trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3",,Trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Holdings LLC,,Trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Inc.,,Trustee,"On November 17, 2014, the plaintiff filed an amended complaint.
+On November 6, 2013, Deutsche Bank, in its capacity as trustee, became the named plaintiff in Federal Housing Finance Agency, as Conservator for
+the Federal Home Loan Mortgage Corporation, on behalf of the Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 (MSAC 2007-NC3) v. Morgan Stanley Mortgage Capital Holdings LLC , and filed a complaint in the Supreme
+Court of NY under the caption Deutsche Bank National Trust Company, solely in its capacity as Trustee for Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC3 v. Morgan Stanley Mortgage Capital Holdings LLC, as Successor-by-Merger to Morgan
+Stanley Mortgage Capital Inc. The complaint asserts claims for breach of contract and breach of the implied covenant of good faith and fair dealing and alleges, among other things, that the loans in the trust, which had an original principal
+balance of approximately $1.3 billion, breached various representations and warranties. The complaint seeks, among other relief, specific performance of the loan breach remedy procedures in the transaction documents, unspecified damages, rescission,
+interest and costs.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Wilmington Trust Company,,trustee,"The Company and other defendants moved to dismiss the complaint on December 5, 2014. On December 30, 2013, Wilmington Trust Company, in its capacity as trustee for Morgan Stanley Mortgage Loan Trust 2007-12, filed a complaint against the Company. The matter is styled Wilmington
+Trust Company v. Morgan Stanley Mortgage Capital Holdings LLC et al. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2007-12,,trustee,"The Company and other defendants moved to dismiss the complaint on December 5, 2014. On December 30, 2013, Wilmington Trust Company, in its capacity as trustee for Morgan Stanley Mortgage Loan Trust 2007-12, filed a complaint against the Company. The matter is styled Wilmington
+Trust Company v. Morgan Stanley Mortgage Capital Holdings LLC et al. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank National Trust Company,,trustee,"Table of ContentsOn April 28, 2014, Deutsche Bank National Trust Company, in its capacity as trustee for Morgan Stanley
+Structured Trust I 2007-1, filed a complaint against the Company. The matter is styled Deutsche Bank National Trust Company v. Morgan Stanley Mortgage Capital Holdings LLC and is pending in the SDNY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"Table of ContentsOn April 28, 2014, Deutsche Bank National Trust Company, in its capacity as trustee for Morgan Stanley
+Structured Trust I 2007-1, filed a complaint against the Company. The matter is styled Deutsche Bank National Trust Company v. Morgan Stanley Mortgage Capital Holdings LLC and is pending in the SDNY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank National Trust Company,,trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC4",,trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,New York,,trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Deutsche Bank National Trust Company,,Trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Morgan Stanley ABS Capital I Inc. Trust, Series 2007-NC4",,trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Holdings LLC,,Trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Inc,,Trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley ABS Capital I Inc,,Trustee,"On November 24, 2014, the Company filed a motion to dismiss the complaint. On September 19, 2014, Deutsche Bank National Trust Company, in its capacity as trustee of Morgan Stanley ABS Capital I
+Inc. Trust, Series 2007-NC4, filed a summons with notice against the Company in the Supreme Court of New York styled Deutsche Bank National Trust Company, solely in its capacity as Trustee of the Morgan Stanley ABS Capital I Inc. Trust, Series
+2007-NC4 v. Morgan Stanley Mortgage Capital Holdings LLC, as successor-by-merger to Morgan Stanley Mortgage Capital Inc ., and Morgan Stanley ABS Capital I Inc . The notice asserts claims for breach of contract and alleges, among other
+things, that the loans in the trust, which had an original principal balance of approximately $1.05 billion, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Equity Securities,,Issuer,"Item 5.
+Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities.
+Morgan Stanley?s common stock trades under the symbol ?MS? on
+the NYSE.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Equity Securities,,Issuer,"The table below sets forth the information with respect to purchases made by or on behalf of the Company of
+its common stock during the fourth quarter of the year ended December 31, 2014. Issuer Purchases of Equity Securities (dollars in millions, except per
+share amounts)Period",Relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Wealth Management JV,,affiliates,"Net interest increased 20% from 2012 to $1,875 million
+in 2013, primarily due to higher lending balances and growth in loans and lending commitments in PLA securities-based lending products. In addition, interest expense declined in 2013 due to the Company?s redemption of all the Class A
+Preferred Interests owned by Citi and its affiliates, in connection with the Company?s acquisition of 100% ownership of the Wealth Management JV effective at the end of the second quarter of 2013. Total client liability balances increased
+to $39 billion at December 31, 2013 from $31 billion at December 31, 2012.",Relevant,,Highly relevant,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Equity Securities,,Issuer,"The share repurchases may be effected through open market purchases or privately negotiated transactions, including through Rule
+10b5-1 plans, and may be suspended at any time. Share repurchases by the Company are subject to regulatory approval (see also ?Market for Registrant?s Common Equity, Related Shareholder Matters and Issuer Purchases of Equity Securities in
+Part II, Item 5). The share repurchase program has no set expiration or termination date.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Tier 1 capital,,counterparty,"This estimate utilizes a fully phased-in U.S. Basel III Tier 1 capital numerator and a denominator of approximately $1.19 trillion. The denominator represents the Company?s consolidated
+assets under U.S. GAAP as adjusted, among other items, by: (i) the addition of the potential future exposure for derivative contracts (including contracts cleared for clients), off-balance sheet exposures multiplied by their respective credit
+conversion factors, counterparty credit risk associated with repo-style transactions and the effective notional amount of sold credit protection reduced by certain qualifying purchased credit protection; and (ii) the subtraction of certain
+amounts deducted from Tier 1 capital under U.S. Basel III. The pro forma supplementary",Relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Prudential Insurance Company of America,,affiliates,"The Company may be entitled to an offset
+for interest received by the plaintiff prior to a judgment. On
+April 25, 2012, The Prudential Insurance Company of America and certain affiliates filed a complaint against the Company and certain affiliates in the Superior Court of the State of New Jersey, styled The Prudential Insurance Company of America,
+et al. v. Morgan Stanley, et al. On October 16, 2012, plaintiffs filed an amended complaint. The amended complaint alleges that defendants made untrue statements and material omissions in connection with the sale to plaintiffs of certain
+mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,affiliates,"The Company may be entitled to an offset
+for interest received by the plaintiff prior to a judgment. On
+April 25, 2012, The Prudential Insurance Company of America and certain affiliates filed a complaint against the Company and certain affiliates in the Superior Court of the State of New Jersey, styled The Prudential Insurance Company of America,
+et al. v. Morgan Stanley, et al. On October 16, 2012, plaintiffs filed an amended complaint. The amended complaint alleges that defendants made untrue statements and material omissions in connection with the sale to plaintiffs of certain
+mortgage pass-through certificates backed by securitization trusts containing residential mortgage loans.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"The Company may be entitled to be indemnified for some of these losses and to an offset for interest received by the
+plaintiff prior to a judgment. On August 7, 2012, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan
+Stanley Mortgage Loan Trust 2006-4SL, et al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-4SL,,Trustee,"The Company may be entitled to be indemnified for some of these losses and to an offset for interest received by the
+plaintiff prior to a judgment. On August 7, 2012, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan
+Stanley Mortgage Loan Trust 2006-4SL, et al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-4SL",,Trustee,"The Company may be entitled to be indemnified for some of these losses and to an offset for interest received by the
+plaintiff prior to a judgment. On August 7, 2012, U.S. Bank,
+in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-4SL and Mortgage Pass-Through Certificates, Series 2006-4SL (together, the ?Trust?) against the Company. The matter is styled Morgan
+Stanley Mortgage Loan Trust 2006-4SL, et al. v. Morgan Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"Based on currently available information, the Company believes that it could
+incur a loss in this action of up to approximately $149 million, plus pre- and post-judgment interest, fees and costs.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-14SL,,Trustee,"Based on currently available information, the Company believes that it could
+incur a loss in this action of up to approximately $149 million, plus pre- and post-judgment interest, fees and costs.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-14SL",,Trustee,"Based on currently available information, the Company believes that it could
+incur a loss in this action of up to approximately $149 million, plus pre- and post-judgment interest, fees and costs.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2007-4SL,,Trustee,"Based on currently available information, the Company believes that it could
+incur a loss in this action of up to approximately $149 million, plus pre- and post-judgment interest, fees and costs.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2007-4SL",,Trustee,"Based on currently available information, the Company believes that it could
+incur a loss in this action of up to approximately $149 million, plus pre- and post-judgment interest, fees and costs.
+On August 8, 2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-14SL, Mortgage
+Pass-Through Certificates, Series 2006-14SL, Morgan Stanley Mortgage Loan Trust 2007-4SL and Mortgage Pass-Through Certificates, Series 2007-4SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-14SL, et al. v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc .",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"Based on currently available information, the Company believes that it could incur a loss in this action of up to approximately $527 million, plus
+pre- and post-interest, fees and costs. On September 28,
+2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of
+contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-13ARX,,Trustee,"Based on currently available information, the Company believes that it could incur a loss in this action of up to approximately $527 million, plus
+pre- and post-interest, fees and costs. On September 28,
+2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of
+contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-13ARX,,Trustee,"Based on currently available information, the Company believes that it could incur a loss in this action of up to approximately $527 million, plus
+pre- and post-interest, fees and costs. On September 28,
+2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of
+contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Holdings LLC,,Trustee,"Based on currently available information, the Company believes that it could incur a loss in this action of up to approximately $527 million, plus
+pre- and post-interest, fees and costs. On September 28,
+2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of
+contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Capital Inc.,,Trustee,"Based on currently available information, the Company believes that it could incur a loss in this action of up to approximately $527 million, plus
+pre- and post-interest, fees and costs. On September 28,
+2012, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-13ARX against the Company styled Morgan Stanley Mortgage Loan Trust 2006-13ARX v.
+Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan Stanley Mortgage Capital Inc., pending in the Supreme Court of NY. U.S. Bank filed an amended complaint on January 17, 2013, which asserts claims for breach of
+contract and alleges, among other things, that the loans in the trust, which had an original principal balance of approximately $609 million, breached various representations and warranties.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,U.S. Bank,,Trustee,"Based on currently available information, the
+Company believes that it could incur a loss in this action of up to approximately $173 million, plus pre- and post-judgment interest, fees and costs.
+On January 10, 2013, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and
+Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan
+Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley Mortgage Loan Trust 2006-10SL,,Trustee,"Based on currently available information, the
+Company believes that it could incur a loss in this action of up to approximately $173 million, plus pre- and post-judgment interest, fees and costs.
+On January 10, 2013, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and
+Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan
+Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,"Mortgage Pass-Through Certificates, Series 2006-10SL",,Trustee,"Based on currently available information, the
+Company believes that it could incur a loss in this action of up to approximately $173 million, plus pre- and post-judgment interest, fees and costs.
+On January 10, 2013, U.S. Bank, in its capacity as Trustee, filed a complaint on behalf of Morgan Stanley Mortgage Loan Trust 2006-10SL and
+Mortgage Pass-Through Certificates, Series 2006-10SL against the Company. The complaint is styled Morgan Stanley Mortgage Loan Trust 2006-10SL, et al. v. Morgan Stanley Mortgage Capital Holdings LLC, as successor in interest to Morgan
+Stanley Mortgage Capital Inc. and is pending in the Supreme Court of NY.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,New York,,affiliates,"The Company may be entitled to be indemnified for some of these losses.
+On September 23, 2013, the plaintiff in National Credit Union Administration Board v. Morgan Stanley & Co. Inc., et al. filed a
+complaint against the Company and certain affiliates in the United States District Court for the Southern District of New York. The complaint alleges that defendants made untrue statements of material fact or omitted to state material facts in the
+sale to the plaintiff of certain mortgage pass-through certificates issued by securitization trusts containing residential mortgage loans.",Highly relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Equity Securities,,Issuer,"The share repurchases may be effected through open market purchases or privately negotiated transactions, including through Rule 10b5-1 plans, and may be suspended at any time. Share repurchases by the Company
+are subject to regulatory approval (see ?Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities? in Part II, Item 5). In March 2014, the Company received no objection from the Federal Reserve to the Company?s 2014 capital plan, which
+included a share repurchase of up to $1 billion of the Company?s outstanding common stock beginning in the second quarter of 2014 through the end of the first quarter of 2015 as well as an increase in the Company?s quarterly common stock
+dividend to $0.10 per share from $0.05 per share, beginning with the dividend declared on April 17, 2014.",Relevant,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.1
+Indenture dated as of February 24, 1993 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4 to Morgan Stanley?s Registration Statement on Form S-3 (No.
+33-57202)).4.2",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.1
+Indenture dated as of February 24, 1993 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4 to Morgan Stanley?s Registration Statement on Form S-3 (No.
+33-57202)).4.2",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.1
+Indenture dated as of February 24, 1993 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4 to Morgan Stanley?s Registration Statement on Form S-3 (No.
+33-57202)).4.2",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.2
+Amended and Restated Senior Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-e to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-75289) as amended by Fourth Supplemental Senior Indenture dated as of October 8, 2007 (Exhibit 4.3 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year
+ended November 30, 2007).(1)
+For purposes of this Exhibit Index, references to ?The Bank of New York? mean in some instances the entity successor to JPMorgan Chase Bank, N.A. or J.P.
+Morgan Trust Company, National Association; references to ?JPMorgan Chase Bank, N.A.? mean the entity formerly known as The Chase Manhattan Bank, in some instances as the successor to Chemical Bank; references to ?J.P. Morgan Trust
+Company, N.A.? mean the entity formerly known as Bank One Trust Company, N.A., as successor to The First National Bank of Chicago.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.2
+Amended and Restated Senior Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-e to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-75289) as amended by Fourth Supplemental Senior Indenture dated as of October 8, 2007 (Exhibit 4.3 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year
+ended November 30, 2007).(1)
+For purposes of this Exhibit Index, references to ?The Bank of New York? mean in some instances the entity successor to JPMorgan Chase Bank, N.A. or J.P.
+Morgan Trust Company, National Association; references to ?JPMorgan Chase Bank, N.A.? mean the entity formerly known as The Chase Manhattan Bank, in some instances as the successor to Chemical Bank; references to ?J.P. Morgan Trust
+Company, N.A.? mean the entity formerly known as Bank One Trust Company, N.A., as successor to The First National Bank of Chicago.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.2
+Amended and Restated Senior Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-e to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-75289) as amended by Fourth Supplemental Senior Indenture dated as of October 8, 2007 (Exhibit 4.3 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year
+ended November 30, 2007).(1)
+For purposes of this Exhibit Index, references to ?The Bank of New York? mean in some instances the entity successor to JPMorgan Chase Bank, N.A. or J.P.
+Morgan Trust Company, National Association; references to ?JPMorgan Chase Bank, N.A.? mean the entity formerly known as The Chase Manhattan Bank, in some instances as the successor to Chemical Bank; references to ?J.P. Morgan Trust
+Company, N.A.? mean the entity formerly known as Bank One Trust Company, N.A., as successor to The First National Bank of Chicago.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.2
+Amended and Restated Senior Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-e to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-75289) as amended by Fourth Supplemental Senior Indenture dated as of October 8, 2007 (Exhibit 4.3 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year
+ended November 30, 2007).(1)
+For purposes of this Exhibit Index, references to ?The Bank of New York? mean in some instances the entity successor to JPMorgan Chase Bank, N.A. or J.P.
+Morgan Trust Company, National Association; references to ?JPMorgan Chase Bank, N.A.? mean the entity formerly known as The Chase Manhattan Bank, in some instances as the successor to Chemical Bank; references to ?J.P. Morgan Trust
+Company, N.A.? mean the entity formerly known as Bank One Trust Company, N.A., as successor to The First National Bank of Chicago.",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.3
+Senior Indenture dated as of November 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s Registration Statement on Form
+S-3/A (No. 333-117752), as amended by First Supplemental Senior Indenture dated as of September 4, 2007 (Exhibit 4.5 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year ended November 30, 2007), Second Supplemental Senior
+Indenture dated as of January 4, 2008 (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated January 4, 2008), Third Supplemental Senior Indenture dated as of September 10, 2008 (Exhibit 4 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended August 31, 2008), Fourth Supplemental Senior Indenture dated as of December 1, 2008.
+(Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated December 1, 2008), Fifth Supplemental Senior Indenture dated as of April 1, 2009 (Exhibit 4 to Morgan
+Stanley?s Quarterly Report on Form 10-Q for the quarter ended March 31, 2009), Sixth Supplemental Senior Indenture dated as of September 16, 2011 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended
+September 30, 2011), Seventh Supplemental Senior Indenture dated as of November 21, 2011 (Exhibit 4.4 to Morgan Stanley?s Annual Report on Form 10-K for the year ended December 31, 2011), Eighth Supplemental Senior Indenture dated as of
+May 4, 2012 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended June 30, 2012), and Ninth Supplemental Senior Indenture dated as of March 10, 2014 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended March 31, 2014).",Neutral,These sentences convey little or no information.  Too much is missing.,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.3
+Senior Indenture dated as of November 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s Registration Statement on Form
+S-3/A (No. 333-117752), as amended by First Supplemental Senior Indenture dated as of September 4, 2007 (Exhibit 4.5 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year ended November 30, 2007), Second Supplemental Senior
+Indenture dated as of January 4, 2008 (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated January 4, 2008), Third Supplemental Senior Indenture dated as of September 10, 2008 (Exhibit 4 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended August 31, 2008), Fourth Supplemental Senior Indenture dated as of December 1, 2008.
+(Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated December 1, 2008), Fifth Supplemental Senior Indenture dated as of April 1, 2009 (Exhibit 4 to Morgan
+Stanley?s Quarterly Report on Form 10-Q for the quarter ended March 31, 2009), Sixth Supplemental Senior Indenture dated as of September 16, 2011 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended
+September 30, 2011), Seventh Supplemental Senior Indenture dated as of November 21, 2011 (Exhibit 4.4 to Morgan Stanley?s Annual Report on Form 10-K for the year ended December 31, 2011), Eighth Supplemental Senior Indenture dated as of
+May 4, 2012 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended June 30, 2012), and Ninth Supplemental Senior Indenture dated as of March 10, 2014 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended March 31, 2014).",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.3
+Senior Indenture dated as of November 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s Registration Statement on Form
+S-3/A (No. 333-117752), as amended by First Supplemental Senior Indenture dated as of September 4, 2007 (Exhibit 4.5 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year ended November 30, 2007), Second Supplemental Senior
+Indenture dated as of January 4, 2008 (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated January 4, 2008), Third Supplemental Senior Indenture dated as of September 10, 2008 (Exhibit 4 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended August 31, 2008), Fourth Supplemental Senior Indenture dated as of December 1, 2008.
+(Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated December 1, 2008), Fifth Supplemental Senior Indenture dated as of April 1, 2009 (Exhibit 4 to Morgan
+Stanley?s Quarterly Report on Form 10-Q for the quarter ended March 31, 2009), Sixth Supplemental Senior Indenture dated as of September 16, 2011 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended
+September 30, 2011), Seventh Supplemental Senior Indenture dated as of November 21, 2011 (Exhibit 4.4 to Morgan Stanley?s Annual Report on Form 10-K for the year ended December 31, 2011), Eighth Supplemental Senior Indenture dated as of
+May 4, 2012 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended June 30, 2012), and Ninth Supplemental Senior Indenture dated as of March 10, 2014 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended March 31, 2014).",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.3
+Senior Indenture dated as of November 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s Registration Statement on Form
+S-3/A (No. 333-117752), as amended by First Supplemental Senior Indenture dated as of September 4, 2007 (Exhibit 4.5 to Morgan Stanley?s Annual Report on Form 10-K for the fiscal year ended November 30, 2007), Second Supplemental Senior
+Indenture dated as of January 4, 2008 (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated January 4, 2008), Third Supplemental Senior Indenture dated as of September 10, 2008 (Exhibit 4 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended August 31, 2008), Fourth Supplemental Senior Indenture dated as of December 1, 2008.
+(Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated December 1, 2008), Fifth Supplemental Senior Indenture dated as of April 1, 2009 (Exhibit 4 to Morgan
+Stanley?s Quarterly Report on Form 10-Q for the quarter ended March 31, 2009), Sixth Supplemental Senior Indenture dated as of September 16, 2011 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended
+September 30, 2011), Seventh Supplemental Senior Indenture dated as of November 21, 2011 (Exhibit 4.4 to Morgan Stanley?s Annual Report on Form 10-K for the year ended December 31, 2011), Eighth Supplemental Senior Indenture dated as of
+May 4, 2012 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended June 30, 2012), and Ninth Supplemental Senior Indenture dated as of March 10, 2014 (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended March 31, 2014).",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,Agent,"4.4
+The Unit Agreement Without Holders? Obligations, dated as of August 29, 2008, between Morgan Stanley and The Bank of New York Mellon, as Unit Agent, as Trustee and Paying Agent
+under the Senior Indenture referred to therein and as Warrant Agent under the Warrant Agreement referred to therein (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated August 29, 2008).4.5",Neutral,Not enough information in the sentences to make a judgement,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York Mellon,,Agent,"4.4
+The Unit Agreement Without Holders? Obligations, dated as of August 29, 2008, between Morgan Stanley and The Bank of New York Mellon, as Unit Agent, as Trustee and Paying Agent
+under the Senior Indenture referred to therein and as Warrant Agent under the Warrant Agreement referred to therein (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated August 29, 2008).4.5",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,Agent,"4.4
+The Unit Agreement Without Holders? Obligations, dated as of August 29, 2008, between Morgan Stanley and The Bank of New York Mellon, as Unit Agent, as Trustee and Paying Agent
+under the Senior Indenture referred to therein and as Warrant Agent under the Warrant Agreement referred to therein (Exhibit 4.1 to Morgan Stanley?s Current Report on Form 8-K dated August 29, 2008).4.5",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.5
+Amended and Restated Subordinated Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s
+Registration Statement on Form S-3/A (No. 333-75289)).4.6",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.5
+Amended and Restated Subordinated Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s
+Registration Statement on Form S-3/A (No. 333-75289)).4.6",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.5
+Amended and Restated Subordinated Indenture dated as of May 1, 1999 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-f to Morgan Stanley?s
+Registration Statement on Form S-3/A (No. 333-75289)).4.6",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.6
+Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-g to Morgan Stanley?s Registration Statement
+on Form S-3/A (No. 333-117752)).4.7",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.6
+Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-g to Morgan Stanley?s Registration Statement
+on Form S-3/A (No. 333-117752)).4.7",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.6
+Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-g to Morgan Stanley?s Registration Statement
+on Form S-3/A (No. 333-117752)).4.7",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.7
+Junior Subordinated Indenture dated as of March 1, 1998 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended February 28, 1998).4.8",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.7
+Junior Subordinated Indenture dated as of March 1, 1998 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended February 28, 1998).4.8",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.7
+Junior Subordinated Indenture dated as of March 1, 1998 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Quarterly Report on
+Form 10-Q for the quarter ended February 28, 1998).4.8",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.8
+Junior Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-ww to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-117752)).4.9",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.8
+Junior Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-ww to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-117752)).4.9",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.8
+Junior Subordinated Indenture dated as of October 1, 2004 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4-ww to Morgan Stanley?s Registration
+Statement on Form S-3/A (No. 333-117752)).4.9",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.9
+Junior Subordinated Indenture dated as of October 12, 2006 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Current Report on
+Form 8-K dated October 12, 2006).4.10",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.9
+Junior Subordinated Indenture dated as of October 12, 2006 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Current Report on
+Form 8-K dated October 12, 2006).4.10",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,Morgan Stanley,,trustee,"4.9
+Junior Subordinated Indenture dated as of October 12, 2006 between Morgan Stanley and The Bank of New York, as trustee (Exhibit 4.1 to Morgan Stanley?s Current Report on
+Form 8-K dated October 12, 2006).4.10",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.12
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust III dated as of February 27, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee, and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended February 28,
+2003).
+E-2",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,trustee,"4.12
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust III dated as of February 27, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee, and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended February 28,
+2003).
+E-2",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.13
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust IV dated as of April 21, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee, The
+Bank of New York (Delaware), as Delaware Trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended May 31, 2003).4.14",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,Trustee,"4.13
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust IV dated as of April 21, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee, The
+Bank of New York (Delaware), as Delaware Trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended May 31, 2003).4.14",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.14
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust V dated as of July 16, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee, The
+Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended August 31, 2003).4.15",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,trustee,"4.14
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust V dated as of July 16, 2003 among Morgan Stanley, as depositor, The Bank of New York, as property trustee, The
+Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended August 31, 2003).4.15",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.15
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VI dated as of January 26, 2006 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended February 28, 2006).4.16",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,trustee,"4.15
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VI dated as of January 26, 2006 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4 to Morgan Stanley?s Quarterly Report on Form 10-Q for the quarter ended February 28, 2006).4.16",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.16
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VII dated as of October 12, 2006 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4.3 to Morgan Stanley?s Current Report on Form 8-K dated October 12, 2006).4.17",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,trustee,"4.16
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VII dated as of October 12, 2006 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4.3 to Morgan Stanley?s Current Report on Form 8-K dated October 12, 2006).4.17",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York,,trustee,"4.17
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VIII dated as of April 26, 2007 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4.3 to Morgan Stanley?s Current Report on Form 8-K dated April 26, 2007).4.18",Neutral,,,
+10-K,MORGAN STANLEY,895421,2014-FY,3/2/2015,The Bank of New York (Delaware),,trustee,"4.17
+Amended and Restated Trust Agreement of Morgan Stanley Capital Trust VIII dated as of April 26, 2007 among Morgan Stanley, as depositor, The Bank of New York, as property trustee,
+The Bank of New York (Delaware), as Delaware trustee and the administrators named therein (Exhibit 4.3 to Morgan Stanley?s Current Report on Form 8-K dated April 26, 2007).4.18",Neutral,,,

@@ -1,0 +1,103 @@
+"DOCUMENT_TYPE","FILER_NAME","FILER_CIK","FILING_INTERVAL","FILING_DATE","MENTIONED_FINANCIAL_ENTITY","PP_RSSD_ID","ROLE","THREE_SENTENCES","RATING_EXPERT_2","COMMENT_EXPERT_2"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","American Express","","issuers","COMPETITION
+Each of our business segments
+operates in a highly competitive environment, and we face competition in all aspects of our business from numerous bank and non-bank providers of financial services. Our Credit Card business competes with international, national, regional and local issuers of Visa ? and MasterCard ? credit cards,
+as well as with American Express ? , Discover Card ? , private-label card brands, and, to a certain extent, issuers of debit cards. In general, customers are attracted to credit card issuers largely on the basis of
+price, credit limit and other product features.","Neutral","-1.0.-1 (American Express here is a card brand, not a legal entity)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Discover","","issuers","COMPETITION
+Each of our business segments
+operates in a highly competitive environment, and we face competition in all aspects of our business from numerous bank and non-bank providers of financial services. Our Credit Card business competes with international, national, regional and local issuers of Visa ? and MasterCard ? credit cards,
+as well as with American Express ? , Discover Card ? , private-label card brands, and, to a certain extent, issuers of debit cards. In general, customers are attracted to credit card issuers largely on the basis of
+price, credit limit and other product features.","Neutral","-1.0.-1 (Discover here is a card brand, not a legal entity)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Equity Securities Market","","Issuer","PART II Item 5. Market for Registrant?s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities
+Market Information Our common stock is
+listed on the NYSE and is traded under the symbol ?COF.? As of January 31, 2013, there were 14,059 holders of record of our common stock. The table below presents the high and low closing sales prices of our common stock as reported
+by the NYSE and cash dividends per common share declared by us during each quarter indicated.","Neutral","0.-1.-1 (Equity Securities Market is not a legal entity, but rather a diffuse set of unspecified entities)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Equity Securities","","Issuer","Table of ContentsIssuer Purchases of Equity Securities The following table presents information related to repurchases of shares of our common stock during the fourth quarter of 2012.
+Total Number
+of Shares Purchased (1)","Neutral","-1.0.-1 (Equity Securities is not a legal entity)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Capital One","","Sellers","CAPITAL ONE FINANCIAL CORPORATION
+NOTES TO CONSOLIDATED FINANCIAL STATEMENTS?(Continued)
+2012 U.S. Card Acquisition On May 1, 2012, we completed the previously announced acquisition of assets and assumption of liabilities of the credit card and private label credit card business in the United States (other than
+the HSBC Bank USA, National Association consumer credit card program and certain other retained assets and liabilities) of HSBC Finance Corporation, HSBC USA Inc. and HSBC Technology & Services (USA) Inc. (collectively, the ?HSBC
+Sellers?), pursuant to the Purchase and Assumption Agreement, dated as of August 10, 2011 by and among Capital One and each of the HSBC Sellers (the ?2012 U.S. card acquisition?). We acquired approximately $28.3 billion of
+outstanding credit card receivables as well as $327 million in other net assets in exchange for consideration of approximately $31.1 billion in cash to the HSBC Sellers, net of a $252 million receivable.","Relevant","-1.1.1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Federal Home Loan Bank","","counterparties","$
+12,466
+Securities Pledged As part of our liquidity management strategy, we pledge securities to secure borrowings from counterparties including the Federal Home Loan Bank (?FHLB?) and the Federal Reserve Bank. We
+also pledge securities to secure trust and public deposits and for other purposes as required or permitted by law.","Relevant","1.1.1."
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Federal Reserve Bank","","counterparties","$
+12,466
+Securities Pledged As part of our liquidity management strategy, we pledge securities to secure borrowings from counterparties including the Federal Home Loan Bank (?FHLB?) and the Federal Reserve Bank. We
+also pledge securities to secure trust and public deposits and for other purposes as required or permitted by law.","Relevant","1.1.1."
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","GreenPoint","","trustees","Also as noted above, CONA
+has exposure to loss in excess of the amount established within the overall representation and warranty reserve because our reserve assumes, among other things, that we will be responsible for only a portion of the alleged losses sought in the
+lawsuit. On May 30, June 29, and July 30, 2012, FHFA (acting as conservator for Freddie Mac) filed three summons with
+notice in the New York state court against GreenPoint, on behalf of the trustees for three RMBS trusts backed by 9,594 loans originated by GreenPoint (the ?FHFA Litigation?) with an aggregate original principal balance of $3.4 billion. On
+January 25, 2013, the plaintiffs filed an amended complaint in the name of the three trusts, acting by the respective trustees, alleging breaches of contractual representations and warranties regarding compliance with GreenPoint underwriting
+guidelines relating to 1,808 loans.","Relevant","1.0.1 (Greenpoint appears not to be in the role of trustee in this case)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","GreenPoint","","trustees","On May 30, June 29, and July 30, 2012, FHFA (acting as conservator for Freddie Mac) filed three summons with
+notice in the New York state court against GreenPoint, on behalf of the trustees for three RMBS trusts backed by 9,594 loans originated by GreenPoint (the ?FHFA Litigation?) with an aggregate original principal balance of $3.4 billion. On
+January 25, 2013, the plaintiffs filed an amended complaint in the name of the three trusts, acting by the respective trustees, alleging breaches of contractual representations and warranties regarding compliance with GreenPoint underwriting
+guidelines relating to 1,808 loans. Plaintiffs seek specific performance of the repurchase obligations with respect to the 1,808 loans for which they have provided notice of alleged breaches as well as all other allegedly breaching loans, rescissory
+damages, indemnification, costs and interest.","Relevant","0.1.1 (Greenpoint appears not to be in the role of trustee in this case)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","Savings Bank","","trustee","4.2.1
+Senior Indenture dated as of November 1, 1996 between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., formerly known as The Bank of
+New York Trust Company, N.A. (as successor to Harris Trust and Savings Bank), as trustee (incorporated by reference to Exhibit 4.1 of the Corporation?s Report on Form 8-K, filed on November 13, 1996).4.2.2","Relevant","-1.1.-1 (Harris Trust and Savings Bank is a single entity; Bank of New York Mellon is the entity currently in the role of trustee)"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon","","trustee","4.4.2
+Amended and Restated Declaration of Trust of Capital One Capital II, dated as of June 6, 2006, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on June 12,
+2006).4.4.3","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","BNY Mellon Trust of Delaware","","Trustee","4.4.2
+Amended and Restated Declaration of Trust of Capital One Capital II, dated as of June 6, 2006, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on June 12,
+2006).4.4.3","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.4.3
+Guarantee Agreement, dated as of June 6, 2006, between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., as guarantee trustee (incorporated
+by reference to Exhibit 4.4 of the Corporation?s Current Report on Form 8-K, filed on June 12, 2006).4.4.4","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon","","trustee","4.5.3
+Amended and Restated Declaration of Trust of Capital One Capital III, dated as of August 1, 2006, between Capital One Financial Corporation, as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on August 4,
+2006).4.5.4","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","BNY Mellon Trust of Delaware","","trustee","4.5.3
+Amended and Restated Declaration of Trust of Capital One Capital III, dated as of August 1, 2006, between Capital One Financial Corporation, as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on August 4,
+2006).4.5.4","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.5.4
+Guarantee Agreement, dated as of August 1, 2006, between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., as guarantee trustee
+(incorporated by reference to Exhibit 4.4 of the Corporation?s Current Report on Form 8-K, filed on August 4, 2006).4.5.5","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon","","trustee","4.6.2
+Amended and Restated Declaration of Trust of Capital One Capital IV, dated as of February 5, 2007, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on
+February 8, 2007).
+277","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","BNY Mellon Trust of Delaware","","Trustee","4.6.2
+Amended and Restated Declaration of Trust of Capital One Capital IV, dated as of February 5, 2007, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon, as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K, filed on
+February 8, 2007).
+277","Relevant","-1.1.-1"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.6.3
+Guarantee Agreement, dated as of February 5, 2007, between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., as guarantee trustee
+(incorporated by reference to Exhibit 4.4 of the Corporation?s Current Report on Form 8-K, filed on February 8, 2007).4.6.4","Relevant","-1.1.-1. Qualified role names: guarantee trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.7.2
+Amended and Restated Declaration of Trust of Capital One Capital V, dated as of August 5, 2009, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon Trust Company, N.A., as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K,
+filed on August 6, 2009).4.7.3","Relevant","-1.1.-1. Qualified role names: institutional trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","BNY Mellon Trust of Delaware","","Trustee","4.7.2
+Amended and Restated Declaration of Trust of Capital One Capital V, dated as of August 5, 2009, between Capital One Financial Corporation as Sponsor, The Bank of New York
+Mellon Trust Company, N.A., as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on Form 8-K,
+filed on August 6, 2009).4.7.3","Relevant","-1.1.-1. Qualified role names: Delaware trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.7.3
+Guarantee Agreement, dated as of August 5, 2009, between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., as guarantee trustee
+(incorporated by reference to Exhibit 4.4 of the Corporation?s Current Report on Form 8-K, filed on August 6, 2009).4.7.4","Relevant","-1.1.-1. Qualified role names: guarantee trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.8.2
+Amended and Restated Declaration of Trust of Capital One Capital VI, dated as of November 13, 2009, between Capital One Financial Corporation as Sponsor, The Bank of
+New York Mellon Trust Company, N.A., as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on
+Form 8-K, filed on November 13, 2009).4.8.3","Relevant","-1.1.-1. Qualified role names: institutional trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","BNY Mellon Trust of Delaware","","Trustee","4.8.2
+Amended and Restated Declaration of Trust of Capital One Capital VI, dated as of November 13, 2009, between Capital One Financial Corporation as Sponsor, The Bank of
+New York Mellon Trust Company, N.A., as institutional trustee, BNY Mellon Trust of Delaware, as Delaware Trustee and the Administrative Trustees named therein (incorporated by reference to Exhibit 4.3 of the Corporation?s Current Report on
+Form 8-K, filed on November 13, 2009).4.8.3","Relevant","-1.1.-1. Qualified role names: Delaware trustee"
+"10-K","CAPITAL ONE FINANCIAL CORP","927628","2012-FY","2/28/2013","The Bank of New York Mellon Trust Company, N.A.","","trustee","4.8.3
+Guarantee Agreement, dated as of November 13, 2009, between Capital One Financial Corporation and The Bank of New York Mellon Trust Company, N.A., as guarantee trustee
+(incorporated by reference to Exhibit 4.4 of the Corporation?s Current Report on Form 8-K, filed on November 13, 2009).4.8.4","Relevant","-1.1.-1. Qualified role names: guarantee trustee"
