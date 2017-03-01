@@ -1,16 +1,19 @@
 \section{Introduction}
-Efficiently identifying relations between companies based on 10k filings [.. is interesting, important ..] to support analysts.
+Efficiently identifying relations between companies based on 10k filings is an interesting and important task.
+The automatic extraction of such relationships from massive data collections allows analysts to use this kind of information in their business analysis.
+The FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}} addresses this problem which is located exactly at the intersection of finance and big data.
+Using 10-K and 10-Q filings the challenge consists of identifying all sentences that contain the relationships between the filing financial entity and another financial entity.
+In a subsequent step the resulting triples consisting of financial entity mentions, role keywords, and their contextual text should be ranked in a way, that triples which contain relevant knowledge in financial sense are ranked to top positions.
+During our approach, we focus exclusively on the texts (triples) and refrain from enriching the data set with additional information such as revenue streams and other information.
+In this way, we want to make sure that we focus on the core problem and not add further sources of error through the integration of additional data.
+We found that one of the main difficulties is that the relatively small dataset of 1000 documents is not sufficiently large for many of the machine learning approaches we tried. 
+Aggravating is that the already small amount of data is very unbalanced regarding the contained roles and the tendency to relevant and highly relevant ratings.
+Thus, X, Y, Z expert ratings exist for the roles A, B, C, while for the roles G, H, J there are only X, X, and X ratings.  
+In addition, there is a tendency for experts to frequently categorize documents as relevant.
+Another problem stems from the fuzzy definition of ``relevance'' term.
+Here it was often not clear what exactly the relevance concept refers to.
 
-- FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}}
-
-- task: rank relationships between financial entities
-
-- we focus our approach on textual features only (neglect evaluating revenue streams that could be extracted from other sources i.e. stock market)
-
-- difficulty: small imbalanced dataset, fuzzy definition of "relevance"
-
-- performance: good NDCG around .98
-
+Despite these difficulties we were able to achieve an overall normalized discounted cumulative gain (NDCG) score of 98\%
 % from webpage: Given a 10-K filing, an analyst asks, does Company Y, mentioned in this filing, play the role R with respect to filing Company X? Rather than simply answering "yes" or "no", a system responds by providing all the mentions of Company Y in Company X's 10-K filing, with context sentences. These triples are then in ordered by the likelihood that the context accurately defines the relationship or role R between X and Y.
 
 \section{Description of the Data}
