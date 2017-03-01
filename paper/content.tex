@@ -14,7 +14,7 @@ Efficiently identifying relations between companies based on 10k filings [.. is 
 % from webpage: Given a 10-K filing, an analyst asks, does Company Y, mentioned in this filing, play the role R with respect to filing Company X? Rather than simply answering "yes" or "no", a system responds by providing all the mentions of Company Y in Company X's 10-K filing, with context sentences. These triples are then in ordered by the likelihood that the context accurately defines the relationship or role R between X and Y.
 
 \section{Description of the Data}
-The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship between the filing company and a mentioned financial entity. Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}. Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
+The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship (role) between the filing company and a mentioned financial entity. Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}. Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
 
 Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}. Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
 
@@ -40,7 +40,11 @@ Our ranking model takes the three sentences triples are extracted from as input 
 As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments. The four rating categories are mapped to numerical values (1-4).
 
 \section{Ranking Model}
+Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category. Before building the dictionary, n-grams of length one to three are formed from the lemmatised tokens. A filter removes most and least frequent terms to reduce the feature space. To emphasise n-grams most meaningful for distiction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one "document". Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
 
+For each role, an ensemble of  linear regression models is trained to classify the sentences into the relevance categories. Problems arise due to the limited size of the annotated training set. The number of samples per role varies strongly, where sometimes not all relevance categories are represented. A model trained on such a set would not generalise properly. To circumvent that issue it was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
+
+The predictions of the model for previously unseen samples return a softmax score for each of the four categories. One could simply take the argmax as a categorical rating, but since the goal is to create a ranking, it is shown, that using the weighted sum of the confidence scores leads to better results.
 
 \section{Evaluation and Conclusion}
 The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG). The rank at position $p$ is calculated by
@@ -50,9 +54,11 @@ DCG_p = rel_1 + \sum_{i=2}^{p} \frac{rel_i}{\log_2(i+1)}
 \end{equation}
 where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based on a given score, $IDCG_p$ the ideal DCG, and $rel_i$ the relevance of an item at position $i$ as depicted by the experts.
 
+For the cross-evaluation, the labelled samples are split into a training and test set. Tuples in both sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified. As mentioned before, eleven models are trained. One over samples ignoring the role and one for each subset restricted to a role. Predictions are only performed on test sets restricted to one role. Scores for the ranking are either continuous or categorical as described above.
+
 \begin{table}
 	\caption{Experimental results}
-	\label{tab:freq}
+	\label{tab:results}
 	\begin{tabular}{lcc}
 		\toprule
 		Approach & NDCG & $\sigma ($NDCG$)$\\
@@ -67,6 +73,28 @@ where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based 
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+In \fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$). For comparison we take a baseline of the worst possible ranking (iverse order of the ideal ranking) and the average of multiple random rankings. This shows, that disregarding roles during training significantly improves the performance and continuous scoring helps to correct the score in cases of slight uncertainty.
+
+\begin{figure}
+	\begin{subfigure}[t]{0.5\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{conf_full}
+		\caption{Trained on all samples}
+	\end{subfigure}%
+	~ 
+	\begin{subfigure}[t]{0.5\linewidth}
+		\includegraphics[width=\linewidth]{conf_role}
+		\caption{Trained on role samples}
+	\end{subfigure}
+	\caption{Normalised aggregated confusion matrices for the model with different training sets}
+	\label{fig:confmatrix}
+\end{figure}
+
+It is interesting to note, that evaluating the classification model alone, the F1-Score is only around 0.49 ($\sigma=$0.17) when training on small subsets and 0.73 ($\sigma=$0.27) for the full set. \Fref{fig:confmatrix} clearly shows the difficulties, which appear to be a result of the bias towards relevant documents due to the imbalanced set.
+
+Training a model on text usually requires a reasonably large corpus. With the data at hand we had to pay close attention to the selection of features, since seemingly very specific terms are used, which likely negatively affacts the ability of the model to generalise to unseen samples.
+
 %
 %\begin{table}
 %	\caption{Experimental results}
@@ -85,17 +113,3 @@ where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based 
 %	\end{tabular}
 %\end{table}
 %
-\begin{figure}
-	\begin{subfigure}[t]{0.5\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{conf_full}
-		\caption{Trained on all samples}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\linewidth}
-		\includegraphics[width=\linewidth]{conf_role}
-		\caption{Trained on role samples}
-	\end{subfigure}
-	\caption{Normalised aggregated confusion matrices for the model with different training sets}
-	\label{fig:confmatrix}
-\end{figure}
