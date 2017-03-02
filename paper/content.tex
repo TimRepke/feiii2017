@@ -38,16 +38,40 @@ where $p_0$ is the proportion of labels with agreement, and $p_e$ the statistica
 \Fref{fig:iaa} shows the $\kappa$ for each pair of experts, as well as the number of overlapping labels. Most triplets (60\%) aren't represented in this figure, since they only received a rating by one expert and very few by more than two. The weighted average of $\overline{k}<0.5$ and few overlapping annotations are not ideal for a reliable development and evaluation of a system.
 
 \subsection{Preparing the Dataset}
-Our ranking model takes the three sentences triples are extracted from as input to predict its relevance. Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}. Based on the normalised tokens of the entire training set, a dictionary is constructed.
+Our ranking model takes the three sentences triples are extracted from as input to predict its relevance.
+Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. 
+Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}.
+Based on the normalised tokens of the entire training set, a dictionary is constructed.
+We used EDGAR\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}} to retrieve the full original filings.
 
-As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments. The four rating categories are mapped to numerical values (1-4).
+As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments.
+The four rating categories are mapped to numerical values (1-4).
 
 \section{Ranking Model}
-Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category. Before building the dictionary, n-grams of length one to three are formed from the lemmatised tokens. A filter removes most and least frequent terms to reduce the feature space. To emphasise n-grams most meaningful for distiction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one "document". Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
+Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category.
+We consider three concepts to numerically represent the three sentences as input to our model, namely \textit{bag-of-words} (BOW), an \textit{embedding}, and \textit{syntax features}.
 
-For each role, an ensemble of  linear regression models is trained to classify the sentences into the relevance categories. Problems arise due to the limited size of the annotated training set. The number of samples per role varies strongly, where sometimes not all relevance categories are represented. A model trained on such a set would not generalise properly. To circumvent that issue it was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
+The bag-of-words representation is constructed as follows. 
+Before building the dictionary, n-grams of length one to three are formed from lemmatised tokens. 
+A filter removes most and least frequent terms to reduce the feature space. To emphasise n-grams most meaningful for class distinction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one ``document''. 
+Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
 
-The predictions of the model for previously unseen samples return a softmax score for each of the four categories. One could simply take the argmax as a categorical rating, but since the goal is to create a ranking, it is shown, that using the weighted sum of the confidence scores leads to better results.
+The bag-of-words approach might be limited by the size of the dictionary and therefore lead to difficulties with previously unseen samples.
+Therefore, we created a doc2vec\cite{le2014distributed} embedding from 25 of the original full text filings on a sentence basis using the implementation by Gensim\cite{gensim}.
+The vectors induced for each of the three sentences for a sample are concatenated and padded or truncated if necessary.
+The resulting vector is used as input to the model.
+
+Lastly, to provide a language independent approach, we created a selection of syntax-based features.
+Following the gini impurity metric and information gain, features like the ratio of upper-case words and numbers or the number of dollar signs and word repetitions appear to be most meaningful for classification.
+
+For each role, an ensemble of logistic regression models is trained to classify the sentences into four relevance categories.
+For some roles, the number of samples is to small to train a reasonable model.
+It was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
+Whereas a logit model is a good choice for the BOW and embeddings, since it may not as quickly affected by over-fitting, it performs badly on syntax features.
+Random forests have shown promising results in this case, but are not applied to BOW as it might be more prone to favouring a small number of n-grams and thus not generalise well.
+
+The predictions of the model for previously unseen samples return a softmax score for each of the four categories.
+One could simply take the argmax as a categorical rating, but since the goal is to create a ranking, using the weighted sum of the confidence scores leads to better results.
 
 \section{Evaluation and Conclusion}
 The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG). The rank at position $p$ is calculated by
@@ -57,10 +81,14 @@ DCG_p = rel_1 + \sum_{i=2}^{p} \frac{rel_i}{\log_2(i+1)}
 \end{equation}
 where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based on a given score, $IDCG_p$ the ideal DCG, and $rel_i$ the relevance of an item at position $i$ as depicted by the experts.
 
-For the cross-evaluation, the labelled samples are split into a training and test set. Tuples in both sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified. As mentioned before, eleven models are trained. One over samples ignoring the role and one for each subset restricted to a role. Predictions are only performed on test sets restricted to one role. Scores for the ranking are either continuous or categorical as described above.
+For the cross-evaluation, the labelled samples are split into a training and test set.
+Triples in both sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified.
+As mentioned before, for each experiment, eleven models are trained. One over samples ignoring the role and one for each subset restricted to a role.
+Predictions are only performed on each role's test sets.
+Scores for the ranking are either continuous or categorical as described above.
 
 \begin{table}
-	\caption{Experimental results}
+	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), and syntax (SYN) features}
 	\label{tab:results}
 	\begin{tabular}{lcc}
 		\toprule
@@ -69,15 +97,35 @@ For the cross-evaluation, the labelled samples are split into a training and tes
 		Baseline (random) & 0.87 & 0.07\\
 		Baseline (worst) & 0.73 & 0.13\\
 		\midrule
-		full set, categorical & 0.97 & 0.04 \\
-		role based, categorical & 0.92 & 0.07  \\
-		full set, continuous & \textbf{0.98} & 0.03 \\
-		role based, continuous & 0.93 & 0.07 \\
+		%F1 full 0.73 std=0.27
+		%F1 role 0.49 std=0.17
+		BOW, full set, categorical & 0.97 & 0.04 \\
+		BOW, role based, categorical & 0.92 & 0.07  \\
+		BOW, full set, continuous & \textbf{0.98} & 0.03 \\
+		BOW, role based, continuous & 0.93 & 0.07 \\
+		\midrule
+		% F1 full 0.41 std=0.16
+		% F1 role 0.38 std=0.21
+		EMB, full set, categorical & 0.91 & 0.07 \\
+		EMB, role based, categorical & 0.89 & 0.07  \\
+		EMB, full set, continuous & 0.92 & 0.07 \\
+		EMB, role based, continuous & 0.90 & 0.08 \\
+		\midrule
+		% F1 full 0.84 std=0.22
+		% F1 role 0.35 std=0.19
+		SYN, full set, categorical & 0.97 & 0.04 \\
+		SYN, role based, categorical & 0.92 & 0.07  \\
+		SYN, full set, continuous & \textbf{0.98} & 0.03 \\
+		SYN, role based, continuous & 0.91 & 0.09 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-In \fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$). For comparison we take a baseline of the worst possible ranking (iverse order of the ideal ranking) and the average of multiple random rankings. This shows, that disregarding roles during training significantly improves the performance and continuous scoring helps to correct the score in cases of slight uncertainty.
+In \fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$).
+For comparison we take a baseline of the worst possible ranking (inverse order of the ideal ranking) and the average of multiple random rankings.
+Disregarding roles during training showed significant performance improvements and thus are not listed here.
+
+This shows, that disregarding roles during training significantly improves the performance and continuous scoring helps to correct the score in cases of slight uncertainty.
 
 \begin{figure}
 	\begin{subfigure}[t]{0.5\linewidth}
