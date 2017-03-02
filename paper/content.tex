@@ -12,7 +12,7 @@
 Efficiently identifying and assessing relations between companies from text is an interesting and important task.
 Automatic extraction of such relationships from massive data collections allows business analysts to quickly gather and evaluate relevant information.
 
-The FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}} focuses on finding means to approximate the relevance of a triple formed by the role between the filing entity and another mentioned financial entity extracted from 10-K and 10-Q filings.
+
 Triples which contain relevant knowledge in a financial sense should be ranked to top positions.
 Approaches to identify financial entities in text were found in a previous challenge\cite{Samiei:2016:CRT:2951894.2951905}.
 
@@ -34,41 +34,24 @@ Here it was often not clear what exactly the relevance concept refers to.
 Despite these difficulties we were able to achieve an overall normalized discounted cumulative gain (NDCG) score of 98\%
 % from webpage: Given a 10-K filing, an analyst asks, does Company Y, mentioned in this filing, play the role R with respect to filing Company X? Rather than simply answering "yes" or "no", a system responds by providing all the mentions of Company Y in Company X's 10-K filing, with context sentences. These triples are then in ordered by the likelihood that the context accurately defines the relationship or role R between X and Y.
 
-\section{Description of the Data}
-The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship (role) between the filing company and a mentioned financial entity.
-Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}.
-Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
+\section{Dataset}
+The dataset used for this work was provided for the FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}}, which contains almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship (role) between the filing company and a mentioned financial entity.
+Relationships are limited to ten predefined roles (see \fref{tab:roleresults}).
+The challenge is focused on finding means to rate the relevance of the contained knowledge from a business perspective.
 
 Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}.
 Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
 
 
 \paragraph{\textbf{Inter Annotator Agreement}}
-The quality of annotations is estimated using Cohen's kappa. The inter annotator agreement (IAA) between two experts is defined as
-$$
-\kappa = \frac{p_0-p_e}{1-p_e},
-$$
-where $p_0$ is the proportion of labels with agreement, and $p_e$ the statistical chance of random agreement.
+The quality of annotations is estimated using Cohen's Kappa ($\kappa\in [0,1]$), which quantifies the inter annotator agreement (IAA) between two experts\cite{ir}.
+Around 40\% of the triples were rated by more than one expert with a weighted average of $\overline{\kappa}=0.45$, indicates a high level of disagreement.
+For training and evaluation we map the ratings to numerical values (1-4) and consider the rounded average rating for each triple.
 
-\begin{figure}
-	\includegraphics[width=0.7\linewidth]{iaa}
-	\caption{$\kappa$ IAA (upper triangular matrix), number of commonly rated triples (lower triangular matrix), and number of ratings (diagonal matrix)}
-	\label{fig:iaa}
-\end{figure}
-
-\Fref{fig:iaa} shows the $\kappa$ for each pair of experts, as well as the number of overlapping labels. Most triplets (60\%) aren't represented in this figure, since they only received a rating by one expert and very few by more than two. The weighted average of $\overline{k}<0.5$ and few overlapping annotations are not ideal for a reliable development and evaluation of a system.
-
-\subsection{Dataset and Task}
-Our ranking model takes the three sentences triples are extracted from as input to predict its relevance.
-Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. 
-Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}.
-Based on the normalised tokens of the entire training set, a dictionary is constructed.
-
-% retrieved from web (edgar)
-We used EDGAR\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}} to retrieve the full original filings. In total, these documents contain over 60k sentences (2M words), on which we train an embedding.
-
-As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments.
-The four rating categories are mapped to numerical values (1-4).
+\paragraph{\textbf{Additional Data}}
+Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
+We complement this by the full original filings, which are available online\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}}.
+In total, these documents contain over 60k sentences (2M words).
 
 \section{Our Approach}
 % classification model to produce score
@@ -109,6 +92,19 @@ NDCG_p = \frac{DCG_p}{IDCG_p},\;
 DCG_p = rel_1 + \sum_{i=2}^{p} \frac{rel_i}{\log_2(i+1)}
 \end{equation}
 where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based on a given score, $IDCG_p$ the ideal DCG, and $rel_i$ the relevance of an item at position $i$ as depicted by the experts.
+
+\begin{table*}
+	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features, and ensemble}
+	\label{tab:roleresults}
+	\begin{tabular}{lcccccccccc}
+		\toprule
+		          & affiliate & agent & counterpart & guarantor & insurer & issuer & seller & servicer & trustee & underwriter \\
+		\midrule
+		NDCG & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+	  \# samples & 186       & 61    & 64          & 34        & 19      & 129    & 20     & 21       & 420     & 21          \\
+		\bottomrule
+	\end{tabular}
+\end{table*}
 
 \paragraph{\textbf{kalsjdk.}}
 For the cross-evaluation, the labelled samples are split into a training and test set.
