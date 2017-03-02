@@ -9,12 +9,9 @@
 
 % categorical -> discrete
 
-Efficiently identifying and assessing relations between companies from text is an interesting and important task.
+Efficiently identifying and assessing relations between companies from text is an interesting and important task\cite{entityextraction}.
 Automatic extraction of such relationships from massive data collections allows business analysts to quickly gather and evaluate relevant information.
 
-
-Triples which contain relevant knowledge in a financial sense should be ranked to top positions.
-Approaches to identify financial entities in text were found in a previous challenge\cite{Samiei:2016:CRT:2951894.2951905}.
 
 With our approach, we focus exclusively on the textual context a triple appears in and refrain from enriching the data set with additional information, such as revenue streams or other information.
 We present three approaches to transform the input for a machine learning model using bag-of-words, embeddings and syntax features.
@@ -42,56 +39,62 @@ The challenge is focused on finding means to rate the relevance of the contained
 Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}.
 Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
 
-
+{\setlength{\parindent}{0cm}
 \paragraph{\textbf{Inter Annotator Agreement}}
 The quality of annotations is estimated using Cohen's Kappa ($\kappa\in [0,1]$), which quantifies the inter annotator agreement (IAA) between two experts\cite{ir}.
 Around 40\% of the triples were rated by more than one expert with a weighted average of $\overline{\kappa}=0.45$, indicates a high level of disagreement.
 For training and evaluation we map the ratings to numerical values (1-4) and consider the rounded average rating for each triple.
+}
 
+{\setlength{\parindent}{0cm}
 \paragraph{\textbf{Additional Data}}
 Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
 We complement this by the full original filings, which are available online\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}}.
 In total, these documents contain over 60k sentences (2M words).
+}
 
 \section{Our Approach}
+In our approach we use machine learning to calculate a ranking score for sentences a triple was extracted from.
+This ranking reflects the relevance of a triple with respect to it's contained knowledge about a given relationship between companies.
+
+Classifiers try to learn from data labelled by the experts to distinguish relevant from irrelevant samples.
+Therefore, an ensemble of logistic regression models is trained to classify text into four categories given by the expert ratings.
+The predictions of the model return a softmax confidence score for each category, from which the weighted sum is taken as the ranking score.
+
+%For some roles, the number of samples is to small to train a reasonable model.
+%It was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
+
+The sentences have to be transformed into a numerical representation, to be used in a machine learning model.
+In the following sections we describe three approaches, namely \textit{bag-of-words} (BOW), \textit{embeddings} (EMB), and \textit{syntax features} (SYN).
+
 % classification model to produce score
 % try to learn from labelled data (whats rel/irrel)
 % therefore logit
 % for features, three approaches
 % 3 subsections describing each
 
-Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category.
-We consider three concepts to numerically represent the three sentences as input to our model, namely \textit{bag-of-words} (BOW), an \textit{embedding} (EMB), and \textit{syntax features} (SYN).
-
+\subsection{Bag-of-Words}
 The bag-of-words representation is constructed as follows. 
 Before building the dictionary, n-grams of length one to three are formed from lemmatised tokens. 
 A filter removes most and least frequent terms to reduce the feature space. To emphasise n-grams most meaningful for class distinction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one ``document''. 
 Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
 
+\subsection{Embedding}
 Difficulties with previously unseen examples might arise from the limited size of the dictionary for the BOW.
-Therefore, we created a doc2vec\cite{le2014distributed} embedding from 25 of the original full text filings on a sentence basis using the implementation by Gensim\cite{gensim}.
+Therefore, we created a doc2vec embedding from 25 of the original full text filings on a sentence basis using the implementation by Gensim\footnote{\url{https://radimrehurek.com/gensim/models/doc2vec.html}}.
 The vectors induced for each of the three sentences for a sample are concatenated and padded or truncated if necessary.
 The resulting vector is used as input to the model.
 
+\subsection{Syntax Features}
 Lastly, to provide a language independent approach, we created a selection of syntax-based features.
 Following the gini impurity metric and information gain, features like the ratio of upper-case words and numbers or the number of dollar signs and word repetitions appear to be most meaningful for classification.
 
-For each role, an ensemble of logistic regression models is trained to classify the sentences into four relevance categories.
-For some roles, the number of samples is to small to train a reasonable model.
-It was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
 Whereas a logit model is a good choice for the BOW and embeddings, since it may not as quickly affected by over-fitting, it performs badly on syntax features.
 Random forests have shown promising results in this case, but are not applied to BOW as it might be more prone to favouring a small number of n-grams and thus not generalise well.
 
-The predictions of the model for previously unseen samples return a softmax score for each of the four categories.
-One could simply take the argmax as a categorical rating, but since the goal is to create a ranking, using the weighted sum of the confidence scores leads to better results.
 
-\section{Evaluation and Conclusion}
-The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG). The rank at position $p$ is calculated by
-\begin{equation}
-NDCG_p = \frac{DCG_p}{IDCG_p},\;
-DCG_p = rel_1 + \sum_{i=2}^{p} \frac{rel_i}{\log_2(i+1)}
-\end{equation}
-where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based on a given score, $IDCG_p$ the ideal DCG, and $rel_i$ the relevance of an item at position $i$ as depicted by the experts.
+\section{Evaluation}
+The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG)\cite{ir}.
 
 \begin{table*}
 	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features, and ensemble}
@@ -106,7 +109,6 @@ where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based 
 	\end{tabular}
 \end{table*}
 
-\paragraph{\textbf{kalsjdk.}}
 For the cross-evaluation, the labelled samples are split into a training and test set.
 Triples in both sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified.
 As mentioned before, for each experiment, eleven models are trained. One over samples ignoring the role and one for each subset restricted to a role.
@@ -146,6 +148,11 @@ In the general case, this model might perform better than the others.
 
 Combining the features did not produce an improved model. The soft-voted ensemble of all classifiers shows similar results as EMB and SYN alone.
 
+
+\section{Conclusion}
+- embedding probably better/more general
+
+- enrich data with revenue numbers
 
 %\begin{figure}
 %	\begin{subfigure}[t]{0.5\linewidth}
