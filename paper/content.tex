@@ -1,10 +1,28 @@
 \section{Introduction}
-Efficiently identifying relations between companies based on 10k filings is an interesting and important task.
-The automatic extraction of such relationships from massive data collections allows analysts to use this kind of information in their business analysis.
-The FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}} addresses this problem which is located exactly at the intersection of finance and big data.
-Using 10-K and 10-Q filings the challenge consists of identifying all sentences that contain the relationships between the filing financial entity and another financial entity.
-In a subsequent step the resulting triples consisting of financial entity mentions, role keywords, and their contextual text should be ranked in a way, that triples which contain relevant knowledge in financial sense are ranked to top positions.
-During our approach, we focus exclusively on the texts (triples) and refrain from enriching the data set with additional information such as revenue streams and other information.
+% task for experts, large datasources by hand 
+%   -> partly automatic would be useful (ranking)
+% risk analysis -> relations important
+% data required, unstructured i.e. in 10k filings
+% where do you get info? newspaper, börse, bankberichte
+% what changed? more data. + availability
+
+
+% categorical -> discrete
+
+Efficiently identifying and assessing relations between companies from text is an interesting and important task.
+Automatic extraction of such relationships from massive data collections allows business analysts to quickly gather and evaluate relevant information.
+
+The FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}} focuses on finding means to approximate the relevance of a triple formed by the role between the filing entity and another mentioned financial entity extracted from 10-K and 10-Q filings.
+Triples which contain relevant knowledge in a financial sense should be ranked to top positions.
+Approaches to identify financial entities in text were found in a previous challenge\cite{Samiei:2016:CRT:2951894.2951905}.
+
+With our approach, we focus exclusively on the textual context a triple appears in and refrain from enriching the data set with additional information, such as revenue streams or other information.
+We present three approaches to transform the input for a machine learning model using bag-of-words, embeddings and syntax features.
+
+
+
+
+
 In this way, we want to make sure that we focus on the core problem and not add further sources of error through the integration of additional data.
 We found that one of the main difficulties is that the relatively small dataset of 1000 documents is not sufficiently large for many of the machine learning approaches we tried. 
 Aggravating is that the already small amount of data is very unbalanced regarding the contained roles and the tendency to relevant and highly relevant ratings.
@@ -25,7 +43,7 @@ Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutra
 Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
 
 
-\subsection{Inter Annotator Agreement}
+\paragraph{\textbf{Inter Annotator Agreement}}
 The quality of annotations is estimated using Cohen's kappa. The inter annotator agreement (IAA) between two experts is defined as
 $$
 \kappa = \frac{p_0-p_e}{1-p_e},
@@ -40,18 +58,25 @@ where $p_0$ is the proportion of labels with agreement, and $p_e$ the statistica
 
 \Fref{fig:iaa} shows the $\kappa$ for each pair of experts, as well as the number of overlapping labels. Most triplets (60\%) aren't represented in this figure, since they only received a rating by one expert and very few by more than two. The weighted average of $\overline{k}<0.5$ and few overlapping annotations are not ideal for a reliable development and evaluation of a system.
 
-\subsection{Preparing the Dataset}
+\subsection{Dataset and Task}
 Our ranking model takes the three sentences triples are extracted from as input to predict its relevance.
 Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. 
 Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}.
 Based on the normalised tokens of the entire training set, a dictionary is constructed.
 
+% retrieved from web (edgar)
 We used EDGAR\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}} to retrieve the full original filings. In total, these documents contain over 60k sentences (2M words), on which we train an embedding.
 
 As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments.
 The four rating categories are mapped to numerical values (1-4).
 
-\section{Ranking Model}
+\section{Our Approach}
+% classification model to produce score
+% try to learn from labelled data (whats rel/irrel)
+% therefore logit
+% for features, three approaches
+% 3 subsections describing each
+
 Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category.
 We consider three concepts to numerically represent the three sentences as input to our model, namely \textit{bag-of-words} (BOW), an \textit{embedding} (EMB), and \textit{syntax features} (SYN).
 
@@ -85,6 +110,7 @@ DCG_p = rel_1 + \sum_{i=2}^{p} \frac{rel_i}{\log_2(i+1)}
 \end{equation}
 where $DCG_p$ is the Discounted Cumulative Gain (DCG) when ordering items based on a given score, $IDCG_p$ the ideal DCG, and $rel_i$ the relevance of an item at position $i$ as depicted by the experts.
 
+\paragraph{\textbf{kalsjdk.}}
 For the cross-evaluation, the labelled samples are split into a training and test set.
 Triples in both sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified.
 As mentioned before, for each experiment, eleven models are trained. One over samples ignoring the role and one for each subset restricted to a role.
