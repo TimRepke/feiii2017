@@ -17,9 +17,12 @@ Despite these difficulties we were able to achieve an overall normalized discoun
 % from webpage: Given a 10-K filing, an analyst asks, does Company Y, mentioned in this filing, play the role R with respect to filing Company X? Rather than simply answering "yes" or "no", a system responds by providing all the mentions of Company Y in Company X's 10-K filing, with context sentences. These triples are then in ordered by the likelihood that the context accurately defines the relationship or role R between X and Y.
 
 \section{Description of the Data}
-The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship (role) between the filing company and a mentioned financial entity. Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}. Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
+The dataset provided for this challenge is comprised of almost 1000 triples extracted from 25 10-K and 10-Q filings, which describe a relationship (role) between the filing company and a mentioned financial entity.
+Relationships are limited to ten predefined roles, namely \textit{affiliate}, \textit{agent}, \textit{counterpart}, \textit{guarantor}, \textit{insurer}, \textit{issuer}, \textit{seller}, \textit{servicer}, \textit{trustee}, and \textit{underwriter}.
+Additional information, such as the context a triple was extracted from and supplementary meta-data about the entities are contained as well.
 
-Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}. Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
+Experts labelled the relevance of triples as \textit{irrelevant}, \textit{neutral}, \textit{relevant}, or \textit{highly relevant}.
+Depending on the context, relevance may be understood as an indicator for potential impact a relationship might have on the business of the filing company. 
 
 
 \subsection{Inter Annotator Agreement}
@@ -42,21 +45,22 @@ Our ranking model takes the three sentences triples are extracted from as input 
 Especially due to the limited size of the dataset, normalising the text is an important first step, thus the strings are lower-cased and tokenised. 
 Furthermore, tokens are lemmatised using the language model provided by SpaCy\footnote{\url{https://spacy.io/}}.
 Based on the normalised tokens of the entire training set, a dictionary is constructed.
-We used EDGAR\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}} to retrieve the full original filings.
+
+We used EDGAR\footnote{\url{https://www.sec.gov/edgar/aboutedgar.htm}} to retrieve the full original filings. In total, these documents contain over 60k sentences (2M words), on which we train an embedding.
 
 As mentioned above, experts may not always agree in their rating, therefore each triple's rounded average rating is considered for all experiments.
 The four rating categories are mapped to numerical values (1-4).
 
 \section{Ranking Model}
 Developing a ranking model that estimates the relevance based on text assumes the presence of phrases mostly distinct for each category.
-We consider three concepts to numerically represent the three sentences as input to our model, namely \textit{bag-of-words} (BOW), an \textit{embedding}, and \textit{syntax features}.
+We consider three concepts to numerically represent the three sentences as input to our model, namely \textit{bag-of-words} (BOW), an \textit{embedding} (EMB), and \textit{syntax features} (SYN).
 
 The bag-of-words representation is constructed as follows. 
 Before building the dictionary, n-grams of length one to three are formed from lemmatised tokens. 
 A filter removes most and least frequent terms to reduce the feature space. To emphasise n-grams most meaningful for class distinction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one ``document''. 
 Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
 
-The bag-of-words approach might be limited by the size of the dictionary and therefore lead to difficulties with previously unseen samples.
+Difficulties with previously unseen examples might arise from the limited size of the dictionary for the BOW.
 Therefore, we created a doc2vec\cite{le2014distributed} embedding from 25 of the original full text filings on a sentence basis using the implementation by Gensim\cite{gensim}.
 The vectors induced for each of the three sentences for a sample are concatenated and padded or truncated if necessary.
 The resulting vector is used as input to the model.
@@ -88,79 +92,93 @@ Predictions are only performed on each role's test sets.
 Scores for the ranking are either continuous or categorical as described above.
 
 \begin{table}
-	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), and syntax (SYN) features}
+	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features, and ensemble}
 	\label{tab:results}
-	\begin{tabular}{lcc}
+	\begin{tabular}{lcccc}
 		\toprule
-		Approach & NDCG & $\sigma ($NDCG$)$\\
+		Approach & NDCG & $\sigma ($NDCG$)$ & F1-Score &  $\sigma ($F1$)$\\
 		\midrule
-		Baseline (random) & 0.87 & 0.07\\
-		Baseline (worst) & 0.73 & 0.13\\
+		Baseline (random) & 0.87 & 0.07 & - & - \\
+		Baseline (worst)  & 0.73 & 0.13 & - & - \\
 		\midrule
-		%F1 full 0.73 std=0.27
-		%F1 role 0.49 std=0.17
-		BOW, full set, categorical & 0.97 & 0.04 \\
-		BOW, role based, categorical & 0.92 & 0.07  \\
-		BOW, full set, continuous & \textbf{0.98} & 0.03 \\
-		BOW, role based, continuous & 0.93 & 0.07 \\
-		\midrule
-		% F1 full 0.41 std=0.16
-		% F1 role 0.38 std=0.21
-		EMB, full set, categorical & 0.91 & 0.07 \\
-		EMB, role based, categorical & 0.89 & 0.07  \\
-		EMB, full set, continuous & 0.92 & 0.07 \\
-		EMB, role based, continuous & 0.90 & 0.08 \\
-		\midrule
-		% F1 full 0.84 std=0.22
-		% F1 role 0.35 std=0.19
-		SYN, full set, categorical & 0.97 & 0.04 \\
-		SYN, role based, categorical & 0.92 & 0.07  \\
-		SYN, full set, continuous & \textbf{0.98} & 0.03 \\
-		SYN, role based, continuous & 0.91 & 0.09 \\
+		BOW & \textbf{0.98} & 0.03 & 0.73 & 0.27\\
+		EMB & 0.92 & 0.07 & 0.41 & 0.16\\
+		SYN & 0.94 & 0.06 & 0.43 & 0.26 \\
+		BOW+EMB+SYN& 0.93 & 0.06 & 0.46 & 0.22\\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
 In \fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$).
 For comparison we take a baseline of the worst possible ranking (inverse order of the ideal ranking) and the average of multiple random rankings.
-Disregarding roles during training showed significant performance improvements and thus are not listed here.
+Models that disregard roles during training consistently outperform the others by a margin of over 0.05 and are not listed here.
+Furthermore, the calculated continuous ranking score is able to add another slight improvement over the categorical score.
 
-This shows, that disregarding roles during training significantly improves the performance and continuous scoring helps to correct the score in cases of slight uncertainty.
+The BOW model performed best in our experiments, the EMB and SYN models show similar results. 
+Training a model on text usually requires a reasonably large corpus.
+With the data at hand we had to pay close attention to the selection of features, since seemingly very specific terms are likely to negatively affect the model's ability to classify unseen samples.
 
-\begin{figure}
-	\begin{subfigure}[t]{0.5\linewidth}
-		\centering
-		\includegraphics[width=\linewidth]{conf_full}
-		\caption{Trained on all samples}
-	\end{subfigure}%
-	~ 
-	\begin{subfigure}[t]{0.5\linewidth}
-		\includegraphics[width=\linewidth]{conf_role}
-		\caption{Trained on role samples}
-	\end{subfigure}
-	\caption{Normalised aggregated confusion matrices for the model with different training sets}
-	\label{fig:confmatrix}
-\end{figure}
+Looking at the performance of the classification task itself, measured by the F1-Score, the EMB model has the smallest standard deviation across multiple runs of the evaluation.
+Since the embedding is trained on a significantly larger dataset, slight deviations in the input are tolerated.
+In the general case, this model might perform better than the others.
 
-It is interesting to note, that evaluating the classification model alone, the F1-Score is only around 0.49 ($\sigma=$0.17) when training on small subsets and 0.73 ($\sigma=$0.27) for the full set. \Fref{fig:confmatrix} clearly shows the difficulties, which appear to be a result of the bias towards relevant documents due to the imbalanced set.
+Combining the features did not produce an improved model. The soft-voted ensemble of all classifiers shows similar results as EMB and SYN alone.
 
-Training a model on text usually requires a reasonably large corpus. With the data at hand we had to pay close attention to the selection of features, since seemingly very specific terms are used, which likely negatively affacts the ability of the model to generalise to unseen samples.
 
+%\begin{figure}
+%	\begin{subfigure}[t]{0.5\linewidth}
+%		\centering
+%		\includegraphics[width=\linewidth]{conf_full}
+%		\caption{Trained on all samples}
+%	\end{subfigure}%
+%	~ 
+%	\begin{subfigure}[t]{0.5\linewidth}
+%		\includegraphics[width=\linewidth]{conf_role}
+%		\caption{Trained on role samples}
+%	\end{subfigure}
+%	\caption{Normalised aggregated confusion matrices for the model with different training sets}
+%	\label{fig:confmatrix}
+%\end{figure}
 %
+
+
 %\begin{table}
-%	\caption{Experimental results}
-%	\label{tab:freq}
-%	\begin{tabular}{lcccc}
+%	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features}, and ensemble (ENS)
+%	\label{tab:results}
+%	\begin{tabular}{lcc}
 %		\toprule
-%		Approach & NDCG & $\sigma ($NDCG$)$ & F1-score & $\sigma($F1-Score$)$\\
+%		Approach & NDCG & $\sigma ($NDCG$)$\\
 %		\midrule
-%		Baseline (random) & $0.87$ & $0.07$ & - & - \\
-%		Baseline (worst) & $0.73$ & $0.13$ & - & - \\
-%		full set, categorical & $0.97$ & $0.04$ & $0.73$ & $0.27$ \\
-%		role based, categorical & $0.92$ & $0.07$ & $0.49$ & $0.17$ \\
-%		full set, continuous & $0.98$ & $0.03$ & - & - \\
-%		role based, continuous & $0.93$ & $0.07$ & - & - \\
+%		Baseline (random) & 0.87 & 0.07\\
+%		Baseline (worst) & 0.73 & 0.13\\
+%		\midrule
+%		%F1 full 0.73 std=0.27
+%		%F1 role 0.49 std=0.17
+%		BOW, full set, categorical & 0.97 & 0.04 \\
+%		BOW, role based, categorical & 0.92 & 0.07  \\
+%		BOW, full set, continuous & \textbf{0.98} & 0.03 \\
+%		BOW, role based, continuous & 0.93 & 0.07 \\
+%		\midrule
+%		% F1 full 0.41 std=0.16
+%		% F1 role 0.38 std=0.21
+%		EMB, full set, categorical & 0.91 & 0.07 \\
+%		EMB, role based, categorical & 0.89 & 0.07  \\
+%		EMB, full set, continuous & 0.92 & 0.07 \\
+%		EMB, role based, continuous & 0.90 & 0.08 \\
+%		\midrule
+%		% F1 full 0.43 std=0.26
+%		% F1 role 0.39 std=0.26
+%		SYN, full set, categorical & 0.93 & 0.07 \\
+%		SYN, role based, categorical & 0.92 & 0.07  \\
+%		SYN, full set, continuous & 0.94 & 0.06 \\
+%		SYN, role based, continuous & 0.92 & 0.08 \\
+%		\midrule
+%		% F1 full 0.46 std=0.22
+%		% F1 role 0.39 std=0.20
+%		ENS, full set, categorical & 0.93 & 0.06 \\
+%		ENS, role based, categorical & 0.91 & 0.07  \\
+%		ENS, full set, continuous & 0.93 & 0.06 \\
+%		ENS, role based, continuous & 0.92 & 0.07 \\
 %		\bottomrule
 %	\end{tabular}
 %\end{table}
-%
