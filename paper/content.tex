@@ -10,25 +10,39 @@ Evaluating the credibility of a company is an important and complex task for fin
 When estimating the risk associated with a potential asset, analysts rely on large amounts of data from a variety of different sources, such as newspapers, stock market trends, and bank statements.
 Finding relevant information in mostly unstructured data is a tedious task and examining all sources by hand quickly becomes infeasible.
 
-An important aspect of risk management is the relations of a company of interest to other financial entities.
+An important aspect of risk management are the relations of a company of interest to other financial entities.
 Automatically extracting such relationships from unstructured text files, such as 10-K filings, significantly reduces the amount of manual work.
 Such structured knowledge enables experts to quickly gain insight into a company's relationship network.
 However, not all extracted relationships may be important in a given context.
-In this paper, we propose an approach to rank extracted relationships based on a text snippets, such that important information can be displayed more prominently.
+In this paper, we propose an approach to rank extracted relationships based on text snippets, such that important information can be displayed more prominently.
 %With our approach we are able to achieve an overall normalized discounted cumulative gain (NDCG) score of 0.98.
+
+% not only for companies relevant -> paper
 
 \section{Dataset}
 The dataset used for this work was provided in the context of the FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}}, which contains almost 1000 \emph{triples} extracted from 25 10-K and 10-Q filings, which describe a relationship (\emph{role}) between the \emph{filing company} and a \emph{mentioned financial entity}.
+The context a relation is appeared in the original filing, is given by text snippets of three sentences.
 Relationships are limited to ten predefined roles (see \fref{tab:roleresults}).
-Triples were labelled by experts according to their relevance from a business perspective as \emph{irrelevant}, \emph{neutral}, \emph{relevant}, or \emph{highly relevant}.
+Judging from their respective text snippets, triples were labelled by experts according to their relevance from a business perspective as \emph{irrelevant}, \emph{neutral}, \emph{relevant}, or \emph{highly relevant}.
 %Depending on the context, the relevance can be understood as an indicator for the potential impact a relationship might have on the business \textbf{business what? operations?} of the filing company. 
 
 {\setlength{\parindent}{0cm}
-\paragraph{\textbf{Inter Annotator Agreement}}
-The quality of the annotations is estimated using Cohen's Kappa ($\kappa\in [0,1]$), which quantifies the inter annotator agreement (IAA) between two experts.%\cite{ir}.
-Around 40\% of the triples were rated by more than one expert with a weighted average of $\overline{\kappa}=0.45$, which indicates a high level of disagreement.
-For our training and evaluation purposes we map the ratings to numerical values (1--4) and consider the average rating for each triple labelled by multiple experts.
+\paragraph{\textbf{Task Description}}
+The challenge is aimed to explore methods that automatically produce a ranking by relevance of triples with the same role.
+This complements last year's challenge to identify financial entities in free text\cite{dsmm16}.
 }
+
+{\setlength{\parindent}{0cm}
+\paragraph{\textbf{Inter Annotator Agreement}}
+The quality of the annotations is estimated using Cohen's Kappa\cite{ir} ($\kappa\in [0,1]$), which quantifies the inter annotator agreement (IAA) between two experts as shown in \fref{fig:iaa}.
+Around 40\% of the triples were rated by more than one expert with a weighted average of $\overline{\kappa}=0.45$, which indicates a high level of disagreement.
+For our training and evaluation purposes, we map the ratings to numerical values (1--4) and consider the discrete average rating for each triple labelled by multiple experts.
+}
+\begin{figure}[b]
+	\includegraphics[width=0.8\linewidth]{iaa}
+	\caption{$\kappa$ Inter Annotator Agreement (upper triangular matrix), number of commonly rated triples (lower triangular matrix), and number of ratings (diagonal matrix)}
+	\label{fig:iaa}
+\end{figure}
 
 %{\setlength{\parindent}{0cm}
 %\paragraph{\textbf{Additional Data}}
@@ -43,7 +57,7 @@ We rank the snippets for each role based on an ensemble of multi-class classifie
 The ensemble consists of three multi-class classifiers, all trained on different feature sets.
 Two classifier consist of four one-versus-rest logistic regression models trained on the experts' labels.
 The one-versus-rest logistic regression output probabilities of all four classifiers are fed into a softmax function to calculate a weighted ranking score.
-The third classifier is a random forrest model.
+The third classifier is a random forest model.
 The different models of the ensemble are based on different feature sets, namely \emph{bag-of-words} (BOW), \emph{embeddings} (EMB), and \emph{syntax features} (SYN).
 
 % classification model to produce score
@@ -56,7 +70,7 @@ The different models of the ensemble are based on different feature sets, namely
 
 Our first model uses a simple bag-of-words representation of the snippets to classify them.
 N-grams are extracted for $n=1$ to $3$ and are weighted based on information gain between the classes.
-In order to reduce the feature space and guard agains over-fitting, a filter removes the most and least frequent terms.
+In order to reduce the feature space and guard against over-fitting, a filter removes the most and least frequent terms.
 
 \begin{table*}[tb]
 	\caption{Averaged experimental results for each role using BOW}
@@ -72,30 +86,29 @@ In order to reduce the feature space and guard agains over-fitting, a filter rem
 	\end{tabular}
 \end{table*}
 
-\subsection{Word Embeddings}
+\subsection{Sentence Embeddings}
 Difficulties with previously unseen examples might arise from the limited training size.
 Word embeddings can alleviate this problem by representing words in a 50- to 300-dimensional vector space.
-These representations are learned by using usupervised deep learning.
+These representations are learned by using unsupervised deep learning.
 Internally, a neural network is trained to predict the following word in a sequence of words based on the word's context window. 
 
-We learned word embeddings\footnote{Using Gensim~\url{https://radimrehurek.com/gensim/models/doc2vec.html}} from 25 of the original full text filing documents containing 60k sentences (2m words).
-We use a window size of 10 and a paragraph vector of size 50 (approximately three sentences), which is trained for 30 epochs over the entire set.
+We learned paragraph embeddings\footnote{Using Gensim~\url{https://radimrehurek.com/gensim/models/doc2vec.html}} from 25 of the original full text filing documents containing 60k sentences (2m words).
+Previous research has shown, that such embeddings manage to outperform BOW approaches\cite{embeddings}. 
+We use a window size of 10 and a paragraph vector of size 50 (approximately three sentences), which is trained for 30 epochs over all filings.
+From the embedding, we induce a vector for each sentence in the text snippet associated with a triple and concatenate them.
 
 \subsection{Syntax Features}
 Additionally, to provide a language independent approach, we created a set of syntax-based features.
 Following the Gini impurity metric, features, such as the ratio of upper-case words and numbers, or the number of dollar signs and word repetitions, appear to be most meaningful for classification.
 In total we derived 25 features describing the number or presence of different syntactical characteristics.
 
-While a logit model is a good choice for BOW and EMB, it has shown unsatisfactory performances on syntax features.
-Therefore, we chose random forests, which perform significantly better in this case.
+In our experiments, a logit model has proven to be a good choice for BOW and EMB, but has shown unsatisfactory performances on syntax features.
+Therefore, we chose random forests, which perform much better in this case.
 
 \subsection{Ensemble}
 Each of the numerical representations and their resulting models have their strengths and weaknesses.
 For example, the language independence of SYN can tolerate a changing vocabulary to a certain extent, but misses the advantage to identify key phrases which may prove useful for classification.
 As a conclusion, we combined the three models by summing the individual predictions to form a soft vote.
-
-\section{Evaluation}
-
 \begin{table}[tb]
 	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features, and ensemble}
 	\label{tab:results}
@@ -113,8 +126,13 @@ As a conclusion, we combined the three models by summing the individual predicti
 		\bottomrule
 	\end{tabular}
 \end{table}
+\vfill\null
+%\columnbreak
+\section{Evaluation}
 
-The system's performance is measured by normalised discounted cumulative gain (NDCG).%\cite{ir}.
+
+
+The system's performance is measured by normalised discounted cumulative gain (NDCG)\cite{ir}.
 We perform 5-fold cross-validation (5-fold-cv).
 \Fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$).
 For comparison, we consider a baseline of the worst possible ranking (inverse order of the ideal ranking) and the average of multiple random rankings.
@@ -122,18 +140,17 @@ The BOW model performed best in our experiments, the EMB and SYN models show sim
 Training a model on text usually requires a reasonably large corpus.
 With the data at hand we had to pay close attention to the feature selection, since seemingly very specific terms are likely to negatively affect the model's ability to classify unseen samples.
 Looking at the performance of the classification task itself (measured by the F1-Score) the EMB model has the smallest standard deviation across multiple runs of the evaluation.
-Combining different text represenations did not produce an improved model on this limited set of data.
+Combining different text representations did not produce an improved model on this limited set of data.
 The soft-voted ensemble of all classifiers shows similar results as EMB and SYN alone.
 
 \section{Conclusion}
-
 Overall, we managed to achieve very good NDCG scores of around 0.98 using a BOW model.
 However, with the limited amount of data at hand, concerns about the ability to generalise to unseen samples that deviate from the vocabulary can not be fully eliminated.
 We assume EMB may be more robust to such changes, since the underlying word embeddings are trained on a significantly larger set of text and is able to reflect phrase similarities.
 A comparison of the standard deviation of the F1-Scores of 0.27 and 0.17 respectively, supports this assumption.
 
 For future work we are interested in additional external data, e.g. the impact of a business relationship may be judged by comparing revenues of the involved companies.
-Thus, triples could be enriched by adding the (historical) revenue of the two involved financial entities. 
+Thus, triples could be enriched by adding (historical) revenue of the two involved financial entities. 
 
 
 
