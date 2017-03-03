@@ -8,18 +8,6 @@
 
 PACKAGE=acmart
 
-SAMPLES = \
-	sample-manuscript.tex \
-	sample-acmsmall.tex \
-	sample-acmlarge.tex \
-	sample-acmtog.tex \
-	sample-sigconf.tex \
-	sample-siggraph.tex \
-	sample-sigplan.tex \
-	sample-sigchi.tex \
-	sample-sigchi-a.tex 
-
-
 PDF = $(PACKAGE).pdf ${SAMPLES:%.tex=%.pdf} acmguide.pdf
 
 all:  ${PDF}
@@ -46,23 +34,13 @@ acmguide.pdf: $(PACKAGE).dtx $(PACKAGE).cls
 %.cls:   %.ins %.dtx  
 	pdflatex $<
 
-%.pdf:  %.tex   $(PACKAGE).cls ACM-Reference-Format.bst
+%.pdf:  %.tex content.tex  $(PACKAGE).cls ACM-Reference-Format.bst
 	pdflatex $<
 	- bibtex $*
 	pdflatex $<
 	pdflatex $<
 	while ( grep -q '^LaTeX Warning: Label(s) may have changed' $*.log) \
 	do pdflatex $<; done
-
-sample-manuscript.pdf \
-sample-acmsmall.pdf \
-sample-acmlarge.pdf \
-sample-acmtog.pdf: samplebody-journals.tex
-
-sample-sigconf.pdf \
-sample-siggraph.pdf \
-sample-sigplan.pdf \
-sample-sigchi.pdf: samplebody-conf.tex
 
 
 .PRECIOUS:  $(PACKAGE).cfg $(PACKAGE).cls
