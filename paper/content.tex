@@ -39,17 +39,11 @@ For our training and evaluation purposes we map the ratings to numerical values 
 %}
 
 \section{Our Approach}
-We use logistic regression to generate a ranking for the sentences a particular triple was found in.
-%This ranking reflects the relevance of a sentence with respect to the imminence of business implications.
-The ranking is obtained by classifying the sentences as relevant or irrelevant and rank them based on the output probability for the relevant class.
-We trained three models with different features.
-Then we combined the three models to form an ensemble to classify the snippets.
-The logit models in the ensemble performs a one-vs-rest classification for each respective category.
-The predictions of the model return a softmax confidence score for each category, from which the weighted sum is taken as the ranking score.
-
-%For some roles, the number of samples is to small to train a reasonable model.
-%It was found, that training on the entire set, disregarding the roles, results in similar or even better performance.
-
+We rank the snippets for each role based on an ensemble of multi-class classifiers.
+The ensemble consists of three multi-class classifiers, all trained on different feature sets.
+Two classifier consist of four one-versus-rest logistic regression models trained on the experts' labels.
+The one-versus-rest logistic regression output probabilities of all four classifiers are fed into a softmax function to calculate a weighted ranking score.
+The third classifier is a random forrest model.
 The different models of the ensemble are based on different feature sets, namely \emph{bag-of-words} (BOW), \emph{embeddings} (EMB), and \emph{syntax features} (SYN).
 
 % classification model to produce score
@@ -59,18 +53,12 @@ The different models of the ensemble are based on different feature sets, namely
 % 3 subsections describing each
 
 \subsection{Bag-of-Words}
-The bag-of-words representation uses a predefined dictionary.
-A sentence is represented by a vector of the dimensionality of the dictionary.
-The presence of a word is indicated by a non-zero value corresponding to its index in the dictionary.
-To emphasise words most meaningful for category distinction, the inverse document frequency (IDF) is calculated by virtually putting all texts with the same rating in one ``document''. 
-Each sentence then is encoded as a bag-of-words vector where the respective positions contain the IDF weighted by the corresponding term frequency in the sentence.
 
-In order to reduce the feature space, a filter removes the most and least frequent terms.
-This also limits the chance of over-fitting the model due to sparse terms.
+Our first model uses a simple bag-of-words representation of the snippets to classify them.
+N-grams are extracted for $n=1$ to $3$ and are weighted based on information gain between the classes.
+In order to reduce the feature space and guard agains over-fitting, a filter removes the most and least frequent terms.
 
-This encoding does not represent phrases, which may loose their meaning when only considering their terms individually.
-Thus, the dictionary is created using n-grams of length one to three from the lemmatised tokens in the training set.
-\begin{table*}
+\begin{table*}[tb]
 	\caption{Averaged experimental results for each role using BOW}
 	\label{tab:roleresults}
 	\begin{tabular}{lcccccccccc}
@@ -78,48 +66,37 @@ Thus, the dictionary is created using n-grams of length one to three from the le
 		& affiliate & agent & counterpart & guarantor & insurer & issuer & seller & servicer & trustee & underwriter \\
 		\midrule
                \# samples        & 185  & 61   & 64   & 34   & 19   & 129  & 20   & 21   & 420  & 21   \\
-               NDCG (5fold-CV)   & 0.97 & 0.97 & 0.93 & 0.97 & 0.99 & 0.92 & 1.0  & 0.98 & 0.99 & 1.0  \\
+               NDCG (5-fold-cv)   & 0.97 & 0.97 & 0.93 & 0.97 & 0.99 & 0.92 & 1.0  & 0.98 & 0.99 & 1.0  \\
                Baseline (random) & 0.86 & 0.81 & 0.84 & 0.96 & 0.97 & 0.75 & 0.96 & 0.93 & 0.88 & 0.96 \\
 		\bottomrule
 	\end{tabular}
 \end{table*}
 
-\subsection{Embedding}
-Difficulties with previously unseen examples might arise from the limited size of the dictionary for the BOW.
-Previous research has shown, that doc2vec embeddings manage to outperform BOW approaches.
-Therefore, we created a embedding from 25 of the original full text filings on a sentence basis using the Gensim\footnote{\url{https://radimrehurek.com/gensim/models/doc2vec.html}} implementation.
+\subsection{Word Embeddings}
+Difficulties with previously unseen examples might arise from the limited training size.
+Word embeddings can alleviate this problem by representing words in a 50- to 300-dimensional vector space.
+These representations are learned by using usupervised deep learning.
+Internally, a neural network is trained to predict the following word in a sequence of words based on the word's context window. 
 
-Such an embedding uses unsupervised deep learning. 
-Internally, the neural network is trained to predict the following word to a sequence of words. 
-The length of the sequence has a fixed length, which is compensated by an additional paragraph matrix, implicitly acting as a memory of the context.
-After multiple iterations of training, this matrix can be used to induce fixed size, dense vectors for text of variable length by representing its context.
-
-We use a window size of 10 and a paragraph vector of size 50, which is trained for 30 epochs over the entire set containing 60k sentences (2M words).
-The representation for our classifier is construced by inducing a vector for each of the three sentences in a sample are concatenating them.
-If necessary, the resulting vector is padded or truncated, since in some cases, there are more or less than three sentences.
+We learned word embeddings\footnote{Using Gensim~\url{https://radimrehurek.com/gensim/models/doc2vec.html}} from 25 of the original full text filing documents containing 60k sentences (2m words).
+We use a window size of 10 and a paragraph vector of size 50 (approximately three sentences), which is trained for 30 epochs over the entire set.
 
 \subsection{Syntax Features}
-Lastly, to provide a language independent approach, we created a selection of syntax-based features.
-Following the gini impurity metric, features like the ratio of upper-case words and numbers or the number of dollar signs and word repetitions appear to be most meaningful for classification.
+Additionally, to provide a language independent approach, we created a set of syntax-based features.
+Following the Gini impurity metric, features, such as the ratio of upper-case words and numbers, or the number of dollar signs and word repetitions, appear to be most meaningful for classification.
 In total we derived 25 features describing the number or presence of different syntactical characteristics.
 
 While a logit model is a good choice for BOW and EMB, it has shown unsatisfactory performances on syntax features.
-Random forests, on the other hand, have shown promising results in this case.
-They are not applied to BOW, as they potentially are more prone to favouring a small number of n-grams and thus won't generalise well.
+Therefore, we chose random forests, which perform significantly better in this case.
 
 \subsection{Ensemble}
-Each of the numerical representations and their resulting model have their strengths and weaknesses.
-For example, the language independence of SYN can tolerate a changing vocabulary to an extent, but misses the advantage to identify key phrases which may prove useful for classification.
-Thus, combining them through concatenation provides more information to a classifier.
-However, more features lead to noise in the data, which hinders efficient training or even prevents its convergence.
-
-Better results were achieved by keeping the input spaces separate and fitting individual models.
-Predictions of each model are summed together to a soft vote.
+Each of the numerical representations and their resulting models have their strengths and weaknesses.
+For example, the language independence of SYN can tolerate a changing vocabulary to a certain extent, but misses the advantage to identify key phrases which may prove useful for classification.
+As a conclusion, we combined the three models by summing the individual predictions to form a soft vote.
 
 \section{Evaluation}
 
-The system's performance is measured by the Normalised Discounted Cumulative Gain (NDCG).%\cite{ir}.
-\begin{table}[H]
+\begin{table}[tb]
 	\caption{Experimental results for bag-of-words (BOW), embedding (EMB), syntax (SYN) features, and ensemble}
 	\label{tab:results}
 	\begin{tabular}{lcccc}
@@ -136,33 +113,27 @@ The system's performance is measured by the Normalised Discounted Cumulative Gai
 		\bottomrule
 	\end{tabular}
 \end{table}
-For the cross-evaluation, the labelled samples are split into a training and test set.
-Triples in those sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified.
-For each the five cross evaluation (5fold-CV) passes, samples are reassigned to different sets.
-Models are trained on the training set as described in the sections above.
-The performance is measured for samples of each role respectively by calculating the NDCG that results from the calculated ranking score and F1-Score, which indicates the quality of underlying classifiers.
 
+The system's performance is measured by normalised discounted cumulative gain (NDCG).%\cite{ir}.
+We perform 5-fold cross-validation (5-fold-cv).
 \Fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$).
 For comparison, we consider a baseline of the worst possible ranking (inverse order of the ideal ranking) and the average of multiple random rankings.
-
 The BOW model performed best in our experiments, the EMB and SYN models show similar results. 
 Training a model on text usually requires a reasonably large corpus.
 With the data at hand we had to pay close attention to the feature selection, since seemingly very specific terms are likely to negatively affect the model's ability to classify unseen samples.
-
-Looking at the performance of the classification task itself, measured by the F1-Score, the EMB model has the smallest standard deviation across multiple runs of the evaluation.
-
-Combining different text represenations did not produce an improved model.
+Looking at the performance of the classification task itself (measured by the F1-Score) the EMB model has the smallest standard deviation across multiple runs of the evaluation.
+Combining different text represenations did not produce an improved model on this limited set of data.
 The soft-voted ensemble of all classifiers shows similar results as EMB and SYN alone.
 
 \section{Conclusion}
-Overall, we managed to achieve very good NDCG scores of around 0.98 using a BOW model.
-However, with the limited amount of data at hand, concerns about the ability to generalise to unseen samples that diviate from the vocabulary can not be fully eliminated.
-We assume BOW may be more robust to such changes, since the underlying word embedding is trained on a significantly larger set of text and is able to reflect phrase similarities.
-A comparison of the standard deviation of the F1-Scores of 0.27 and 0.17, respectively, supports this assumption.
 
-The impact of a relationship on business perspectives of a company may also be judged by comparing revenues.
-For example, the (new) relationship of a small company to a high-valued company may indicate future growth.
-Thus, in future work, triples could be enriched by adding the (historical) revenue of two involved financial entities. 
+Overall, we managed to achieve very good NDCG scores of around 0.98 using a BOW model.
+However, with the limited amount of data at hand, concerns about the ability to generalise to unseen samples that deviate from the vocabulary can not be fully eliminated.
+We assume EMB may be more robust to such changes, since the underlying word embeddings are trained on a significantly larger set of text and is able to reflect phrase similarities.
+A comparison of the standard deviation of the F1-Scores of 0.27 and 0.17 respectively, supports this assumption.
+
+For future work we are interested in additional external data, e.g. the impact of a business relationship may be judged by comparing revenues of the involved companies.
+Thus, triples could be enriched by adding the (historical) revenue of the two involved financial entities. 
 
 
 
