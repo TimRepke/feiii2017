@@ -7,12 +7,11 @@
 % what changed? more data. + availability
 
 Evaluating the credibility of a company is an important and complex task for financial experts.
-When estimating the risk of a potential transaction, analysts rely on large amounts of data from a variety of different sources, like newspapers, stock market trends and bank statements.
-Finding relevant information in mostly unstructured data is a tedious task and examining all sources is virtually impossible.
+When estimating the risk associated with a potential asset, analysts rely on large amounts of data from a variety of different sources, like newspapers, stock market trends and bank statements.
+Finding relevant information in mostly unstructured data is a tedious task and examining all sources by hand quickly becomes infeasible.
 
 An important aspect are the relations of a company of interest to other financial entities.
-Such relations can be automatically extracted from large corpora of unstructured text\cite{entityextraction} like 10-K filings.
-This can help to significantly reduce the amount of data
+Automatically extracting such relationships from large corpora of unstructured text\cite{entityextraction} like 10-K filings significantly reduces the amount of data.
 %The structured knowledge can be presented to experts in a more meaningful way, so they can quickly gain insight into a company's relationship network.
 Such structured knowledge enables experts to quickly gain insight into a company's relationship network.
 
@@ -82,9 +81,9 @@ Thus, the dictionary is created using n-grams of length one to threen from lemma
 		\toprule
 		& affiliate & agent & counterpart & guarantor & insurer & issuer & seller & servicer & trustee & underwriter \\
 		\midrule
-		\# samples & 186       & 61    & 64          & 34        & 19      & 129    & 20     & 21       & 420     & 21          \\
-		NDCG & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
-		Baseline (random) & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+		\# samples        & 185  & 61   & 64   & 34   & 19   & 129  & 20   & 21   & 420  & 21   \\
+		NDCG (5fold-CV)   & 0.97 & 0.97 & 0.93 & 0.97 & 0.99 & 0.92 & 1.0  & 0.98 & 0.99 & 1.0  \\
+		Baseline (random) & 0.86 & 0.81 & 0.84 & 0.96 & 0.97 & 0.75 & 0.96 & 0.93 & 0.88 & 0.96 \\
 		\bottomrule
 	\end{tabular}
 \end{table*}
@@ -142,9 +141,9 @@ The system's performance is measured by the Normalised Discounted Cumulative Gai
 		\bottomrule
 	\end{tabular}
 \end{table}
-For the cross-evaluation, the labelled samples are split into a training (70\%) and test set (30\%).
+For the cross-evaluation, the labelled samples are split into a training and test set.
 Triples in those sets do not share the filings they were extracted from and the distribution of ratings is roughly stratified.
-For each the five cross evaluation passes, samples are reassigned to different sets.
+For each the five cross evaluation (5fold-CV) passes, samples are reassigned to different sets.
 Models are trained on the training set as described in the sections above.
 The performance is measured for samples of each role respectively by calculating the NDCG that results from the calculated ranking score and F1-Score, which indicates the quality of underlying classifiers.
 
