@@ -67,55 +67,54 @@ _params = {
 
 
 class FeiiiPipeline:
-    def __init__(self, pipln, embedding=None, params=None):
+    def __init__(self, nlp, pipln='all', embedding=None, params=None):
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
         self.params = _params if params is None else params
 
-        line = []
-        for classifier, features in pipln:
-            if type(features) == list:
-                features = [self._pick_features(f, embedding) for f in features]
-            else:
-                features = self._pick_features(features, embedding)
-            line.append(self._union_skeleton(features, self._pick_classifier(classifier)))
+        if pipln == 'all':
+            self.tfidf = TfidfTransformer(**self.params['tt'])
+            line = [
+                ('union', FeatureUnion(
+                    transformer_list=[
+                        ('emb', Pipeline([
+                            ('emb', ft.Embedder(nlp, embedding))
+                        ])),
+                        ('syntax', Pipeline([
+                            ('feats', ft.SyntaxFeatures()),
+                        ])),
+                        ('bow', Pipeline([
+                            ('lem', ft.Lemmatiser(nlp)),
+                            ('vect', CountVectorizer(**self.params['cv'])),
+                            ('tfidf', self.tfidf)
+                        ]))
+                    ],
+                    transformer_weights={
+                        'syntax': 1,
+                        'bow': 1
+                    },
+                )),
+                # ('clf', SGDClassifier(**self.params['svm']))
+                ('clf', SGDClassifier(**self.params['logit']))
+                # ('clf', RandomForestClassifier(**self.params['rf']))
+            ]
+        if pipln == 'syn':
+            line = [
+                ('feats', ft.SyntaxFeatures()),
+                ('clf', RandomForestClassifier(**self.params['rf']))
+            ]
 
-        self.pipeline = Pipeline(self._voting_skeleton(line))
-
-    def get(self):
-        return self.pipeline
-
-    def _pick_classifier(self, clf_name):
-        if clf_name == 'logit':
-            return 'clf', SGDClassifier(**self.params['logit'])
-        if clf_name == 'svm':
-            return 'clf', SVC(**self.params['svm'])
-        return 'clf', RandomForestClassifier(**self.params['rf'])
+        self.pipeline = Pipeline(line)
 
     def _voting_skeleton(self, pipln):
-        return [
-            ('clf', VotingClassifier(voting='soft',
-                                     # weights=[1,2,3],
-                                     estimators=pipln))
-        ]
+        return 'vote', VotingClassifier(voting='soft',
+                                        # weights=[1,2,3],
+                                        estimators=pipln)
 
     def _union_skeleton(self, features, classifier):
-        return [
-            ('union', FeatureUnion(
-                transformer_list=features,
-                # transformer_weights={'syn': 1, 'bow':1, 'emb':1}
-            )),
-            classifier
-        ]
-
-    def _pick_features(self, feat_name, embedding=None):
-        if feat_name == 'emb':
-            return [('emb', ft.Embedder(embedding))]
-        if feat_name == 'bow':
-            self.tfidf = TfidfTransformer(**self.params['tt'])
-            return [('lem', ft.Lemmatiser()),
-                    ('vect', CountVectorizer(**self.params['cv'])),
-                    ('tfidf', self.tfidf)]
-        return [('feats', ft.SyntaxFeatures())]
+        return ('union', FeatureUnion(
+            transformer_list=features,
+            # transformer_weights={'syn': 1, 'bow':1, 'emb':1}
+        )), classifier
 
     def get_vocabulary(self):
         if self.tfidf:
@@ -161,4 +160,3 @@ class FeiiiPipeline:
             return pred.argmax(axis=1), pred
         except AttributeError:
             return pred
-

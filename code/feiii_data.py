@@ -3,11 +3,8 @@ import os
 import pandas as pd
 import re
 import numpy as np
-import spacy
 
 from feiii_experiment import ndcg2
-
-nlp = spacy.load('en')
 
 
 def avg2rating(rating_avg):
@@ -25,11 +22,14 @@ def avg2rating(rating_avg):
 
 class DataHolder:
     def __init__(self,
+                 nlp,
                  traindir='/home/tim/Uni/HPI/workspace/FEII/Training/',
                  testfile='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing.csv',
                  eval_docs=2):
+        self.nlp = nlp
 
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
+        self.ratingmap_verbose = {'Irrelevant': 0, 'Neutral': 1, 'Relevant': 2, 'Highly relevant': 3}
 
         self.train_full = self._load_trainframe(traindir)
         self.train_full = self._prepare_frame(self.train_full)
@@ -41,7 +41,7 @@ class DataHolder:
         self.test = self._prepare_frame(pd.read_csv(testfile, index_col=None))
 
     def get_roles(self):
-        return list(set(self.train['grp']))
+        return list(set(self.train_full['grp']).union(set(self.test['grp'])))
 
     def set_train_eval(self, eval_samples):
         self.train = self.train_full[~self.train_full['SOURCE'].isin(eval_samples)]
@@ -62,12 +62,12 @@ class DataHolder:
         return frm
 
     def _prepare_frame(self, frm):
+        frm = self._adjust_ratings(frm)
         frm['grp'] = frm['ROLE'].map(lambda x: re.sub("(ies|y|s)$", "", x)).str.lower()
 
-        frm['SOURCE'] = [r['FILER_CIK'] + '-' + r['FILING_INTERVAL'] for r in frm.iterrows()]
+        frm['SOURCE'] = [str(r['FILER_CIK']) + '-' + str(r['FILING_INTERVAL']) for i, r in frm.iterrows()]
 
         frm = self._lemmatise(frm)
-        frm = self._adjust_ratings(frm)
 
         return frm
 
@@ -76,7 +76,7 @@ class DataHolder:
         for doc, row in frm.iterrows():
             tmp = []
             text = row['THREE_SENTENCES']
-            for token in nlp(text):
+            for token in self.nlp(text):
                 if not (token.like_num or
                             token.is_stop or
                             token.is_space or
@@ -94,7 +94,7 @@ class DataHolder:
         rats = []
         mins = []
         maxs = []
-        for n, row in frm.replace(to_replace=self.ratingmap).filter(regex=("RATING")).iterrows():
+        for n, row in frm.replace(to_replace=self.ratingmap_verbose).filter(regex=("RATING")).iterrows():
             cnt = 0
             s = -1
             for k, v in row.to_dict().items():
@@ -164,29 +164,36 @@ class DataHolder:
         plt.legend((p0[0], p1[0], p2[0], p3[0]), ('irrelevant', 'neutral', 'relevant', 'highly'))
         plt.show()
 
-    def short_setinfo(self):
-        print('Items in training set:', len(self.train),
-              '({:.2f}%)'.format(len(self.train) / (len(self.train) + len(self.eval)) * 100))
-        print('Items in eval set:', len(self.eval))
-        print('Items in test set:', len(self.test))
-        print(' =', len(self.train) + len(self.eval) + len(self.test))
+    def short_setinfo(self, group=None):
+        train = self.get_frame('train', group=group)
+        eval = self.get_frame('eval', group=group)
+        test = self.get_frame('test', group=group)
+        print('Items in training set:', len(train),
+              '({:.2f}%)'.format(len(train) / (len(train) + len(eval)) * 100))
+        print('Items in eval set:', len(eval))
+        print('Items in test set:', len(test))
+        print(' =', len(train) + len(eval) + len(test))
 
-        a = len(set(self.train['SOURCE']))
-        b = len(set(self.eval['SOURCE']))
-        c = len(set(self.test['SOURCE']))
+        a = len(set(train['SOURCE']))
+        b = len(set(eval['SOURCE']))
+        c = len(set(test['SOURCE']))
         print('Number of source documents:', a + b + c, 'total,', a, 'train,', b, 'eval', c, 'test')
 
-        rating_agg = self._get_rating_agg(self.train)
+        rating_agg = self._get_rating_agg(train)
         print('Absolute (training): IR {:.2f}, N {:.2f}, R {:.2f}, HR {:.2f}'.format(*rating_agg.sum(axis=1)))
         print('Relative (training): IR {:.2f}, N {:.2f}, R {:.2f}, HR {:.2f}'.format(*rating_agg.sum(axis=1) /
                                                                                       rating_agg.sum()))
+        rating_agg = self._get_rating_agg(eval)
+        print('Absolute (eval): IR {:.2f}, N {:.2f}, R {:.2f}, HR {:.2f}'.format(*rating_agg.sum(axis=1)))
+        print('Relative (eval): IR {:.2f}, N {:.2f}, R {:.2f}, HR {:.2f}'.format(*rating_agg.sum(axis=1) /
+                                                                                  rating_agg.sum()))
 
-        for grp in set(self.train['grp']):
+        for grp in set(train['grp']):
             print('Role samples for {} in train: {}, eval: {}, test: {}'.format(
                 grp.upper(),
-                len(self.train[self.train['grp'] == grp]),
-                len(self.eval[self.eval['grp'] == grp]),
-                len(self.test[self.test['grp'] == grp])))
+                len(train[train['grp'] == grp]),
+                len(eval[eval['grp'] == grp]),
+                len(test[test['grp'] == grp])))
 
             # for e in ['RATING_EXPERT_1', 'RATING_EXPERT_2', 'RATING_EXPERT_3', 'RATING_EXPERT_4', 'RATING_EXPERT_5',
             #           'RATING_EXPERT_6', 'RATING_EXPERT_7', 'RATING_EXPERT_1.1', 'RATING_EXPERT_9', 'RATING_EXPERT_10']:

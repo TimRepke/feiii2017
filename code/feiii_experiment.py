@@ -10,6 +10,10 @@ import numpy as np
 import pandas as pd
 import logging
 
+import warnings
+from sklearn.exceptions import UndefinedMetricWarning
+warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
+
 # forward mapping
 # rating_map = {'Irrelevant':0.0, 'Neutral': 0.4, 'Relevant':0.75, 'Highly relevant': 1.0}
 rating_map = {'Irrelevant': 0, 'Neutral': 0, 'Relevant': 1, 'Highly relevant': 2}
@@ -74,7 +78,10 @@ def ndcg2(frame, scoring, p=None):
     return ndcg_np(scored, ideal, p)
 
 
-def evaluate(n_folds, data, pipeline_generator):
+def kfold(n_folds, data, pipeline_generator, max_docs=3):
+    n_leaveout_docs = min(max_docs, max(1, int(len(data.files) / n_folds)))
+    print('Leaving {} docs out per fold'.format(n_leaveout_docs))
+
     conf_matrix_role = np.zeros((4, 4))
     conf_matrix_full = np.zeros((4, 4))
 
@@ -98,113 +105,156 @@ def evaluate(n_folds, data, pipeline_generator):
         'ndcg_full_proba': [],
     }
 
-    n_leaveout_docs = min(1, int(data.files / n_folds))
-    print('Leaving {} docs out per fold'.format(n_leaveout_docs))
-
     for crosseval in range(n_folds):
-
         print("\n\n==========================================================================")
         print("===                      CROSSEVAL ITERATION " + str(crosseval + 1) + "/" + str(
             n_folds) + "                     =====")
         print("==========================================================================\n\n")
 
-        scores_role = []
-        scores_full = []
-        scores_role_proba = []
-        scores_full_proba = []
-
         data.set_train_eval(data.files[(n_leaveout_docs * crosseval):(n_leaveout_docs * crosseval) + n_leaveout_docs])
 
-        models = {role: pipeline_generator() for role in data.get_roles()}
+        _, _, cvres, cvmacro_res, cvconf_matrix_role, cvconf_matrix_full = evaluate(data,
+                                                                                    pipeline_generator,
+                                                                                    aggregate_baseline=False)
+        for key in res.keys():
+            res[key] += cvres[key]
+        for key in macro_res.keys():
+            res[key] += cvmacro_res[key]
+        conf_matrix_role += cvconf_matrix_role
+        conf_matrix_full += cvconf_matrix_full
 
-        fullmodel = pipeline_generator()
-        fullmodel.fit(data.train, data.get_target(frm='train', group=None))
+    res['baseline_rand'] = np.mean(res['baseline_rand'], axis=1)
+    return res, macro_res, conf_matrix_role, conf_matrix_full
 
-        # run evaluation for each role
-        for role, model in models.items():
-            print('=== ' + role.upper() + ' ======')
-            grp = None if role == 'full' else role
-            bl1, bl2 = data.establish_baseline(grp=grp, include_eval=True,
-                                               include_test=False, include_train=False)
-            res['baseline_rand'].append(bl2)
-            res['baseline_worst'].append(bl1)
 
-            model.fit(data.get_frame(frm='train', group=grp), data.get_target(frm='train', group=grp))
+def evaluate(data, pipeline_generator, aggregate_baseline=True):
+    conf_matrix_role = np.zeros((4, 4))
+    conf_matrix_full = np.zeros((4, 4))
 
-            eval_target = data.get_target(frm='eval', group=grp)
-            eval_data = data.get_frame(frm='eval', group=grp)
+    # holer for stats
+    res = {
+        'baseline_rand': [],
+        'baseline_worst': [],
+        'ndcg_role': [],
+        'ndcg_full': [],
+        'ndcg_role_proba': [],
+        'ndcg_full_proba': [],
+        'acc_role': [],
+        'acc_full': [],
+        'f1_role': [],
+        'f1_full': []
+    }
+    macro_res = {
+        'ndcg_role': [],
+        'ndcg_full': [],
+        'ndcg_role_proba': [],
+        'ndcg_full_proba': [],
+    }
 
-            # get predictions from model trained on role
-            pred_role, pred_proba_role = model.predict(eval_data)
+    scores_role = []
+    scores_full = []
+    scores_role_proba = []
+    scores_full_proba = []
 
-            # get predictions from model trained on all
-            pred_full, pred_proba_full = fullmodel.predict(eval_data)
+    data.short_setinfo()
+    models = {role: pipeline_generator() for role in data.get_roles()}
 
-            score_role = np.sum(pred_proba_role * np.array([1, 2, 4, 5]), axis=1)
-            score_full = np.sum(pred_proba_full * np.array([1, 2, 4, 5]), axis=1)
+    fullmodel = pipeline_generator()
+    fullmodel.fit(data.get_frame(frm='train', group=None), data.get_target(frm='train', group=None))
 
-            # calculate accuracy
-            res['acc_role'].append(np.mean(pred_role == eval_target))
-            print('Accuracy | role :', np.mean(pred_role == eval_target))
-            res['acc_full'].append(np.mean(pred_full == eval_target))
-            print('Accuracy | full :', np.mean(pred_full == eval_target))
+    # run evaluation for each role
+    for role, model in models.items():
+        print('=== ' + role.upper() + ' ======')
+        grp = role
+        data.short_setinfo(group=role)
+        bl1, bl2 = data.establish_baseline(grp=grp, include_eval=True,
+                                           include_test=False, include_train=False)
+        res['baseline_rand'].append(bl2)
+        res['baseline_worst'].append(bl1)
 
-            _, _, f1, supp = precision_recall_fscore_support(eval_target, pred_full, labels=[0, 1, 2, 3])
-            res['f1_full'].append((f1 * supp).sum() / supp.sum())
-            _, _, f1, supp = precision_recall_fscore_support(eval_target, pred_role, labels=[0, 1, 2, 3])
-            res['f1_role'].append((f1 * supp).sum() / supp.sum())
+        model.fit(data.get_frame(frm='train', group=grp), data.get_target(frm='train', group=grp))
 
-            # print classification report
-            print(metrics.classification_report(eval_target, pred_full,
-                                                labels=[0, 1, 2, 3],
-                                                target_names=list(rating_map2.keys())))
+        eval_target = data.get_target(frm='eval', group=grp)
+        eval_data = data.get_frame(frm='eval', group=grp)
 
-            # print confusion matrix
-            conf_matrix_role += np.array(metrics.confusion_matrix(eval_target, pred_role, labels=[0, 1, 2, 3]))
-            cm = metrics.confusion_matrix(eval_target, pred_full, labels=[0, 1, 2, 3])
-            conf_matrix_full += np.array(cm)
-            print(cm)
-            # print(metrics.confusion_matrix(testtarget, pred_full, labels=[0,1,2,3]))
+        if len(eval_data) < 1:
+            print('WARNING!!! SKIPPING EVALUATION!! No eval samples...')
+            continue
 
-            # add scores to full list
-            score_role_tmp = list(zip(list(eval_data.index), pred_role))
-            scores_role += score_role_tmp
-            score_full_tmp = list(zip(list(eval_data.index), pred_full))
-            scores_full += score_full_tmp
+        # get predictions from model trained on role
+        pred_role, pred_proba_role = model.predict(eval_data)
 
-            # add scores based on probability to full list
-            score_role_proba_tmp = list(zip(list(eval_data.index), score_role))
-            scores_role_proba += score_role_proba_tmp
-            score_full_proba_tmp = list(zip(list(eval_data.index), score_full))
-            scores_full_proba += score_full_proba_tmp
+        # get predictions from model trained on all
+        pred_full, pred_proba_full = fullmodel.predict(eval_data)
 
-            # add NDCG to results
-            res['ndcg_role'].append(ndcg2(eval_data, score_role_tmp))
-            res['ndcg_role_proba'].append(ndcg2(eval_data, score_role_proba_tmp))
-            res['ndcg_full'].append(ndcg2(eval_data, score_full_tmp))
-            res['ndcg_full_proba'].append(ndcg2(eval_data, score_full_proba_tmp))
+        score_role = np.sum(pred_proba_role * np.array([1, 2, 4, 5]), axis=1)
+        score_full = np.sum(pred_proba_full * np.array([1, 2, 4, 5]), axis=1)
 
-            # echo results
-            print('> NDCG Score | role | categ  | {:.5f}'.format(ndcg2(eval_data, score_role_tmp)))
-            print('> NDCG Score | role | proba* | {:.5f}'.format(ndcg2(eval_data, score_role_proba_tmp)))
-            print('> NDCG Score | full | categ  | {:.5f}'.format(ndcg2(eval_data, score_full_tmp)))
-            print('> NDCG Score | full | proba* | {:.5f}'.format(ndcg2(eval_data, score_full_proba_tmp)))
+        # calculate accuracy
+        res['acc_role'].append(np.mean(pred_role == eval_target))
+        print('Accuracy | role :', np.mean(pred_role == eval_target))
+        res['acc_full'].append(np.mean(pred_full == eval_target))
+        print('Accuracy | full :', np.mean(pred_full == eval_target))
 
-        # echo results of NDCG for entire set
-        tmp = ndcg2(data.get_frame(frm='train', group=None).loc[[k for k, v in scores_role]], scores_role)
-        macro_res['ndcg_role'].append(tmp)
-        print('TOTAL NDCG | role | categ  | {:.5f}'.format(tmp))
+        _, _, f1, supp = precision_recall_fscore_support(eval_target, pred_full, labels=[0, 1, 2, 3])
+        res['f1_full'].append((f1 * supp).sum() / supp.sum())
+        _, _, f1, supp = precision_recall_fscore_support(eval_target, pred_role, labels=[0, 1, 2, 3])
+        res['f1_role'].append((f1 * supp).sum() / supp.sum())
 
-        tmp = ndcg2(data.get_frame(frm='train', group=None).loc[[k for k, v in scores_role_proba]], scores_role_proba)
-        macro_res['ndcg_role_proba'].append(tmp)
-        print('TOTAL NDCG | role | proba* | {:.5f}'.format(tmp))
+        # print classification report
+        print(metrics.classification_report(eval_target, pred_full,
+                                            labels=[0, 1, 2, 3],
+                                            target_names=list(rating_map2.keys())))
 
-        tmp = ndcg2(data.get_frame(frm='train', group=None).loc[[k for k, v in scores_full]], scores_full)
-        macro_res['ndcg_full'].append(tmp)
-        print('TOTAL NDCG | full | categ  | {:.5f}'.format(tmp))
+        # print confusion matrix
+        conf_matrix_role += np.array(metrics.confusion_matrix(eval_target, pred_role, labels=[0, 1, 2, 3]))
+        cm = metrics.confusion_matrix(eval_target, pred_full, labels=[0, 1, 2, 3])
+        conf_matrix_full += np.array(cm)
+        print(cm)
+        # print(metrics.confusion_matrix(testtarget, pred_full, labels=[0,1,2,3]))
 
-        tmp = ndcg2(data.get_frame(frm='train', group=None).loc[[k for k, v in scores_full_proba]], scores_full_proba)
-        macro_res['ndcg_full_proba'].append(tmp)
-        print('TOTAL NDCG | full | proba* | {:.5f}'.format(tmp))
+        # add scores to full list
+        score_role_tmp = list(zip(list(eval_data.index), pred_role))
+        scores_role += score_role_tmp
+        score_full_tmp = list(zip(list(eval_data.index), pred_full))
+        scores_full += score_full_tmp
 
+        # add scores based on probability to full list
+        score_role_proba_tmp = list(zip(list(eval_data.index), score_role))
+        scores_role_proba += score_role_proba_tmp
+        score_full_proba_tmp = list(zip(list(eval_data.index), score_full))
+        scores_full_proba += score_full_proba_tmp
+
+        # add NDCG to results
+        res['ndcg_role'].append(ndcg2(eval_data, score_role_tmp))
+        res['ndcg_role_proba'].append(ndcg2(eval_data, score_role_proba_tmp))
+        res['ndcg_full'].append(ndcg2(eval_data, score_full_tmp))
+        res['ndcg_full_proba'].append(ndcg2(eval_data, score_full_proba_tmp))
+
+        # echo results
+        print('> NDCG Score | role | categ  | {:.5f}'.format(ndcg2(eval_data, score_role_tmp)))
+        print('> NDCG Score | role | proba* | {:.5f}'.format(ndcg2(eval_data, score_role_proba_tmp)))
+        print('> NDCG Score | full | categ  | {:.5f}'.format(ndcg2(eval_data, score_full_tmp)))
+        print('> NDCG Score | full | proba* | {:.5f}'.format(ndcg2(eval_data, score_full_proba_tmp)))
+
+    # echo results of NDCG for entire set
+    tmp = ndcg2(data.get_frame(frm='eval', group=None).loc[[k for k, v in scores_role]], scores_role)
+    macro_res['ndcg_role'].append(tmp)
+    print('TOTAL NDCG | role | categ  | {:.5f}'.format(tmp))
+
+    tmp = ndcg2(data.get_frame(frm='eval', group=None).loc[[k for k, v in scores_role_proba]], scores_role_proba)
+    macro_res['ndcg_role_proba'].append(tmp)
+    print('TOTAL NDCG | role | proba* | {:.5f}'.format(tmp))
+
+    tmp = ndcg2(data.get_frame(frm='eval', group=None).loc[[k for k, v in scores_full]], scores_full)
+    macro_res['ndcg_full'].append(tmp)
+    print('TOTAL NDCG | full | categ  | {:.5f}'.format(tmp))
+
+    tmp = ndcg2(data.get_frame(frm='eval', group=None).loc[[k for k, v in scores_full_proba]], scores_full_proba)
+    macro_res['ndcg_full_proba'].append(tmp)
+    print('TOTAL NDCG | full | proba* | {:.5f}'.format(tmp))
+
+    if aggregate_baseline:
         res['baseline_rand'] = np.mean(res['baseline_rand'], axis=1)
+
+    return fullmodel, models, res, macro_res, conf_matrix_role, conf_matrix_full
