@@ -12,6 +12,7 @@ import logging
 
 import warnings
 from sklearn.exceptions import UndefinedMetricWarning
+
 warnings.filterwarnings("ignore", category=UndefinedMetricWarning)
 
 # forward mapping
@@ -127,7 +128,9 @@ def kfold(n_folds, data, pipeline_generator, max_docs=3):
     return res, macro_res, conf_matrix_role, conf_matrix_full
 
 
-def evaluate(data, pipeline_generator, aggregate_baseline=True):
+def evaluate(data, pipeline_generator,
+             score_func=lambda x: np.sum(x * np.array([1, 2, 4, 5]), axis=1),
+             aggregate_baseline=True):
     conf_matrix_role = np.zeros((4, 4))
     conf_matrix_full = np.zeros((4, 4))
 
@@ -167,10 +170,6 @@ def evaluate(data, pipeline_generator, aggregate_baseline=True):
         print('=== ' + role.upper() + ' ======')
         grp = role
         data.short_setinfo(group=role)
-        bl1, bl2 = data.establish_baseline(grp=grp, include_eval=True,
-                                           include_test=False, include_train=False)
-        res['baseline_rand'].append(bl2)
-        res['baseline_worst'].append(bl1)
 
         model.fit(data.get_frame(frm='train', group=grp), data.get_target(frm='train', group=grp))
 
@@ -181,14 +180,19 @@ def evaluate(data, pipeline_generator, aggregate_baseline=True):
             print('WARNING!!! SKIPPING EVALUATION!! No eval samples...')
             continue
 
+        bl1, bl2 = data.establish_baseline(grp=grp, include_eval=True,
+                                           include_test=False, include_train=False)
+        res['baseline_rand'].append(bl2)
+        res['baseline_worst'].append(bl1)
+
         # get predictions from model trained on role
         pred_role, pred_proba_role = model.predict(eval_data)
 
         # get predictions from model trained on all
         pred_full, pred_proba_full = fullmodel.predict(eval_data)
 
-        score_role = np.sum(pred_proba_role * np.array([1, 2, 4, 5]), axis=1)
-        score_full = np.sum(pred_proba_full * np.array([1, 2, 4, 5]), axis=1)
+        score_role = score_func(pred_proba_role)
+        score_full = score_func(pred_proba_full)
 
         # calculate accuracy
         res['acc_role'].append(np.mean(pred_role == eval_target))

@@ -9,11 +9,14 @@ from gensim.models.doc2vec import TaggedDocument
 import os
 from collections import Counter
 
+from code.feiii_nlp import get_nlp_model
+
+nlp = get_nlp_model()
+
 
 class Lemmatiser(BaseEstimator, TransformerMixin):
-    def __init__(self, nlp, textcol='THREE_SENTENCES'):
+    def __init__(self, textcol='THREE_SENTENCES'):
         self.textcol = textcol
-        self.nlp = nlp
 
     def fit(self, x, y=None):
         return self
@@ -26,7 +29,7 @@ class Lemmatiser(BaseEstimator, TransformerMixin):
         for doc, row in frm.iterrows():
             tmp = []
             text = row[self.textcol]
-            for token in self.nlp(text):
+            for token in nlp(text):
                 if not (token.like_num or
                             token.is_stop or
                             token.is_space or
@@ -39,12 +42,11 @@ class Lemmatiser(BaseEstimator, TransformerMixin):
 
 
 class _EmbeddingHolder:
-    def __init__(self, nlp, directory='/home/tim/Uni/HPI/workspace/FEII/full_reports/'):
+    def __init__(self, directory='/home/tim/Uni/HPI/workspace/FEII/full_reports/'):
         self.directory = directory
         self.embedding = None
         self._is_trained = False
         self.only_wordchars = True
-        self.nlp = nlp
 
     def save(self, filename):
         self.embedding.save(filename)
@@ -84,7 +86,7 @@ class _EmbeddingHolder:
 
     def _prepare_string(self, text):
         print('extracting sentences...')
-        sents = [self._clean_string(s) for s in self.nlp(text).sents]
+        sents = [self._clean_string(s) for s in nlp(text).sents]
 
         print('words:', len(text.split()))
         print('sentences:', len(sents))
@@ -120,14 +122,13 @@ class _EmbeddingHolder:
 
 
 class Embedder(BaseEstimator, TransformerMixin):
-    def __init__(self, nlp, embedding, sentence_col='THREE_SENTENCES'):
+    def __init__(self, embedding, sentence_col='THREE_SENTENCES'):
         if embedding is None:
             raise ValueError('Expected embedding, but got None!')
         self.embedding = embedding
         self.col = sentence_col
         self.esize = self.embedding.embedding.vector_size
         self.num_sents = 3
-        self.nlp = nlp
 
     def fit(self, x, y=None):
         return self
@@ -135,7 +136,8 @@ class Embedder(BaseEstimator, TransformerMixin):
     def transform(self, frm):
         X = []
         for i, row in frm.iterrows():
-            vecs = [self.embedding.infer(se) for s in self.nlp(row['THREE_SENTENCES']).sents for se in s][:self.num_sents]
+            vecs = [self.embedding.infer(se) for s in nlp(row['THREE_SENTENCES']).sents for se in s][
+                   :self.num_sents]
             while len(vecs) < self.num_sents:
                 vecs.append(list(np.zeros((self.esize,))))
             X.append(np.array(vecs).reshape((self.num_sents * self.esize,)))

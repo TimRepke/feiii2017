@@ -3,8 +3,12 @@ import os
 import pandas as pd
 import re
 import numpy as np
+from collections import Counter
 
-from feiii_experiment import ndcg2
+from code.feiii_experiment import ndcg2
+
+from code.feiii_nlp import get_nlp_model
+nlp = get_nlp_model()
 
 
 def avg2rating(rating_avg):
@@ -22,11 +26,9 @@ def avg2rating(rating_avg):
 
 class DataHolder:
     def __init__(self,
-                 nlp,
                  traindir='/home/tim/Uni/HPI/workspace/FEII/Training/',
                  testfile='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing.csv',
                  eval_docs=2):
-        self.nlp = nlp
 
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
         self.ratingmap_verbose = {'Irrelevant': 0, 'Neutral': 1, 'Relevant': 2, 'Highly relevant': 3}
@@ -35,13 +37,26 @@ class DataHolder:
         self.train_full = self._prepare_frame(self.train_full)
         self.files = list(set(self.train_full['SOURCE']))
 
-        eval_samples = np.random.choice(self.files, eval_docs)
-        self.set_train_eval(eval_samples)
+        self.shuffle_train_eval(eval_docs)
 
         self.test = self._prepare_frame(pd.read_csv(testfile, index_col=None))
 
     def get_roles(self):
         return list(set(self.train_full['grp']).union(set(self.test['grp'])))
+
+    def shuffle_train_eval(self, n_docs_eval, max_tries=1):
+        basec = Counter()
+        for role in set(self.train_full['grp']):
+            basec[role] = 0
+        for i in range(max_tries):
+            eval_samples = np.random.choice(self.files, n_docs_eval)
+            cnts = Counter(self.train_full[self.train_full['SOURCE'].isin(eval_samples)]['grp'])
+            if 0 in (basec+cnts).values():
+                print('skipping, not a good subset.')
+                continue
+            # else: found a solution
+            self.set_train_eval(eval_samples)
+            break
 
     def set_train_eval(self, eval_samples):
         self.train = self.train_full[~self.train_full['SOURCE'].isin(eval_samples)]
@@ -76,7 +91,7 @@ class DataHolder:
         for doc, row in frm.iterrows():
             tmp = []
             text = row['THREE_SENTENCES']
-            for token in self.nlp(text):
+            for token in nlp(text):
                 if not (token.like_num or
                             token.is_stop or
                             token.is_space or

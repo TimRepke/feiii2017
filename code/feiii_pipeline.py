@@ -16,7 +16,7 @@ from sklearn.svm import SVC
 from sklearn.pipeline import FeatureUnion
 from sklearn.pipeline import Pipeline
 import numpy as np
-import feiii_transformers as ft
+import code.feiii_transformers as ft
 
 import logging
 
@@ -67,23 +67,25 @@ _params = {
 
 
 class FeiiiPipeline:
-    def __init__(self, nlp, pipln='all', embedding=None, params=None):
+    def __init__(self, pipln='all_vote', line=None, embedding=None, params=None):
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
         self.params = _params if params is None else params
 
-        if pipln == 'all':
+        if line is not None:
+            pass
+        elif pipln == 'all_union':
             self.tfidf = TfidfTransformer(**self.params['tt'])
             line = [
                 ('union', FeatureUnion(
                     transformer_list=[
                         ('emb', Pipeline([
-                            ('emb', ft.Embedder(nlp, embedding))
+                            ('emb', ft.Embedder(embedding))
                         ])),
                         ('syntax', Pipeline([
                             ('feats', ft.SyntaxFeatures()),
                         ])),
                         ('bow', Pipeline([
-                            ('lem', ft.Lemmatiser(nlp)),
+                            ('lem', ft.Lemmatiser()),
                             ('vect', CountVectorizer(**self.params['cv'])),
                             ('tfidf', self.tfidf)
                         ]))
@@ -97,10 +99,46 @@ class FeiiiPipeline:
                 ('clf', SGDClassifier(**self.params['logit']))
                 # ('clf', RandomForestClassifier(**self.params['rf']))
             ]
-        if pipln == 'syn':
+        elif pipln == 'all_vote':
+            self.tfidf = TfidfTransformer(**self.params['tt'])
+            line = [
+                ('clf', VotingClassifier(
+                    voting='soft',  # hard, soft
+                    # weights=[2,1,2],
+                    estimators=[
+                        ('syn', Pipeline([
+                            ('feats', ft.SyntaxFeatures()),
+                            ('rf', RandomForestClassifier(**self.params['rf'])),
+                            # ('svc', SVC(**self.params['svm']))
+                        ])),
+                        ('emb', Pipeline([
+                            ('emb', ft.Embedder(embedding)),
+                            ('svc', SVC(**self.params['svm']))
+                        ])),
+                        ('bow', Pipeline([
+                            ('lem', ft.Lemmatiser()),
+                            ('vect', CountVectorizer(**self.params['cv'])),
+                            ('tfidf', self.tfidf),
+                            ('svc', SVC(**self.params['svm']))
+                            # ('bclf', SGDClassifier(**self.params['logit']))
+                        ]))
+                    ]))]
+        elif pipln == 'syn':
             line = [
                 ('feats', ft.SyntaxFeatures()),
                 ('clf', RandomForestClassifier(**self.params['rf']))
+            ]
+        elif pipln == 'emb':
+            line = [
+                ('emb', ft.Embedder(embedding)),
+                ('clf', SVC(**self.params['svm']))
+            ]
+        else:  # pipln == 'bow'
+            line = [
+                ('lem', ft.Lemmatiser()),
+                ('vect', CountVectorizer(**self.params['cv'])),
+                ('tfidf', TfidfTransformer(**self.params['tt'])),
+                ('clf', SGDClassifier(**self.params['logit']))
             ]
 
         self.pipeline = Pipeline(line)
