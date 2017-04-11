@@ -20,15 +20,18 @@ In this paper, we propose an approach to rank extracted relationships based on t
 % not only for companies relevant -> paper
 
 \section{Dataset}
-The dataset used for this work was provided in the context of the FEIII Challenge 2017\footnote{\url{https://ir.nist.gov/feiii/}}, which contains almost 1000 \emph{triples} extracted from 25 10-K and 10-Q filings, which describe a relationship (\emph{role}) between the \emph{filing company} and a \emph{mentioned financial entity}.
-The context a relation is appeared in the original filing, is given by text snippets of three sentences.
+The dataset used for this work was provided in the context of the FEIII Challenge 2017\cite{feiii_overview}, which contains \emph{triples} extracted from 10-K and 10-Q filings, describing a relationship (\emph{role}) between the \emph{filing company} and a \emph{mentioned financial entity}.
+The context a relation appeared in the original filing is given by text snippets of three sentences.
 Relationships are limited to ten predefined roles (see \fref{tab:roleresults}).
 Judging from their respective text snippets, triples were labelled by experts according to their relevance from a business perspective as \emph{irrelevant}, \emph{neutral}, \emph{relevant}, or \emph{highly relevant}.
+
+There are 975 training samples from 25 10-K filings, and 900 triples for testing from 25 other filings. We randomly select three documents in the training set and use the corresponding triples for evaluation.
+
 %Depending on the context, the relevance can be understood as an indicator for the potential impact a relationship might have on the business \textbf{business what? operations?} of the filing company. 
 
 {\setlength{\parindent}{0cm}
 \paragraph{\textbf{Task Description}}
-The challenge is aimed to explore methods that automatically produce a ranking by relevance of triples with the same role\cite{feiii_overview}.
+The challenge is aimed to explore methods that automatically produce a ranking by relevance of triples with the same role.
 This complements last year's challenge to identify financial entities in free text\cite{dsmm16}.
 }
 
@@ -36,13 +39,16 @@ This complements last year's challenge to identify financial entities in free te
 \paragraph{\textbf{Inter Annotator Agreement}}
 The quality of the annotations is estimated using Cohen's Kappa\cite{ir} ($\kappa\in [0,1]$), which quantifies the inter annotator agreement (IAA) between two experts as shown in \fref{fig:iaa}.
 Around 40\% of the triples were rated by more than one expert with a weighted average of $\overline{\kappa}=0.45$, which indicates a high level of disagreement.
-For our training and evaluation purposes, we map the ratings to numerical values (1--4) and consider the discrete average rating for each triple labelled by multiple experts.
+For our training and evaluation purposes, we map the ratings to numerical values (0--3) and consider the discrete average rating for each triple labelled by multiple experts.
 }
+
 \begin{figure}[b]
 	\includegraphics[width=0.8\linewidth]{iaa}
 	\caption{$\kappa$ Inter Annotator Agreement (upper triangular matrix), number of commonly rated triples (lower triangular matrix), and number of ratings (diagonal matrix)}
 	\label{fig:iaa}
 \end{figure}
+
+Unlike as for training triples, all samples in the test set are labelled by at least three experts.
 
 %{\setlength{\parindent}{0cm}
 %\paragraph{\textbf{Additional Data}}
@@ -53,12 +59,19 @@ For our training and evaluation purposes, we map the ratings to numerical values
 %}
 
 \section{Our Approach}
-We rank the snippets for each role based on an ensemble of multi-class classifiers.
-The ensemble consists of three multi-class classifiers, all trained on different feature sets.
-Two classifier consist of four one-versus-rest logistic regression models trained on the experts' labels.
-The one-versus-rest logistic regression output probabilities of all four classifiers are fed into a softmax function to calculate a weighted ranking score.
-The third classifier is a random forest model.
-The different models of the ensemble are based on different feature sets, namely \emph{bag-of-words} (BOW), \emph{embeddings} (EMB), and \emph{syntax features} (SYN).
+We rank the snippets for each role based on multi-class classifiers, which are trained on the experts' labels.
+As input to a classifier we compare three feature sets to represent snippets, namely \emph{bag-of-words} (BOW), \emph{embeddings} (EMB), and \emph{syntax features} (SYN).
+
+The classifier for BOW and EMB consist of an ensemble of four one-versus-rest logistic regression models, whereas for SYN, a random forest model performs better.
+We apply a softmax function to normalise the ensemble's output. The ranking score is the maximum softmax score weighted by the corresponding label.
+ 
+
+%We rank the snippets for each role based on an ensemble of multi-class classifiers.
+%The ensemble consists of three multi-class classifiers, all trained on different feature sets.
+%Two classifier consist of four one-versus-rest logistic regression models trained on the experts' labels.
+%The one-versus-rest logistic regression output probabilities of all four classifiers are fed into a softmax function to calculate a weighted ranking score.
+%The third classifier is a random forest model.
+%The different models of the ensemble are based on different feature sets, namely \emph{bag-of-words} (BOW), \emph{embeddings} (EMB), and \emph{syntax features} (SYN).
 
 % classification model to produce score
 % try to learn from labelled data (whats rel/irrel)
@@ -102,7 +115,7 @@ From the embedding, we induce a vector for each sentence in the text snippet ass
 \subsection{Syntax Features}
 Additionally, to provide a language independent approach, we created a set of syntax-based features.
 Following the Gini impurity metric, features, such as the ratio of upper-case words and numbers, or the number of dollar signs and word repetitions, appear to be most meaningful for classification.
-In total we derived 25 features describing the number or presence of different syntactical characteristics.
+In total we derived 20 features describing the number or presence of different syntactical characteristics.
 
 In our experiments, a logit model has proven to be a good choice for BOW and EMB, but has shown unsatisfactory performances on syntax features.
 Therefore, we chose random forests, which perform much better in this case.
@@ -128,12 +141,9 @@ As a conclusion, we combined the three models by summing the individual predicti
 		\bottomrule
 	\end{tabular}
 \end{table}
-\vfill\null
+%\vfill\null
 %\columnbreak
 \section{Evaluation}
-
-
-
 The system's performance is measured by normalised discounted cumulative gain (NDCG)\cite{ir}.
 We perform 5-fold cross-validation (5-fold-cv).
 \Fref{tab:results} lists the mean NDCG scores and the standard deviation ($\sigma$).
