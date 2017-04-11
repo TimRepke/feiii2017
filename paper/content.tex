@@ -28,7 +28,7 @@ Judging from their respective text snippets, triples were labelled by experts ac
 
 {\setlength{\parindent}{0cm}
 \paragraph{\textbf{Task Description}}
-The challenge is aimed to explore methods that automatically produce a ranking by relevance of triples with the same role.
+The challenge is aimed to explore methods that automatically produce a ranking by relevance of triples with the same role\cite{feiii_overview}.
 This complements last year's challenge to identify financial entities in free text\cite{dsmm16}.
 }
 
@@ -73,15 +73,17 @@ N-grams are extracted for $n=1$ to $3$ and are weighted based on information gai
 In order to reduce the feature space and guard against over-fitting, a filter removes the most and least frequent terms.
 
 \begin{table*}[tb]
-	\caption{Averaged experimental results for each role using BOW}
+	\caption{Averaged experimental results for each role using BOW+EMB+SYN}
 	\label{tab:roleresults}
 	\begin{tabular}{lcccccccccc}
 		\toprule
+		%    1          2          3           4          5         6        7        8         9           10
 		& affiliate & agent & counterpart & guarantor & insurer & issuer & seller & servicer & trustee & underwriter \\
-		\midrule
-               \# samples        & 185  & 61   & 64   & 34   & 19   & 129  & 20   & 21   & 420  & 21   \\
-               NDCG (5-fold-cv)   & 0.97 & 0.97 & 0.93 & 0.97 & 0.99 & 0.92 & 1.0  & 0.98 & 0.99 & 1.0  \\
-               Baseline (random) & 0.86 & 0.81 & 0.84 & 0.96 & 0.97 & 0.75 & 0.96 & 0.93 & 0.88 & 0.96 \\
+		\midrule %                        1      2      3      4      5      6      7      8      9     10
+               \# samples (train/eval) & 185  & 61   & 64   & 34   & 19   & 129  & 20   & 21   & 420  & 21   \\
+               \# samples (test)       & 129  & 40   & 108  & 28   & 47   & 98   & 49   & 57   & 304  & 40   \\
+               NDCG (5-fold-cv)        & 0.94 & 0.90 & 0.94 & 0.95 & 0.97 & 0.90 & 0.96  & 0.93 & 0.97 & 0.94  \\
+               Baseline (random)       & 0.90 & 0.83 & 0.94 & 0.98 & 0.97 & 0.78 & 0.94 & 0.90 & 0.98 & 0.95 \\
 		\bottomrule
 	\end{tabular}
 \end{table*}
@@ -116,13 +118,13 @@ As a conclusion, we combined the three models by summing the individual predicti
 		\toprule
 		Approach & NDCG & $\sigma ($NDCG$)$ & F1-Score &  $\sigma ($F1$)$\\
 		\midrule
-		Baseline (random) & 0.87 & 0.07 & - & - \\
-		Baseline (worst)  & 0.73 & 0.13 & - & - \\
+		Baseline (random) & 0.91 & 0.10 & - & - \\
+		Baseline (worst)  & 0.82 & 0.18 & - & - \\
 		\midrule
-		BOW & \textbf{0.98} & 0.03 & 0.73 & 0.27\\
-		EMB & 0.92 & 0.07 & 0.41 & 0.16\\
-		SYN & 0.94 & 0.06 & 0.43 & 0.26 \\
-		BOW+EMB+SYN& 0.93 & 0.06 & 0.46 & 0.22\\
+		BOW & 0.88 & 0.05 & 0.34 & 0.13\\
+		EMB & 0.89 & 0.04 & 0.24 & 0.18\\
+		SYN & 0.94 & 0.04 & 0.44 & 0.11 \\
+		BOW+EMB+SYN& \textbf{0.95} & 0.04 & 0.43 & 0.12\\
 		\bottomrule
 	\end{tabular}
 \end{table}
