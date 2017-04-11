@@ -28,6 +28,7 @@ class DataHolder:
     def __init__(self,
                  traindir='/home/tim/Uni/HPI/workspace/FEII/Training/',
                  testfile='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing.csv',
+                 testfile_labels='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing_labels.csv',
                  eval_docs=2):
 
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
@@ -40,6 +41,10 @@ class DataHolder:
         self.shuffle_train_eval(eval_docs)
 
         self.test = self._prepare_frame(pd.read_csv(testfile, index_col=None))
+        test_labels = pd.read_csv(testfile_labels, index_col=None)
+        test_labels.index = test_labels['UNIQUE_ID']
+        self.test = self.test.join(test_labels, on='UNIQUE_ID', rsuffix='_r', how="inner")
+        self.test = self._read_test_ratings(self.test)
 
     def get_roles(self):
         return list(set(self.train_full['grp']).union(set(self.test['grp'])))
@@ -101,6 +106,19 @@ class DataHolder:
                     tmp.append(token.lemma_)
             texts.append(' '.join(tmp))
         frm['clean'] = texts
+        return frm
+
+    def _read_test_ratings(self, frm):
+        ratings_abs = []
+        ratings_avg = []
+        map = {'H': 3, 'R': 2, 'N': 1, 'I': 0, 'A': 1, np.nan: 1}
+        for n, row in frm.iterrows():
+            ratings_abs.append(avg2rating(map[row['Final Rating']]))
+            all = row['Rating\nH: Highly Relevant\nR: Relevant\nN: Neutral\nI:  Irrelevant'].split(',')
+            ratings_avg.append(np.array([map[re.sub(r"\([^)]+\)", "", ai)] for ai in all]).mean())
+
+        frm['rating'] = ratings_abs
+        frm['rating_avg'] = ratings_avg
         return frm
 
     def _adjust_ratings(self, frm):
