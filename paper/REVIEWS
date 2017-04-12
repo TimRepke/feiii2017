@@ -1,0 +1,33 @@
+# REVIEWER #1
+
+## REVIEW QUESTIONS
+
+### 1. Final Rating
+Accept
+
+### 2. Detailed Comments (visible to Authors)
+The second sentence of "OUR APPROACH" says that the ensemble components are all trained on different feature sets, but it isn't clear which component goes with which feature set.
+
+If the bag-of-words performs so well, why is the future work justified?
+
+I'm pleased to see a baseline even if it's random classification, which works embarrassingly well. Do you think there is a threshold of performance that a human would require the system to perform at? Have you considered analyzing your misclassifications?
+
+### 3. Recommend to accept as regular paper or short paper
+FEIII Data Challenge
+
+# REVIEWER #2
+
+## REVIEW QUESTIONS
+
+### 1. Final Rating
+Accept
+
+### 2. Detailed Comments (visible to Authors)
+The authors were the only ones to serious consider inter-annotator agreement. It is not clear how these statistics were used.
+
+This method seemed to make good use of bag of words, word embedding and additional features.
+
+It is unclear why the bag of words approach seemed to work best? 
+
+### 3. Recommend to accept as regular paper or short paper
+FEIII Data Challenge
