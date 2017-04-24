@@ -29,6 +29,8 @@ class DataHolder:
                  traindir='/home/tim/Uni/HPI/workspace/FEII/Training/',
                  testfile='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing.csv',
                  testfile_labels='/home/tim/Uni/HPI/workspace/FEII/FEIII2_Testing_labels.csv',
+                 workingfile='/home/tim/Uni/HPI/workspace/FEII/working_unlabeled.csv',
+                 combinetraintest=False,
                  eval_docs=2):
 
         self.ratingmap = {'irrelevant': 0, 'neutral': 1, 'relevant': 2, 'highly': 3}
@@ -45,6 +47,15 @@ class DataHolder:
         test_labels.index = test_labels['UNIQUE_ID']
         self.test = self.test.join(test_labels, on='UNIQUE_ID', rsuffix='_r', how="inner")
         self.test = self._read_test_ratings(self.test)
+
+        self.working = self._prepare_frame(pd.read_csv(workingfile, index_col=None))
+
+        if combinetraintest:
+            self.train_full = pd.concat([self.train_full, self.test])
+            self.train_full.reset_index(drop=True, inplace=True)
+            self.files = list(set(self.train_full['SOURCE']))
+            self.shuffle_train_eval(eval_docs)
+            self.test = self.working
 
     def get_roles(self):
         return list(set(self.train_full['grp']).union(set(self.test['grp'])))

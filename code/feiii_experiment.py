@@ -72,7 +72,6 @@ def ndcg2(frame, scoring, p=None):
 
     frmap = frame['rating'].map(rating_map2)
     s = np.array([sc[1] for sc in scoring])
-
     scored = np.array([frmap.loc[scoring[i][0]] for i in (-s).argsort()])
     ideal = np.array(frmap.sort_values(ascending=False))
 
@@ -184,8 +183,8 @@ def evaluate(data, pipeline_generator,
             print('WARNING!!! SKIPPING EVALUATION!! No eval samples...')
             continue
 
-        bl1, bl2 = data.establish_baseline(grp=grp, include_eval=False,
-                                           include_test=True, include_train=False)
+        bl1, bl2 = data.establish_baseline(grp=grp, include_eval=True,
+                                           include_test=False, include_train=False)
         res['baseline_rand'].append(bl2)
         res['baseline_worst'].append(bl1)
 
