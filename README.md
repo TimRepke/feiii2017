@@ -1,5 +1,12 @@
+# What is this?
+This is the repository for our contribution to the FEIII Challenge 2017 at the DSMM workshop at SIGMOD'17 in Chicago, IL, USA. You may find further information on the official webpages:
+- https://wiki.umiacs.umd.edu/clip/datascience/index.php/Main_Page
+- https://ir.nist.gov/dsfin/
 
-# Create scorings
+# How do I replicate the results?
+An almost minimal working example can be found in the jupyter-notebook file `FEIII_synfeatures`. Check out the init, train and result sections to see how the codebase can be used.
+
+## Create scorings
 Start a jupyter-notebook server in the project root and open the `FEIII_final_scoring.ipynb` file ans start executing the cells.
 Within the `pipeline()` and `score_func()` functions, you can adjust which classifier and scoring function to use by setting the variable directly after the function header.
 
@@ -10,7 +17,7 @@ data.shuffle_train_eval(n_docs_eval=3, max_tries=5)
 
 Remember to adjust the `classifier` variable and scoring function accordingly before executing the cell that saves the frame(s).
 
-# Train and save embeddings
+## Train and save embeddings
 ```
 $ cd <project_root>/
 $ python
