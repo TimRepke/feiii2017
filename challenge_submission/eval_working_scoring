@@ -1,0 +1,51 @@
+SYN
+AGENT       : 0.7465 (ndcg), 0.5337 (rand) | min: 0.6315, rand: 0.8282, ndcg: 0.9066
+TRUSTEE     : 0.7684 (ndcg), 0.5078 (rand) | min: 0.6349, rand: 0.8203, ndcg: 0.9154
+SERVICER    : 0.5939 (ndcg), 0.4494 (rand) | min: 0.6821, rand: 0.8250, ndcg: 0.8709
+COUNTERPART : 0.6277 (ndcg), 0.4951 (rand) | min: 0.5479, rand: 0.7717, ndcg: 0.8317
+ISSUER      : 0.7223 (ndcg), 0.4886 (rand) | min: 0.5606, rand: 0.7753, ndcg: 0.8780
+AFFILIATE   : 0.8819 (ndcg), 0.6201 (rand) | min: 0.6759, rand: 0.8769, ndcg: 0.9617
+INSURER     : 0.8552 (ndcg), 0.5114 (rand) | min: 0.6449, rand: 0.8265, ndcg: 0.9486
+UNDERWRITER : 1.0000 (ndcg), 0.5531 (rand) | min: 0.6179, rand: 0.8292, ndcg: 1.0000
+SELLER      : 1.0000 (ndcg), 0.4979 (rand) | min: 0.8828, rand: 0.9412, ndcg: 1.0000
+GUARANTOR   : 0.6978 (ndcg), 0.5468 (rand) | min: 0.7626, rand: 0.8924, ndcg: 0.9282
+ALL         : 0.7741 (ndcg), 0.5197 (rand) | min: 0.6641, rand: 0.8387, ndcg: 0.9241
+
+ALL_VOTE
+AGENT       : 0.7847 (ndcg), 0.5247 (rand) | min: 0.6315, rand: 0.8248, ndcg: 0.9207 | f1_full: 0.15 f1_role: 0.60
+TRUSTEE     : 0.8937 (ndcg), 0.5033 (rand) | min: 0.6349, rand: 0.8186, ndcg: 0.9612 | f1_full: 0.31 f1_role: 0.32
+SERVICER    : 0.5939 (ndcg), 0.4467 (rand) | min: 0.6821, rand: 0.8241, ndcg: 0.8709 | f1_full: 0.37 f1_role: 0.17
+COUNTERPART : 0.6491 (ndcg), 0.5132 (rand) | min: 0.5479, rand: 0.7799, ndcg: 0.8414 | f1_full: 0.21 f1_role: 0.12
+ISSUER      : 0.7351 (ndcg), 0.4914 (rand) | min: 0.5606, rand: 0.7765, ndcg: 0.8836 | f1_full: 0.36 f1_role: 0.38
+AFFILIATE   : 0.9361 (ndcg), 0.6115 (rand) | min: 0.6759, rand: 0.8741, ndcg: 0.9793 | f1_full: 0.40 f1_role: 0.41
+INSURER     : 0.8498 (ndcg), 0.5230 (rand) | min: 0.6449, rand: 0.8306, ndcg: 0.9467 | f1_full: 0.51 f1_role: 0.17
+UNDERWRITER : 1.0000 (ndcg), 0.5573 (rand) | min: 0.6179, rand: 0.8309, ndcg: 1.0000 | f1_full: 0.58 f1_role: 0.58
+SELLER      : 1.0000 (ndcg), 0.4328 (rand) | min: 0.8828, rand: 0.9335, ndcg: 1.0000 | f1_full: 0.78 f1_role: 0.78
+GUARANTOR   : 0.7167 (ndcg), 0.5398 (rand) | min: 0.7626, rand: 0.8907, ndcg: 0.9327 | f1_full: 0.65 f1_role: 0.76
+ALL         : 0.8024 (ndcg), 0.5188 (rand) | min: 0.6641, rand: 0.8384, ndcg: 0.9336 | f1_full: 0.43 f1_role: 0.43
+
+BOW
+AGENT       : 0.2104 (ndcg), 0.5200 (rand) | min: 0.6315, rand: 0.8231, ndcg: 0.7090 | f1_full: 0.19 f1_role: 0.37
+TRUSTEE     : 0.7348 (ndcg), 0.5107 (rand) | min: 0.6349, rand: 0.8214, ndcg: 0.9032 | f1_full: 0.15 f1_role: 0.39
+SERVICER    : 0.4972 (ndcg), 0.4981 (rand) | min: 0.6821, rand: 0.8405, ndcg: 0.8402 | f1_full: 0.18 f1_role: 0.17
+COUNTERPART : 0.6767 (ndcg), 0.4982 (rand) | min: 0.5479, rand: 0.7731, ndcg: 0.8538 | f1_full: 0.20 f1_role: 0.12
+ISSUER      : 0.6992 (ndcg), 0.4870 (rand) | min: 0.5606, rand: 0.7746, ndcg: 0.8678 | f1_full: 0.25 f1_role: 0.24
+AFFILIATE   : 0.5751 (ndcg), 0.6197 (rand) | min: 0.6759, rand: 0.8768, ndcg: 0.8623 | f1_full: 0.19 f1_role: 0.42
+INSURER     : 0.3752 (ndcg), 0.5199 (rand) | min: 0.6449, rand: 0.8295, ndcg: 0.7782 | f1_full: 0.16 f1_role: 0.34
+UNDERWRITER : 1.0000 (ndcg), 0.5559 (rand) | min: 0.6179, rand: 0.8303, ndcg: 1.0000 | f1_full: 0.40 f1_role: 0.40
+SELLER      : 0.5324 (ndcg), 0.5070 (rand) | min: 0.8828, rand: 0.9422, ndcg: 0.9452 | f1_full: 0.45 f1_role: 0.78
+GUARANTOR   : 0.2534 (ndcg), 0.5775 (rand) | min: 0.7626, rand: 0.8997, ndcg: 0.8227 | f1_full: 0.70 f1_role: 0.76
+ALL         : 0.5780 (ndcg), 0.5270 (rand) | min: 0.6641, rand: 0.8411, ndcg: 0.8582 | f1_full: 0.29 f1_role: 0.40
+
+EMB
+AGENT       : 0.6074 (ndcg), 0.5558 (rand) | min: 0.6315, rand: 0.8363, ndcg: 0.8553 | f1_full: 0.16 f1_role: 0.18
+TRUSTEE     : 0.8385 (ndcg), 0.5210 (rand) | min: 0.6349, rand: 0.8251, ndcg: 0.9411 | f1_full: 0.19 f1_role: 0.45
+SERVICER    : 0.6737 (ndcg), 0.4640 (rand) | min: 0.6821, rand: 0.8296, ndcg: 0.8963 | f1_full: 0.00 f1_role: 0.17
+COUNTERPART : 0.3135 (ndcg), 0.5043 (rand) | min: 0.5479, rand: 0.7759, ndcg: 0.6896 | f1_full: 0.12 f1_role: 0.08
+ISSUER      : 0.7296 (ndcg), 0.5024 (rand) | min: 0.5606, rand: 0.7814, ndcg: 0.8812 | f1_full: 0.22 f1_role: 0.25
+AFFILIATE   : 0.7823 (ndcg), 0.6041 (rand) | min: 0.6759, rand: 0.8717, ndcg: 0.9294 | f1_full: 0.40 f1_role: 0.22
+INSURER     : 0.5179 (ndcg), 0.5372 (rand) | min: 0.6449, rand: 0.8357, ndcg: 0.8288 | f1_full: 0.14 f1_role: 0.19
+UNDERWRITER : 0.6882 (ndcg), 0.5712 (rand) | min: 0.6179, rand: 0.8362, ndcg: 0.8809 | f1_full: 0.11 f1_role: 0.40
+SELLER      : 0.0000 (ndcg), 0.4707 (rand) | min: 0.8828, rand: 0.9380, ndcg: 0.8828 | f1_full: 0.20 f1_role: 0.45
+GUARANTOR   : 0.6198 (ndcg), 0.5733 (rand) | min: 0.7626, rand: 0.8987, ndcg: 0.9097 | f1_full: 0.65 f1_role: 0.68
+ALL         : 0.6115 (ndcg), 0.5321 (rand) | min: 0.6641, rand: 0.8428, ndcg: 0.8695 | f1_full: 0.22 f1_role: 0.31
