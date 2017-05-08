@@ -48,7 +48,8 @@ class DataHolder:
         self.test = self.test.join(test_labels, on='UNIQUE_ID', rsuffix='_r', how="inner")
         self.test = self._read_test_ratings(self.test)
 
-        self.working = self._prepare_frame(pd.read_csv(workingfile, index_col=None))
+        if workingfile is not None:
+            self.working = self._prepare_frame(pd.read_csv(workingfile, index_col=None))
 
         if combinetraintest:
             self.train_full = pd.concat([self.train_full, self.test])

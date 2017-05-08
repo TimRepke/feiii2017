@@ -146,10 +146,11 @@ class Embedder(BaseEstimator, TransformerMixin):
 
 
 class SyntaxFeatures(BaseEstimator, TransformerMixin):
-    def __init__(self, asfrm=False, n_workers=6):
+    def __init__(self, asfrm=False, n_workers=6, features=None):
         self.asfrm = asfrm
         self.n_workers = n_workers
         self.features_ = None
+        self.feats = features
 
     def fit(self, X, y=None):
         return self
@@ -161,6 +162,9 @@ class SyntaxFeatures(BaseEstimator, TransformerMixin):
 
         self.features_ = list(Xd.columns)
 
+        if self.feats is not None:
+            Xd = Xd[self.feats]
+
         if self.asfrm:
             return Xd
 
@@ -169,9 +173,16 @@ class SyntaxFeatures(BaseEstimator, TransformerMixin):
     def _features(self, row):
         _, row = row
         raw = row['THREE_SENTENCES']
+        n = nlp(raw)
+        tagc = Counter([nn.tag_ for nn in n])
+        posc = Counter([nn.pos_ for nn in n])
         clean = row['clean']
         counts_r = Counter(raw.split())
         counts_c = Counter(clean.split())
+        try:
+            dist_role_ent = raw.lower().index(row['MENTIONED_FINANCIAL_ENTITY'].lower()) - raw.lower().index(row['ROLE'].lower())
+        except:
+            dist_role_ent = 0
         ret = {
             'num_chars': len(raw),
             'num_words': len(raw.split()),
@@ -189,5 +200,16 @@ class SyntaxFeatures(BaseEstimator, TransformerMixin):
             'num_digits': len(re.findall(r'\d', raw)),
             'ratio_numbers': len(re.findall(r'\d+', raw)) / max(1, len(raw.split())),
             'ratio_digits': len(re.findall(r'\d', raw)) / len(raw),
+            'num_ents_org': len([ent for ent in n.ents if ent.root.ent_type_ == 'ORG']),
+            'num_ents_person': len([ent for ent in n.ents if ent.root.ent_type_ == 'PERSON']),
+            'num_verbs': tagc['VB'] + tagc['VBD'] + tagc['VBG'] + tagc['VBN'] + tagc['VBP'] + tagc['VBZ'],
+            'num_adverbs': tagc['RB'] + tagc['RBR'] + tagc['RBS'],
+            'num_adj': tagc['JJ'] + tagc['JJR'] + tagc['JJS'],
+            'num_punct': posc['PUNCT']+posc['SYM'],
+            'num_1letter': len([tok for tok in n if len(tok) == 1 and tok.pos_ != 'PUNCT' and tok.pos_ != 'SYM']),
+            'num_role_mentions': raw.lower().count(row['ROLE']),
+            'role+ent': len([sent for sent in n.sents if row['MENTIONED_FINANCIAL_ENTITY'] in str(sent) and row['ROLE'] in str(sent)]),
+            'dist_role_ent': dist_role_ent + (len(row['MENTIONED_FINANCIAL_ENTITY']) if dist_role_ent < 0 else len(row['ROLE'])),
+            'dist_role_ent_abs': abs(dist_role_ent + (len(row['MENTIONED_FINANCIAL_ENTITY']) if dist_role_ent < 0 else len(row['ROLE'])))
         }
         return ret
